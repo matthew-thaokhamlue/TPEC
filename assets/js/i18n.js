@@ -18,12 +18,7 @@ class I18n {
   async init(defaultLang = 'en') {
     try {
       // Load stored language preference or use default
-      let storedLang = null;
-      try {
-        storedLang = localStorage.getItem(this.storageKey);
-      } catch (e) {
-        console.warn('Could not access localStorage. Using default language.');
-      }
+      const storedLang = localStorage.getItem(this.storageKey);
       this.currentLang = storedLang || defaultLang;
 
       // Load translation files

@@ -7,6 +7,7 @@ class Shell {
   constructor() {
     this.currentPage = '';
     this.mobileMenuOpen = false;
+    this.init();
   }
 
   init() {
@@ -354,6 +355,15 @@ class Shell {
       }
     });
   }
+}
+
+// Initialize Shell when DOM is loaded
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    window.shell = new Shell();
+  });
+} else {
+  window.shell = new Shell();
 }
 
 // Export for module usage
