@@ -1551,9 +1551,6 @@ button[aria-pressed="true"] {
     transform: none;
   }
 }
-  color: var(--accent) !important;
-  transform: translateY(-2px);
-}
 
 /* Animation Classes for GSAP */
 .reveal-up {
