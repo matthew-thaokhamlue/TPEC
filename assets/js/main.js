@@ -7,13 +7,17 @@ class App {
   constructor() {
     this.initialized = false;
     this.projects = null;
+    window.shell = new Shell();
   }
 
   async init() {
     if (this.initialized) return;
 
     try {
-      // Initialize i18n system first with error handling
+      // Initialize shell first to build the page structure
+      window.shell.init();
+
+      // Initialize i18n system with error handling
       try {
         await i18n.init();
       } catch (i18nError) {
