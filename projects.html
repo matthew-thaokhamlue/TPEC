@@ -572,21 +572,29 @@
             card.setAttribute('data-project', projectSlug);
             card.setAttribute('tabindex', '0');
             card.setAttribute('role', 'button');
-            card.setAttribute('aria-label', `View details for ${projectData.title}`);
+
+            const lang = i18n.getCurrentLang();
+            const getTranslated = (key) => {
+                const loKey = `${key}_lo`;
+                return lang === 'lo' && projectData[loKey] ? projectData[loKey] : projectData[key];
+            };
+
+            const title = getTranslated('title');
+            card.setAttribute('aria-label', `View details for ${title}`);
 
             card.innerHTML = `
                 <div class="project-avatar">
-                    <img src="${projectData.cover}" alt="${projectData.title}" class="project-photo" loading="lazy">
+                    <img src="${projectData.cover}" alt="${title}" class="project-photo" loading="lazy">
                 </div>
                 <div class="project-info">
-                    <h3 class="project-name">${projectData.title}</h3>
-                    <p class="project-scope">${projectData.scope}</p>
-                    <p class="project-summary">${projectData.summary}</p>
+                    <h3 class="project-name">${title}</h3>
+                    <p class="project-scope">${getTranslated('scope')}</p>
+                    <p class="project-summary">${getTranslated('short_summary')}</p>
                     <div class="project-details">
-                        <p class="project-location">📍 ${projectData.location}</p>
-                        <p class="project-duration">⏱️ ${projectData.duration}</p>
-                        <p class="project-budget">💰 ${projectData.value}</p>
-                        <p class="project-client">🏢 ${projectData.client}</p>
+                        <p class="project-location">📍 ${getTranslated('location')}</p>
+                        <p class="project-duration">⏱️ ${getTranslated('duration')}</p>
+                        <p class="project-budget">💰 ${getTranslated('value')}</p>
+                        <p class="project-client">🏢 ${getTranslated('client')}</p>
                     </div>
                 </div>
             `;
@@ -607,25 +615,12 @@
             return card;
         }
 
-        // Initialize page when DOM is loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('🚀 Projects page loaded with team card style');
-
-            // Initialize modal
-            projectModal = document.getElementById('project-modal');
-
-            // Setup tabs
-            setupTabs();
-
-            // Setup modal events
-            setupModalEvents();
-
-            // Populate completed projects with new card structure
+        // Function to render projects
+        function renderProjects() {
             const completedProjectsGrid = document.getElementById('completed-projects');
             if (completedProjectsGrid) {
-                // Clear existing content and add new structure
+                // Clear existing content
                 completedProjectsGrid.innerHTML = '';
-                completedProjectsGrid.className = 'projects-grid tab-content active reveal-up';
 
                 // Add project cards
                 Object.keys(projectsData).forEach(projectSlug => {
@@ -633,8 +628,34 @@
                     completedProjectsGrid.appendChild(projectCard);
                 });
             }
+        }
 
-            console.log('✅ Projects functionality initialized with team card styling');
+        // Initialize page when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 Projects page loaded with team card style');
+
+            // Initialize i18n
+            i18n.init().then(() => {
+                // Initialize modal
+                projectModal = document.getElementById('project-modal');
+
+                // Setup tabs
+                setupTabs();
+
+                // Setup modal events
+                setupModalEvents();
+
+                // Initial render of projects
+                renderProjects();
+
+                // Listen for language changes
+                window.addEventListener('languageChanged', () => {
+                    console.log('Language changed, re-rendering projects...');
+                    renderProjects();
+                });
+
+                console.log('✅ Projects functionality initialized with team card styling');
+            });
         });
 
         function setupTabs() {
@@ -713,70 +734,125 @@
         const projectsData = {
             'national-road-1e-lot1': {
                 title: 'National Road 1E Construction Project (Lot I)',
+                title_lo: 'ໂຄງການກໍ່ສ້າງផ្លូវជាតិເລກທີ 1E (ຕອນທີ I)',
                 location: 'Bolikhamxay Province, Laos',
+                location_lo: 'ແຂວງບໍລິຄຳໄຊ, ລາວ',
                 scope: 'Road Construction Supervision',
+                scope_lo: 'ການກວດກາການກໍ່ສ້າງຖະໜົນ',
                 year: '2012-2017',
                 duration: 'April 2012 - March 2017 (47 months)',
+                duration_lo: 'ເມສາ 2012 - ມີນາ 2017 (47 ເດືອນ)',
                 client: 'Department of Public Works and Transport, Bolikhamxay Province',
+                client_lo: 'ກົມໂຍທາທິການ ແລະ ຂົນສົ່ງ, ແຂວງບໍລິຄຳໄຊ',
                 value: '4,565,382,448 Kip',
+                value_lo: '4,565,382,448 ກີບ',
                 cover: 'assets/img/projects/national-road-1e-lot1-cover.jpg',
-                summary: 'TPEC provided comprehensive construction supervision for this major road infrastructure project spanning 47 months. Our team of 8 engineers and 1 team leader delivered construction supervision, materials testing, quality control, and progress reporting for road construction with double surface treatment, ensuring project completion to the highest standards.'
+                short_summary: 'Comprehensive construction supervision for a major road infrastructure project.',
+                short_summary_lo: 'ການກວດກາການກໍ່ສ້າງແບບຄົບວົງຈອນສຳລັບໂຄງການພື້ນຖານໂຄງລ່າງທາງຫຼວງທີ່ສຳຄັນ.',
+                summary: 'TPEC provided comprehensive construction supervision for this major road infrastructure project spanning 47 months. Our team of 8 engineers and 1 team leader delivered construction supervision, materials testing, quality control, and progress reporting for road construction with double surface treatment, ensuring project completion to the highest standards.',
+                summary_lo: 'TPEC ໄດ້ໃຫ້ການກວດກາການກໍ່ສ້າງແບບຄົບວົງຈອນສຳລັບໂຄງການພື້ນຖານໂຄງລ່າງທາງຫຼວງທີ່ສຳຄັນນີ້ ເຊິ່ງໃຊ້ເວລາ 47 ເດືອນ. ທີມງານຂອງພວກເຮົາປະກອບດ້ວຍວິສະວະກອນ 8 ຄົນ ແລະ ຫົວໜ້າທີມ 1 ຄົນ ໄດ້ດຳເນີນການກວດກາການກໍ່ສ້າງ, ທົດສອບວັດສະດຸ, ຄວບຄຸມຄຸນນະພາບ ແລະ ລາຍງານຄວາມຄືບໜ້າຂອງການກໍ່ສ້າງຖະໜົນດ້ວຍການປູຢາງສອງຊັ້ນ, ເພື່ອຮັບປະກັນໃຫ້ໂຄງການສຳເລັດຕາມມາດຕະຖານສູງສຸດ.'
             },
             'national-road-1e-lot2': {
                 title: 'National Road 1E Construction Project (Lot II)',
+                title_lo: 'ໂຄງການກໍ່ສ້າງផ្លូវជាតិເລກທີ 1E (ຕອນທີ II)',
                 location: 'Bolikhamxay Province, Laos',
+                location_lo: 'ແຂວງບໍລິຄຳໄຊ, ລາວ',
                 scope: 'Road Construction Supervision',
+                scope_lo: 'ການກວດກາການກໍ່ສ້າງຖະໜົນ',
                 year: '2012-2014',
                 duration: 'April 2012 - December 2014 (32 months)',
+                duration_lo: 'ເມສາ 2012 - ທັນວາ 2014 (32 ເດືອນ)',
                 client: 'Department of Public Works and Transport, Bolikhamxay Province',
+                client_lo: 'ກົມໂຍທາທິການ ແລະ ຂົນສົ່ງ, ແຂວງບໍລິຄຳໄຊ',
                 value: '1,637,511,480 Kip',
+                value_lo: '1,637,511,480 ກີບ',
                 cover: 'assets/img/projects/national-road-1e-lot2-cover.jpg',
-                summary: 'A 32-month road construction supervision project where TPEC\'s team of 3 engineers and 1 team leader provided construction supervision, materials testing, and quality control for road double surface treatment construction, demonstrating our expertise in large-scale infrastructure projects.'
+                short_summary: 'A 32-month road construction supervision project.',
+                short_summary_lo: 'ໂຄງການກວດກາການກໍ່ສ້າງຖະໜົນ 32 ເດືອນ.',
+                summary: 'A 32-month road construction supervision project where TPEC\'s team of 3 engineers and 1 team leader provided construction supervision, materials testing, and quality control for road double surface treatment construction, demonstrating our expertise in large-scale infrastructure projects.',
+                summary_lo: 'ໂຄງການກວດກາການກໍ່ສ້າງຖະໜົນ 32 ເດືອນ ເຊິ່ງທີມງານ TPEC ປະກອບດ້ວຍວິສະວະກອນ 3 ຄົນ ແລະ ຫົວໜ້າທີມ 1 ຄົນ ໄດ້ໃຫ້ການກວດກາການກໍ່ສ້າງ, ທົດສອບວັດສະດຸ ແລະ ຄວບຄຸມຄຸນນະພາບສຳລັບການກໍ່ສ້າງຖະໜົນປູຢາງສອງຊັ້ນ, ເຊິ່ງສະແດງໃຫ້ເຫັນເຖິງຄວາມຊ່ຽວຊານຂອງພວກເຮົາໃນໂຄງການພື້ນຖານໂຄງລ່າງຂະໜາດໃຫຍ່.'
             },
             'mekong-bank-protection-paksan': {
                 title: 'Mekong River Bank Protection - Paksan District',
+                title_lo: 'ການປ້ອງກັນຕາຝັ່ງแม่น้ำຂອງ - ເມືອງປາກຊັນ',
                 location: 'Phoxai Village, Paksan District, Borlikhamxay Province',
+                location_lo: 'ບ້ານໂພໄຊ, ເມືອງປາກຊັນ, ແຂວງບໍລິຄຳໄຊ',
                 scope: 'River Bank Protection Construction',
+                scope_lo: 'ການກໍ່ສ້າງການປ້ອງກັນຕາຝັ່ງแม่น้ำ',
                 year: '2013-2018',
                 duration: 'October 2013 - April 2018 (4.5 years)',
+                duration_lo: 'ຕຸລາ 2013 - ເມສາ 2018 (4.5 ປີ)',
                 client: 'Department of Public Works and Transport, Borlikhamxay Province',
+                client_lo: 'ກົມໂຍທາທິການ ແລະ ຂົນສົ່ງ, ແຂວງບໍລິຄຳໄຊ',
                 value: '779,244,886 Kip',
+                value_lo: '779,244,886 ກີບ',
                 cover: 'assets/img/projects/mekong-bank-protection-cover.jpg',
-                summary: 'TPEC supervised the construction of 1.52 km of Mekong river bank protection in Phoxai Village over 4.5 years. Our team of 2 engineers and 1 team leader ensured proper construction techniques and quality control for this critical flood protection infrastructure project.'
+                short_summary: 'Supervised the construction of 1.52 km of Mekong river bank protection.',
+                short_summary_lo: 'ກວດກາການກໍ່ສ້າງການປ້ອງກັນຕາຝັ່ງแม่น้ำຂອງ 1.52 ກິໂລແມັດ.',
+                summary: 'TPEC supervised the construction of 1.52 km of Mekong river bank protection in Phoxai Village over 4.5 years. Our team of 2 engineers and 1 team leader ensured proper construction techniques and quality control for this critical flood protection infrastructure project.',
+                summary_lo: 'TPEC ໄດ້ກວດກາການກໍ່ສ້າງການປ້ອງກັນຕາຝັ່ງแม่น้ำຂອງ 1.52 ກິໂລແມັດ ຢູ່ບ້ານໂພໄຊ ເປັນເວລາ 4.5 ປີ. ທີມງານຂອງພວກເຮົາປະກອບດ້ວຍວິສະວະກອນ 2 ຄົນ ແລະ ຫົວໜ້າທີມ 1 ຄົນ ໄດ້ຮັບປະກັນເຕັກນິກການກໍ່ສ້າງທີ່ເໝາະສົມ ແລະ ການຄວບຄຸມຄຸນນະພາບສຳລັບໂຄງການພື້ນຖານໂຄງລ່າງປ້ອງກັນນ້ຳຖ້ວມທີ່ສຳຄັນນີ້.'
             },
             'concrete-bridges-road8': {
                 title: '4 Concrete Bridges - National Road No. 8',
+                title_lo: 'ຂົວຄອນກຣີດ 4 ແຫ່ງ - ផ្លូវជាតិເລກທີ 8',
                 location: 'Borlikhamxay Province, Laos',
+                location_lo: 'ແຂວງບໍລິຄຳໄຊ, ລາວ',
                 scope: 'Bridge Construction Supervision',
+                scope_lo: 'ການກວດກາການກໍ່ສ້າງຂົວ',
                 year: '2014-2017',
                 duration: 'December 2014 - May 2017 (2.5 years)',
+                duration_lo: 'ທັນວາ 2014 - ພຶດສະພາ 2017 (2.5 ປີ)',
                 client: 'Department of Public Works and Transport, Borlikhamxay Province',
+                client_lo: 'ກົມໂຍທາທິການ ແລະ ຂົນສົ່ງ, ແຂວງບໍລິຄຳໄຊ',
                 value: '1,050,000,000 Kip',
+                value_lo: '1,050,000,000 ກີບ',
                 cover: 'assets/img/projects/concrete-bridges-road8-cover.jpg',
-                summary: 'A comprehensive bridge construction supervision project where TPEC\'s team of 3 engineers and 1 team leader provided technical oversight for the construction of 4 concrete bridges, ensuring structural integrity and compliance with engineering standards over a 2.5-year period.'
+                short_summary: 'A comprehensive bridge construction supervision project.',
+                short_summary_lo: 'ໂຄງການກວດກາການກໍ່ສ້າງຂົວແບບຄົບວົງຈອນ.',
+                summary: 'A comprehensive bridge construction supervision project where TPEC\'s team of 3 engineers and 1 team leader provided technical oversight for the construction of 4 concrete bridges, ensuring structural integrity and compliance with engineering standards over a 2.5-year period.',
+                summary_lo: 'ໂຄງການກວດກາການກໍ່ສ້າງຂົວແບບຄົບວົງຈອນ ເຊິ່ງທີມງານ TPEC ປະກອບດ້ວຍວິສະວະກອນ 3 ຄົນ ແລະ ຫົວໜ້າທີມ 1 ຄົນ ໄດ້ໃຫ້ການກວດກາດ້ານເຕັກນິກສຳລັບການກໍ່ສ້າງຂົວຄອນກຣີດ 4 ແຫ່ງ, ເພື່ອຮັບປະກັນຄວາມສົມບູນຂອງໂຄງສ້າງ ແລະ ການປະຕິບັດຕາມມາດຕະຖານວິສະວະກຳຕະຫຼອດໄລຍະເວລາ 2.5 ປີ.'
             },
             'nam-ngeip-hydroelectric': {
                 title: 'Nam Ngeip 1 Hydroelectric Project Survey',
+                title_lo: 'ການສຳຫຼວດໂຄງການໄຟຟ້ານ້ຳຕົກນ້ຳງຽບ 1',
                 location: 'Lao PDR',
+                location_lo: 'ສປປ ລາວ',
                 scope: 'Topographic Survey for Re-regulation Dam',
+                scope_lo: 'ການສຳຫຼວດພູມສັນຖານສຳລັບເຂື່ອນ નિયಂತ್ರణ',
                 year: '2013',
                 duration: 'March - May 2013 (3 months)',
+                duration_lo: 'ມີນາ - ພຶດສະພາ 2013 (3 ເດືອນ)',
                 client: 'Obajasih Company (Construction Manager)',
+                client_lo: 'ບໍລິສັດ Obajasih (ຜູ້ຈັດການກໍ່ສ້າງ)',
                 value: '6,950 USD',
+                value_lo: '6,950 ໂດລາສະຫະລັດ',
                 funding: 'Japan Funded',
+                funding_lo: 'ທຶນຈາກປະເທດຍີ່ປຸ່ນ',
                 cover: 'assets/img/projects/nam-ngeip-hydroelectric-cover.jpg',
-                summary: 'TPEC conducted specialized topographic mapping and leveling survey services for this Japan-funded hydroelectric project. Our services included grid 15x15 mapping, river section surveying, and HWL/LWL determination for the re-regulation dam, showcasing our expertise in precision surveying for power infrastructure.'
+                short_summary: 'Specialized topographic mapping and leveling survey services for a hydroelectric project.',
+                short_summary_lo: 'ການບໍລິການສຳຫຼວດພູມສັນຖານ ແລະ ການສຳຫຼວດລະດັບພິເສດສຳລັບໂຄງການໄຟຟ້ານ້ຳຕົກ.',
+                summary: 'TPEC conducted specialized topographic mapping and leveling survey services for this Japan-funded hydroelectric project. Our services included grid 15x15 mapping, river section surveying, and HWL/LWL determination for the re-regulation dam, showcasing our expertise in precision surveying for power infrastructure.',
+                summary_lo: 'TPEC ໄດ້ດຳເນີນການບໍລິການສຳຫຼວດພູມສັນຖານ ແລະ ການສຳຫຼວດລະດັບພິເສດສຳລັບໂຄງການໄຟຟ້ານ້ຳຕົກທີ່ໄດ້ຮັບທຶນຈາກປະເທດຍີ່ປຸ່ນນີ້. ການບໍລິການຂອງພວກເຮົາລວມມີການສ້າງແຜນທີ່ຕາຂ່າຍ 15x15, ການສຳຫຼວດພາກສ່ວນแม่น้ำ ແລະ ການກຳນົດ HWL/LWL ສຳລັບເຂື່ອນ નિયಂತ್ರణ, ເຊິ່ງສະແດງໃຫ້ເຫັນເຖິງຄວາມຊ່ຽວຊານຂອງພວກເຮົາໃນການສຳຫຼວດທີ່แม่นยำສຳລັບພື້ນຖານໂຄງລ່າງດ້ານພະລັງງານ.'
             },
             'road-construction-vientiane': {
                 title: 'Road Construction Projects - Vientiane Province',
+                title_lo: 'ໂຄງການກໍ່ສ້າງຖະໜົນ - ແຂວງວຽງຈັນ',
                 location: 'Vientiane Province, Laos',
+                location_lo: 'ແຂວງວຽງຈັນ, ລາວ',
                 scope: 'Multiple Road Construction and Supervision',
+                scope_lo: 'ການກໍ່ສ້າງ ແລະ ກວດກາຖະໜົນຫຼາຍສາຍ',
                 year: '2013-2016',
                 duration: 'March 2013 - September 2016 (3.5 years)',
+                duration_lo: 'ມີນາ 2013 - ກັນຍາ 2016 (3.5 ປີ)',
                 client: 'Department of Public Works and Transport, Vientiane Province',
+                client_lo: 'ກົມໂຍທາທິການ ແລະ ຂົນສົ່ງ, ແຂວງວຽງຈັນ',
                 value: '2,506,501,727 Kip',
+                value_lo: '2,506,501,727 ກີບ',
                 cover: 'assets/img/projects/road-construction-vientiane-cover.jpg',
-                summary: 'TPEC managed multiple road construction and supervision projects across Vientiane Province, including double bitumen surface treatment construction. Our team of 3 engineers and 1 team leader delivered comprehensive project management and quality control services over a 3-year period.'
+                short_summary: 'Managed multiple road construction and supervision projects across Vientiane Province.',
+                short_summary_lo: 'ຄຸ້ມຄອງໂຄງການກໍ່ສ້າງ ແລະ ກວດກາຖະໜົນຫຼາຍສາຍທົ່ວແຂວງວຽງຈັນ.',
+                summary: 'TPEC managed multiple road construction and supervision projects across Vientiane Province, including double bitumen surface treatment construction. Our team of 3 engineers and 1 team leader delivered comprehensive project management and quality control services over a 3-year period.',
+                summary_lo: 'TPEC ໄດ້ຄຸ້ມຄອງໂຄງການກໍ່ສ້າງ ແລະ ກວດກາຖະໜົນຫຼາຍສາຍທົ່ວແຂວງວຽງຈັນ, ລວມທັງການກໍ່ສ້າງປູຢາງສອງຊັ້ນ. ທີມງານຂອງພວກເຮົາປະກອບດ້ວຍວິສະວະກອນ 3 ຄົນ ແລະ ຫົວໜ້າທີມ 1 ຄົນ ໄດ້ໃຫ້ບໍລິການຄຸ້ມຄອງໂຄງການ ແລະ ຄວບຄຸມຄຸນນະພາບແບບຄົບວົງຈອນຕະຫຼອດໄລຍະເວລາ 3 ປີ.'
             }
         };
 
@@ -787,32 +863,39 @@
                 return;
             }
 
-            console.log('📋 Showing modal for:', project.title);
+            const lang = i18n.getCurrentLang();
+            const getTranslated = (key) => {
+                const loKey = `${key}_lo`;
+                return lang === 'lo' && project[loKey] ? project[loKey] : project[key];
+            };
+
+            const title = getTranslated('title');
+            console.log('📋 Showing modal for:', title);
 
             // Create modal content
             const modalBody = projectModal.querySelector('.project-modal-body');
             if (modalBody) {
                 modalBody.innerHTML = `
                     <div class="project-modal-header">
-                        <h2 class="project-modal-title" id="project-modal-title">${project.title}</h2>
+                        <h2 class="project-modal-title" id="project-modal-title">${title}</h2>
                         <div class="project-modal-meta">
-                            <span class="project-location">📍 ${project.location}</span>
+                            <span class="project-location">📍 ${getTranslated('location')}</span>
                             <span class="project-year">📅 ${project.year}</span>
-                            <span class="project-value">💰 ${project.value}</span>
-                            ${project.funding ? `<span class="project-funding">🏦 ${project.funding}</span>` : ''}
+                            <span class="project-value">💰 ${getTranslated('value')}</span>
+                            ${getTranslated('funding') ? `<span class="project-funding">🏦 ${getTranslated('funding')}</span>` : ''}
                         </div>
                     </div>
                     <div class="project-modal-content">
                         <div class="project-image">
-                            <img src="${project.cover}" alt="${project.title}" loading="lazy">
+                            <img src="${project.cover}" alt="${title}" loading="lazy">
                         </div>
                         <div class="project-details">
                             <h3>Project Scope</h3>
-                            <p>${project.scope}</p>
+                            <p>${getTranslated('scope')}</p>
                             <h3>Client</h3>
-                            <p>${project.client}</p>
+                            <p>${getTranslated('client')}</p>
                             <h3>Summary</h3>
-                            <p>${project.summary}</p>
+                            <p>${getTranslated('summary')}</p>
                         </div>
                     </div>
                 `;
