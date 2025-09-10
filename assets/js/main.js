@@ -812,7 +812,7 @@ class App {
       console.log('Starting to load projects...');
       this.showProjectsLoading();
       
-      const response = await fetch('/assets/data/projects.json');
+      const response = await fetch('assets/data/projects.json');
       if (!response.ok) {
         throw new Error(`Failed to load projects: ${response.status}`);
       }
