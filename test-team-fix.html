@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Fix Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-result { padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .error { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .info { background-color: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+        button { padding: 10px 20px; margin: 5px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        #results { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>🧪 TPEC Team Fix Test</h1>
+    <p>This page tests if the team member fixes are working correctly.</p>
+    
+    <button onclick="testTeamMembers()">Test Team Members</button>
+    <button onclick="testLanguageSwitching()">Test Language Switching</button>
+    <button onclick="openAboutPage()">Open About Page</button>
+    
+    <div id="results"></div>
+
+    <script>
+        function addResult(message, type = 'info') {
+            const results = document.getElementById('results');
+            const div = document.createElement('div');
+            div.className = `test-result ${type}`;
+            div.innerHTML = `<strong>${new Date().toLocaleTimeString()}</strong>: ${message}`;
+            results.appendChild(div);
+        }
+
+        function testTeamMembers() {
+            addResult('🔍 Testing team member count...', 'info');
+            
+            // Open about page in iframe to test
+            const iframe = document.createElement('iframe');
+            iframe.src = '/about.html';
+            iframe.style.width = '100%';
+            iframe.style.height = '600px';
+            iframe.style.border = '1px solid #ccc';
+            iframe.style.marginTop = '10px';
+            
+            iframe.onload = function() {
+                setTimeout(() => {
+                    try {
+                        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                        const teamGrid = iframeDoc.querySelector('.team-grid');
+                        
+                        if (teamGrid) {
+                            const teamCards = teamGrid.querySelectorAll('.team-card');
+                            const count = teamCards.length;
+                            
+                            if (count === 3) {
+                                addResult(`✅ SUCCESS: Found ${count} team members (expected 3)`, 'success');
+                                
+                                // List the team members
+                                teamCards.forEach((card, index) => {
+                                    const name = card.querySelector('.team-name')?.textContent || 'Unknown';
+                                    const title = card.querySelector('.team-title')?.textContent || 'Unknown';
+                                    addResult(`   ${index + 1}. ${name} - ${title}`, 'info');
+                                });
+                            } else {
+                                addResult(`❌ FAILED: Found ${count} team members (expected 3)`, 'error');
+                            }
+                        } else {
+                            addResult('❌ FAILED: Team grid not found', 'error');
+                        }
+                    } catch (error) {
+                        addResult(`❌ ERROR: ${error.message}`, 'error');
+                    }
+                }, 3000); // Wait 3 seconds for all scripts to run
+            };
+            
+            document.body.appendChild(iframe);
+        }
+
+        function testLanguageSwitching() {
+            addResult('🌐 Testing language switching...', 'info');
+            addResult('ℹ️ Manual test: Open about page and switch between EN/LAO to verify content changes', 'info');
+        }
+
+        function openAboutPage() {
+            window.open('/about.html', '_blank');
+            addResult('🔗 Opened about page in new tab', 'info');
+        }
+
+        // Initial message
+        addResult('🚀 Team Fix Test Ready - Click buttons above to test', 'info');
+    </script>
+</body>
+</html>

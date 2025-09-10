@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self';"
+    />
+
+    <title data-i18n="meta.home.title">
+      TPEC Engineering Consulting
+    </title>
+    <meta
+      name="description"
+      data-i18n="meta.home.description"
+      content="Expert construction consulting services for your projects"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://example.com/" />
+    <meta
+      property="og:title"
+      data-i18n="meta.home.og_title"
+      content="Construction Consulting - Professional Services"
+    />
+    <meta
+      property="og:description"
+      data-i18n="meta.home.og_description"
+      content="Expert construction consulting services for your projects"
+    />
+    <meta
+      property="og:image"
+      content="https://example.com/assets/img/og-image.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Construction Consulting Services - Professional expertise in Laos"
+    />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="lo_LA" />
+    <meta property="og:site_name" content="Construction Consulting Services" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://example.com/" />
+    <meta
+      property="twitter:title"
+      data-i18n="meta.home.twitter_title"
+      content="Construction Consulting - Professional Services"
+    />
+    <meta
+      property="twitter:description"
+      data-i18n="meta.home.twitter_description"
+      content="Expert construction consulting services for your projects"
+    />
+    <meta
+      property="twitter:image"
+      content="https://example.com/assets/img/og-image.jpg"
+    />
+    <meta
+      property="twitter:image:alt"
+      content="Construction Consulting Services - Professional expertise in Laos"
+    />
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="en" href="https://example.com/" />
+    <link rel="alternate" hreflang="lo" href="https://example.com/" />
+
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+
+    <!-- Font Preloading -->
+    <link
+      rel="preload"
+      href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="https://fonts.gstatic.com/s/notosanslao/v30/bx6lNx2Ol_ixgdYWLm9BwxM3NW6BOkuf763Clj73CiQ_J1Djx9pidOt4ccbdf5MK3riB2g.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Lao:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/tokens.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/performance.css" />
+
+    <!-- Favicon and Touch Icons -->
+    <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/icons/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/icons/favicon-32x32.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/icons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/assets/icons/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="/assets/icons/android-chrome-512x512.png"
+    />
+    <link rel="manifest" href="/assets/icons/site.webmanifest" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Construction Consulting Services",
+        "url": "https://example.com",
+        "logo": "https://example.com/assets/img/logo.png",
+        "description": "Professional construction consulting services in Laos. Expert guidance for feasibility studies, project management, technical consulting, and quality assurance.",
+        "foundingDate": "2009",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Vientiane",
+          "addressCountry": "LA"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "021-732131",
+          "contactType": "customer service",
+          "email": "thephachanhtoto@hotmail.com",
+          "availableLanguage": ["English", "Lao"]
+        },
+        "sameAs": ["https://facebook.com/ConstructionConsultingLao"],
+        "serviceArea": {
+          "@type": "Country",
+          "name": "Laos"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Construction Consulting Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Feasibility Studies",
+                "description": "Comprehensive project analysis and viability assessment"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Project Management",
+                "description": "End-to-end project oversight and coordination"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Technical Consulting",
+                "description": "Expert technical guidance and problem-solving"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Quality Assurance",
+                "description": "Construction quality control and compliance monitoring"
+              }
+            }
+          ]
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <a href="#main" class="skip-link" data-i18n="accessibility.skip_to_content"
+      >Skip to main content</a
+    >
+
+    <header id="header" role="banner">
+      <!-- Header content will be injected by shell.js -->
+    </header>
+
+    <main id="main" role="main">
+      <!-- Hero Section -->
+      <section class="hero section" aria-labelledby="hero-title">
+        <div class="container">
+          <h1
+            id="hero-title"
+            class="reveal-up parallax-y"
+            data-i18n="hero.title"
+          >
+            Professional Construction Consulting
+          </h1>
+          <p class="reveal-up" data-i18n="hero.subtitle">
+            Expert guidance for your construction projects in Laos and the
+            region
+          </p>
+          <a
+            href="projects.html"
+            class="btn btn-primary reveal-up"
+            data-i18n="hero.cta"
+            >View Our Projects</a
+          >
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section class="services section" aria-labelledby="services-title">
+        <div class="container">
+          <h2
+            id="services-title"
+            class="reveal-up"
+            data-i18n="services.heading"
+          >
+            Our Services
+          </h2>
+          <p
+            class="reveal-up"
+            data-i18n="services.subheading"
+            style="
+              text-align: center;
+              margin-bottom: var(--space-3xl);
+              color: var(--text-muted);
+              font-size: var(--font-size-lg);
+            "
+          >
+            Comprehensive construction consulting solutions
+          </p>
+          <div
+            class="services-grid"
+            role="list"
+            aria-label="Our construction consulting services"
+          >
+            <!-- Service cards will be populated by JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Credibility Section -->
+      <section
+        class="credibility section"
+        style="background: var(--bg-alt)"
+        aria-labelledby="credibility-title"
+      >
+        <div class="container">
+          <h2
+            id="credibility-title"
+            class="reveal-up"
+            data-i18n="credibility.heading"
+            style="text-align: center; margin-bottom: var(--space-3xl)"
+          >
+            Proven Track Record
+          </h2>
+          <div
+            class="credibility-stats"
+            role="list"
+            aria-label="Company statistics and achievements"
+          >
+            <div class="stat reveal-up" role="listitem">
+              <span
+                class="counter"
+                data-target="30"
+                data-i18n="credibility.years.number"
+                aria-label="30+ years of experience"
+                >30+</span
+              >
+              <span data-i18n="credibility.years.label">Years Experience</span>
+            </div>
+            <div class="stat reveal-up" role="listitem">
+              <span
+                class="counter"
+                data-target="25"
+                data-i18n="credibility.projects.number"
+                aria-label="25+ major projects completed"
+                >25+</span
+              >
+              <span data-i18n="credibility.projects.label"
+                >Major Projects Completed</span
+              >
+            </div>
+            <div class="stat reveal-up" role="listitem">
+              <span
+                class="counter"
+                data-target="8"
+                data-i18n="credibility.regions.number"
+                aria-label="8 provinces served"
+                >8</span
+              >
+              <span data-i18n="credibility.regions.label"
+                >Provinces Served</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Projects Section -->
+      <section
+        class="highlights section"
+        aria-labelledby="featured-projects-title"
+      >
+        <div class="container">
+          <h2
+            id="featured-projects-title"
+            class="reveal-up"
+            data-i18n="featured_projects.heading"
+          >
+            Featured Projects
+          </h2>
+          <p
+            class="reveal-up"
+            data-i18n="featured_projects.subheading"
+            style="
+              text-align: center;
+              margin-bottom: var(--space-3xl);
+              color: var(--text-muted);
+              font-size: var(--font-size-lg);
+            "
+          >
+            Showcasing our expertise across diverse construction sectors
+          </p>
+          <div
+            class="projects-grid"
+            role="list"
+            aria-label="Featured construction projects"
+          >
+            <!-- Featured project cards will be populated by JavaScript -->
+          </div>
+          <div style="text-align: center; margin-top: var(--space-3xl)">
+            <a
+              href="projects.html"
+              class="btn btn-secondary reveal-up"
+              data-i18n="featured_projects.view_all"
+              >View All Projects</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section
+        class="cta section"
+        style="
+          background: linear-gradient(
+            135deg,
+            var(--accent) 0%,
+            var(--accent-hover) 100%
+          );
+          color: var(--bg);
+        "
+        aria-labelledby="cta-title"
+      >
+        <div class="container" style="text-align: center">
+          <h2
+            id="cta-title"
+            class="reveal-up"
+            data-i18n="cta_banner.heading"
+            style="color: var(--bg); margin-bottom: var(--space-lg)"
+          >
+            Ready to Start Your Project?
+          </h2>
+          <p
+            class="reveal-up"
+            data-i18n="cta_banner.subheading"
+            style="
+              color: rgba(14, 17, 22, 0.8);
+              font-size: var(--font-size-lg);
+              margin-bottom: var(--space-2xl);
+            "
+          >
+            Get expert construction consulting tailored to your needs
+          </p>
+          <a
+            href="contact.html"
+            class="btn btn-secondary reveal-up"
+            data-i18n="cta_banner.button"
+            style="
+              background: var(--bg);
+              color: var(--accent);
+              border-color: var(--bg);
+            "
+            >Contact Us Today</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer" role="contentinfo">
+      <!-- Footer content will be injected by shell.js -->
+    </footer>
+
+    <!-- Error Handler (loaded first for global error catching) -->
+    <script src="assets/js/error-handler.js"></script>
+
+    <!-- Critical Scripts (loaded immediately) -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+      onerror="console.warn('GSAP failed to load, using CSS fallbacks'); document.body.classList.add('no-gsap', 'no-animations');"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+      integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+      onerror="console.warn('ScrollTrigger failed to load'); document.body.classList.add('no-scroll-trigger');"
+    ></script>
+
+    <!-- Application Scripts (deferred for better performance) -->
+    <script
+      defer
+      src="assets/js/performance.js"
+      onerror="console.warn('Performance script failed to load')"
+    ></script>
+    <script
+      defer
+      src="assets/js/image-optimizer.js"
+      onerror="console.warn('Image optimizer script failed to load')"
+    ></script>
+    <script
+      defer
+      src="assets/js/i18n.js"
+      onerror="console.warn('i18n script failed to load')"
+    ></script>
+    <script
+      defer
+      src="assets/js/motion.js"
+      onerror="console.warn('Motion script failed to load')"
+    ></script>
+    <script
+      defer
+      src="assets/js/seo.js"
+      onerror="console.warn('SEO script failed to load')"
+    ></script>
+    <script
+      defer
+      src="assets/js/shell.js"
+      onerror="console.warn('Shell script failed to load')"
+    ></script>
+    <script
+      defer
+      src="assets/js/main.js"
+      onerror="console.warn('Main script failed to load')"
+    ></script>
+  </body>
+</html>

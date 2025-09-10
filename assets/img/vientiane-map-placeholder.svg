@@ -1,0 +1,56 @@
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="450" fill="#1a1f2e"/>
+  
+  <!-- Grid lines -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#2a3441" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="url(#grid)"/>
+  
+  <!-- River (Mekong) -->
+  <path d="M 0 200 Q 200 180 400 220 Q 600 260 800 240" 
+        fill="none" stroke="#4da3ff" stroke-width="8" opacity="0.6"/>
+  
+  <!-- Roads -->
+  <path d="M 0 150 L 800 180" stroke="#555" stroke-width="3"/>
+  <path d="M 0 300 L 800 320" stroke="#555" stroke-width="3"/>
+  <path d="M 200 0 L 220 450" stroke="#555" stroke-width="3"/>
+  <path d="M 500 0 L 520 450" stroke="#555" stroke-width="3"/>
+  
+  <!-- Buildings/Areas -->
+  <rect x="150" y="100" width="60" height="40" fill="#333" opacity="0.7"/>
+  <rect x="180" y="120" width="80" height="60" fill="#333" opacity="0.7"/>
+  <rect x="450" y="150" width="70" height="50" fill="#333" opacity="0.7"/>
+  <rect x="480" y="180" width="90" height="70" fill="#333" opacity="0.7"/>
+  
+  <!-- Office Location Marker -->
+  <circle cx="400" cy="200" r="8" fill="#4da3ff"/>
+  <circle cx="400" cy="200" r="16" fill="none" stroke="#4da3ff" stroke-width="2" opacity="0.5">
+    <animate attributeName="r" values="16;24;16" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.5;0;0.5" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Location Label -->
+  <rect x="320" y="170" width="160" height="24" fill="#0e1116" stroke="#4da3ff" stroke-width="1" rx="4"/>
+  <text x="400" y="186" text-anchor="middle" fill="#e6eaf2" font-family="Inter, sans-serif" font-size="12">
+    Construction Consulting
+  </text>
+  
+  <!-- Compass -->
+  <g transform="translate(720, 50)">
+    <circle r="25" fill="#0e1116" stroke="#4da3ff" stroke-width="2"/>
+    <path d="M 0 -20 L 5 0 L 0 20 L -5 0 Z" fill="#4da3ff"/>
+    <text x="0" y="-30" text-anchor="middle" fill="#e6eaf2" font-family="Inter, sans-serif" font-size="10">N</text>
+  </g>
+  
+  <!-- Scale -->
+  <g transform="translate(50, 400)">
+    <line x1="0" y1="0" x2="100" y2="0" stroke="#e6eaf2" stroke-width="2"/>
+    <line x1="0" y1="-5" x2="0" y2="5" stroke="#e6eaf2" stroke-width="2"/>
+    <line x1="100" y1="-5" x2="100" y2="5" stroke="#e6eaf2" stroke-width="2"/>
+    <text x="50" y="15" text-anchor="middle" fill="#e6eaf2" font-family="Inter, sans-serif" font-size="10">1 km</text>
+  </g>
+</svg>

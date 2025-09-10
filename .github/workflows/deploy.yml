@@ -1,0 +1,121 @@
+name: Deploy to GitHub Pages
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Install dependencies (if needed)
+        run: |
+          # No build dependencies needed for this static site
+          echo "No build dependencies required"
+          
+      - name: Process and optimize files
+        run: |
+          # Create minified versions of CSS and JS files
+          # Install terser and clean-css-cli for minification
+          npm install -g terser clean-css-cli
+          
+          # Minify CSS files
+          if [ -f "assets/css/main.css" ]; then
+            cleancss -o assets/css/main.min.css assets/css/main.css
+          fi
+          
+          if [ -f "assets/css/tokens.css" ]; then
+            cleancss -o assets/css/tokens.min.css assets/css/tokens.css
+          fi
+          
+          # Minify JavaScript files
+          if [ -f "assets/js/main.js" ]; then
+            terser assets/js/main.js -o assets/js/main.min.js --compress --mangle
+          fi
+          
+          if [ -f "assets/js/motion.js" ]; then
+            terser assets/js/motion.js -o assets/js/motion.min.js --compress --mangle
+          fi
+          
+          if [ -f "assets/js/performance.js" ]; then
+            terser assets/js/performance.js -o assets/js/performance.min.js --compress --mangle
+          fi
+          
+      - name: Validate HTML files
+        run: |
+          # Install html-validate for HTML validation
+          npm install -g html-validate
+          
+          # Validate all HTML files
+          find . -name "*.html" -not -path "./node_modules/*" -exec html-validate {} \; || echo "HTML validation completed with warnings"
+          
+      - name: Check for required files
+        run: |
+          # Verify all required files exist
+          echo "Checking for required files..."
+          
+          required_files=(
+            "index.html"
+            "about.html" 
+            "projects.html"
+            "contact.html"
+            "404.html"
+            "robots.txt"
+            "sitemap.xml"
+            ".nojekyll"
+          )
+          
+          for file in "${required_files[@]}"; do
+            if [ -f "$file" ]; then
+              echo "✓ $file exists"
+            else
+              echo "✗ $file is missing"
+              exit 1
+            fi
+          done
+          
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+        
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload entire repository
+          path: '.'
+
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

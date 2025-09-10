@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self';">
+    
+    <title data-i18n="meta.about.title">About Us - Construction Consulting</title>
+    <meta name="description" data-i18n="meta.about.description" content="Learn about our construction consulting expertise and team">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com/about.html">
+    <meta property="og:title" data-i18n="meta.about.og_title" content="About Us - Construction Consulting">
+    <meta property="og:description" data-i18n="meta.about.og_description" content="Learn about our construction consulting expertise and team">
+    <meta property="og:image" content="https://example.com/assets/img/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="About Our Construction Consulting Team">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="lo_LA">
+    <meta property="og:site_name" content="Construction Consulting Services">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://example.com/about.html">
+    <meta property="twitter:title" data-i18n="meta.about.twitter_title" content="About Us - Construction Consulting">
+    <meta property="twitter:description" data-i18n="meta.about.twitter_description" content="Learn about our construction consulting expertise and team">
+    <meta property="twitter:image" content="https://example.com/assets/img/og-image.jpg">
+    <meta property="twitter:image:alt" content="About Our Construction Consulting Team">
+    
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="en" href="https://example.com/about.html">
+    <link rel="alternate" hreflang="lo" href="https://example.com/about.html">
+    
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    
+    <!-- Font Preloading -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/notosanslao/v30/bx6lNx2Ol_ixgdYWLm9BwxM3NW6BOkuf763Clj73CiQ_J1Djx9pidOt4ccbdf5MK3riB2g.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Lao:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/performance.css">
+    
+    <style>
+        /* Team Modal Styles */
+        .team-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .team-modal.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .team-modal-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(4px);
+        }
+
+        .team-modal-content {
+            position: relative;
+            background: var(--card, #1a1d23);
+            border: 1px solid var(--line, #2a2d35);
+            border-radius: var(--radius-lg, 12px);
+            max-width: 700px;
+            max-height: 90vh;
+            width: 90%;
+            overflow-y: auto;
+            transform: scale(0.9) translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .team-modal.visible .team-modal-content {
+            transform: scale(1) translateY(0);
+        }
+
+        .team-modal-close {
+            position: absolute;
+            top: var(--space-md, 16px);
+            right: var(--space-md, 16px);
+            background: var(--card-hover, #22252c);
+            border: 1px solid var(--line, #2a2d35);
+            color: var(--text-muted, #9ca3af);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 24px;
+            line-height: 1;
+            transition: all 0.2s ease;
+            z-index: 10001;
+        }
+
+        .team-modal-close:hover {
+            background: var(--accent, #4da3ff);
+            color: var(--bg, #0e1116);
+            border-color: var(--accent, #4da3ff);
+        }
+
+        .team-modal-body {
+            padding: var(--space-2xl, 32px);
+        }
+
+        .team-modal-header {
+            text-align: center;
+            margin-bottom: var(--space-xl, 24px);
+        }
+
+        .team-modal-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto var(--space-lg, 20px);
+            background: var(--accent, #4da3ff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-2xl, 24px);
+            font-weight: var(--font-weight-bold, 700);
+            color: var(--bg, #0e1116);
+        }
+
+        .team-modal-name {
+            font-size: var(--font-size-xl, 20px);
+            font-weight: var(--font-weight-bold, 700);
+            color: var(--text, #ffffff);
+            margin-bottom: var(--space-sm, 8px);
+        }
+
+        .team-modal-title {
+            color: var(--accent, #4da3ff);
+            font-weight: var(--font-weight-medium, 500);
+            margin-bottom: var(--space-lg, 20px);
+        }
+
+        .team-modal-description {
+            color: var(--text, #ffffff);
+            line-height: 1.6;
+            margin-bottom: var(--space-xl, 24px);
+        }
+
+        .team-modal-section {
+            background: var(--bg, #0e1116);
+            border: 1px solid var(--line, #2a2d35);
+            border-radius: var(--radius, 6px);
+            padding: var(--space-lg, 20px);
+            margin-bottom: var(--space-lg, 20px);
+        }
+
+        .team-modal-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .team-modal-section h4 {
+            color: var(--text, #ffffff);
+            font-weight: var(--font-weight-semibold, 600);
+            margin-bottom: var(--space-md, 16px);
+        }
+
+        .team-modal-section p {
+            color: var(--text-muted, #9ca3af);
+            line-height: 1.6;
+            margin-bottom: var(--space-md, 16px);
+        }
+
+        .team-modal-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .team-modal-section ul {
+            color: var(--text-muted, #9ca3af);
+            line-height: 1.6;
+            padding-left: var(--space-lg, 20px);
+        }
+
+        .team-modal-section li {
+            margin-bottom: var(--space-sm, 8px);
+        }
+
+        .team-card {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .team-photo {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .team-modal-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto var(--space-lg, 20px);
+        }
+
+        @media (max-width: 768px) {
+            .team-modal-content {
+                width: 95%;
+                max-height: 95vh;
+            }
+
+            .team-modal-body {
+                padding: var(--space-lg, 20px);
+            }
+
+            .team-modal-avatar {
+                width: 100px;
+                height: 100px;
+                font-size: var(--font-size-xl, 20px);
+            }
+        }
+    </style>
+    
+    <!-- Favicon and Touch Icons -->
+    <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/icons/android-chrome-512x512.png">
+    <link rel="manifest" href="/assets/icons/site.webmanifest">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Construction Consulting Services",
+        "url": "https://example.com",
+        "logo": "https://example.com/assets/img/logo.png",
+        "description": "Professional construction consulting services in Laos with 15+ years of experience. Expert guidance for feasibility studies, project management, technical consulting, and quality assurance.",
+        "foundingDate": "2009",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Vientiane",
+          "addressCountry": "LA"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "021-732131",
+          "contactType": "customer service",
+          "email": "thephachanhtoto@hotmail.com",
+          "availableLanguage": ["English", "Lao"]
+        },
+        "sameAs": [
+          "https://facebook.com/ConstructionConsultingLao"
+        ],
+        "serviceArea": {
+          "@type": "Country",
+          "name": "Laos"
+        },
+        "knowsAbout": [
+          "Construction Management",
+          "Project Planning",
+          "Quality Assurance",
+          "Risk Assessment",
+          "Feasibility Studies",
+          "Technical Consulting"
+        ]
+      }
+    }
+    </script>
+</head>
+<body>
+    <a href="#main" class="skip-link" data-i18n="accessibility.skip_to_content">Skip to main content</a>
+    
+    <header id="header" role="banner">
+        <!-- Header content will be injected by shell.js -->
+    </header>
+
+    <main id="main" role="main">
+        <!-- Page Header -->
+        <section class="page-header section" aria-labelledby="page-title">
+            <div class="container">
+                <h1 id="page-title" class="reveal-up" data-i18n="nav.about">About Us</h1>
+                <p class="reveal-up" data-i18n="about.leadership.subheading">Experienced professionals leading our consulting excellence</p>
+            </div>
+        </section>
+
+        <!-- Anchor Navigation -->
+        <nav class="anchor-nav" id="anchor-nav" role="navigation" aria-label="Page sections navigation">
+            <ul class="anchor-nav-list">
+                <li><a href="#mission-vision" class="anchor-nav-link" data-i18n="about.anchor_nav.mission_vision">Mission & Vision</a></li>
+                <li><a href="#approach" class="anchor-nav-link" data-i18n="about.anchor_nav.approach">Our Approach</a></li>
+                <li><a href="#capabilities" class="anchor-nav-link" data-i18n="about.anchor_nav.capabilities">Capabilities</a></li>
+                <li><a href="#leadership" class="anchor-nav-link" data-i18n="about.anchor_nav.leadership">Leadership</a></li>
+                <li><a href="#certifications" class="anchor-nav-link" data-i18n="about.anchor_nav.certifications">Certifications</a></li>
+            </ul>
+        </nav>
+
+        <!-- Mission & Vision -->
+        <section id="mission-vision" class="mission-vision section" aria-labelledby="mission-vision-title">
+            <div class="container">
+                <h2 id="mission-vision-title" class="sr-only">Mission and Vision</h2>
+                <div class="two-column reveal-up">
+                    <div class="column">
+                        <h3 data-i18n="about.mission.heading">Our Mission</h3>
+                        <p data-i18n="about.mission.content">To provide exceptional construction consulting services that ensure project success through expert guidance, innovative solutions, and unwavering commitment to quality and safety.</p>
+                    </div>
+                    <div class="column">
+                        <h3 data-i18n="about.vision.heading">Our Vision</h3>
+                        <p data-i18n="about.vision.content">To be the leading construction consulting firm in Laos and the region, recognized for our expertise, integrity, and contribution to sustainable infrastructure development.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Approach -->
+        <section id="approach" class="approach section" aria-labelledby="approach-title">
+            <div class="container">
+                <h2 id="approach-title" class="reveal-up" data-i18n="about.approach.heading">Our Approach</h2>
+                <div class="timeline reveal-up" role="list" aria-label="Our four-step consulting approach">
+                    <!-- Timeline steps will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Capabilities -->
+        <section id="capabilities" class="capabilities section" aria-labelledby="capabilities-title">
+            <div class="container">
+                <h2 id="capabilities-title" class="reveal-up" data-i18n="about.capabilities.heading">Our Capabilities</h2>
+                <div class="capabilities-grid reveal-up" role="list" aria-label="Our construction consulting capabilities">
+                    <!-- Capabilities will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership -->
+        <section id="leadership" class="leadership section" aria-labelledby="leadership-title">
+            <div class="container">
+                <h2 id="leadership-title" class="reveal-up" data-i18n="about.leadership.heading">Leadership Team</h2>
+                <p class="reveal-up" data-i18n="about.leadership.subheading">Experienced professionals leading our consulting excellence</p>
+                <div class="team-grid reveal-up" role="list" aria-label="Leadership team members">
+                    <!-- Team members will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Member Detail Modal -->
+        <div id="team-modal" class="team-modal hidden" role="dialog" aria-modal="true" aria-labelledby="team-modal-title" aria-hidden="true">
+            <div class="team-modal-overlay"></div>
+            <div class="team-modal-content">
+                <button class="team-modal-close" aria-label="Close team member details">&times;</button>
+                <div class="team-modal-body">
+                    <!-- Team member detail content will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Certifications -->
+        <section id="certifications" class="certifications section" aria-labelledby="certifications-title">
+            <div class="container">
+                <h2 id="certifications-title" class="reveal-up" data-i18n="about.certifications.heading">Certifications & Insurance</h2>
+                <div class="certifications-list reveal-up" role="list" aria-label="Company certifications and insurance coverage">
+                    <!-- Certifications will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer" role="contentinfo">
+        <!-- Footer content will be injected by shell.js -->
+    </footer>
+
+    <!-- Critical Scripts (loaded immediately) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="console.warn('GSAP failed to load, using CSS fallbacks')"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="console.warn('ScrollTrigger failed to load')"></script>
+    
+    <!-- Error Handler (loaded first for global error catching) -->
+    <script src="/assets/js/error-handler.js"></script>
+    
+    <!-- Application Scripts (deferred for better performance) -->
+    <script defer src="/assets/js/performance.js" onerror="console.warn('Performance script failed to load')"></script>
+    <script defer src="/assets/js/image-optimizer.js" onerror="console.warn('Image optimizer script failed to load')"></script>
+    <script defer src="/assets/js/i18n.js" onerror="console.warn('i18n script failed to load')"></script>
+    <script defer src="/assets/js/motion.js" onerror="console.warn('Motion script failed to load')"></script>
+    <script defer src="/assets/js/seo.js" onerror="console.warn('SEO script failed to load')"></script>
+    <script defer src="/assets/js/shell.js" onerror="console.warn('Shell script failed to load')"></script>
+    <script defer src="/assets/js/main.js" onerror="console.warn('Main script failed to load')"></script>
+
+    <!-- About Page Team Modal Script -->
+    <script>
+        let teamModal = null;
+
+        // Robust team initialization that ensures 3 members always show
+        function initializeTeamRobustly() {
+            console.log('🚀 Robust team initialization');
+
+            // Initialize modal if not already done
+            if (!teamModal) {
+                teamModal = document.getElementById('team-modal');
+                setupTeamModalEvents();
+            }
+
+            // Always populate team grid with all 3 members
+            populateTeamGrid();
+
+            // Mark grid as protected and track update time
+            const teamGrid = document.querySelector('.team-grid');
+            if (teamGrid) {
+                teamGrid.setAttribute('data-protected', 'true');
+                teamGrid.setAttribute('data-last-update', Date.now());
+
+                // Verify we have 3 team cards
+                const teamCards = teamGrid.querySelectorAll('.team-card');
+                console.log(`✅ Team grid now has ${teamCards.length} members`);
+            }
+        }
+
+        // Initialize when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('About page loaded, setting up team functionality');
+            initializeTeamRobustly();
+
+            // Also wait for i18n to load for localized content
+            const checkI18n = () => {
+                if (window.i18n && window.i18n.isReady) {
+                    console.log('i18n ready, re-populating with localized data');
+                    initializeTeamRobustly();
+                } else {
+                    setTimeout(checkI18n, 100);
+                }
+            };
+            checkI18n();
+
+            // Listen for language changes
+            window.addEventListener('languageChanged', function(e) {
+                console.log('🌐 Language changed, re-populating team');
+                setTimeout(initializeTeamRobustly, 100);
+            });
+        });
+
+        // Run multiple times to override main.js interference
+        setTimeout(() => {
+            console.log('🔄 Override protection: Ensuring 3 team members show');
+            initializeTeamRobustly();
+        }, 2000);
+
+        setTimeout(() => {
+            console.log('🔄 Final override: Ensuring 3 team members show');
+            initializeTeamRobustly();
+        }, 4000);
+
+        // Periodic check to maintain 3 team members
+        setInterval(() => {
+            const teamGrid = document.querySelector('.team-grid');
+            if (teamGrid) {
+                const teamCards = teamGrid.querySelectorAll('.team-card');
+                if (teamCards.length !== 3) {
+                    console.log(`⚠️ Team grid has ${teamCards.length} members, should be 3. Fixing...`);
+                    initializeTeamRobustly();
+                }
+            }
+        }, 5000);
+
+        function setupTeamModalEvents() {
+            if (!teamModal) return;
+
+            // Close modal when clicking overlay
+            const overlay = teamModal.querySelector('.team-modal-overlay');
+            if (overlay) {
+                overlay.addEventListener('click', closeTeamModal);
+            }
+
+            // Close modal when clicking close button
+            const closeBtn = teamModal.querySelector('.team-modal-close');
+            if (closeBtn) {
+                closeBtn.addEventListener('click', closeTeamModal);
+            }
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && teamModal && !teamModal.classList.contains('hidden')) {
+                    closeTeamModal();
+                }
+            });
+        }
+
+        function populateTeamGrid() {
+            const teamGrid = document.querySelector('.team-grid');
+            if (!teamGrid) return;
+
+            // Fallback team data (works without i18n)
+            const teamMembers = [
+                {
+                    key: 'founder',
+                    name: 'Mr. Bounlieng Thephachanh',
+                    title: 'Founder & Managing Director',
+                    bio: 'With over 30 years of experience in public works engineering, Mr. Thephachanh founded TPEC after extensive international experience including education in Germany and consulting work with Swedish companies SKANSKA, HIFAB, and Sweroad.',
+                    education: 'Road-Bridge Construction Engineering graduate from Germany (1981)',
+                    experience: [
+                        'Road-Bridge Maintenance Supervisor, State Enterprise No.1 Company (1982)',
+                        'Head of Planning Department, Water Road Construction Enterprise',
+                        'Chief of Construction Division, Road No.13 Construction Company (1985)',
+                        'International training in Thailand for road-bridge supervision and construction',
+                        'Trainer and Consultant with SKANSKA subsidiary (Swedish construction company)',
+                        'Senior Consultant with HIFAB (Swedish consulting company)',
+                        'Local Consultant with Sweroad Consultant Company (2001)',
+                        'Nationwide capacity building for Department of Public Works and Transportation staff across all provinces of Lao PDR'
+                    ],
+                    description: 'Founded by Mr. Bounlieng Thephachanh, our company is built on over 30 years of engineering excellence and industry expertise. Our founder brings extensive international experience and has been instrumental in developing infrastructure consulting capabilities across Laos.',
+                    image: '/assets/img/team/founder.jpg'
+                },
+                {
+                    key: 'vice_president',
+                    name: 'Ms. Sengdavanh Thepphachanh',
+                    title: 'Vice President',
+                    bio: 'Dr. Sengdavanh Thepphachanh brings advanced expertise in hydraulic and environmental engineering to TPEC. With a Doctor of Engineering degree from Technische Universität Dresden and extensive research experience, she leads our environmental compliance and sustainable engineering initiatives.',
+                    education: 'Doctor of Engineering in Hydraulic Engineering, Technische Universität Dresden (2019-2022); Master\'s degree in Environmental Engineering, University of the Philippines Diliman (2013-2015)',
+                    experience: [
+                        'Scientific Researcher, Technische Universität Dresden (Apr 2023 - Present)',
+                        'Lecturer/Researcher, National University of Laos (NUOL) (Dec 2015 - Aug 2019)',
+                        'Environmental Engineer, Archineer Associates (Mar 2017 - Jul 2019)'
+                    ],
+                    description: 'Dr. Sengdavanh Thepphachanh serves as Vice President, bringing cutting-edge expertise in hydraulic modeling, environmental engineering, and sustainable development. Her international education and research background strengthen TPEC\'s technical capabilities in environmental compliance and innovative engineering solutions.',
+                    image: '/assets/img/team/vice%20president.jpg'
+                },
+                {
+                    key: 'technology_advisor',
+                    name: 'Mr. Matthew Thaokhamlue',
+                    title: 'Technology Advisor',
+                    bio: 'Technical Product Manager with 5+ years in B2B SaaS, focusing on AI features and API integrations for health analytics and lab software. He brings expertise in product management, AI solutions, and technical integration to support TPEC\'s digital transformation initiatives.',
+                    education: 'Master of International and Development Economics, Hochschule für Technik und Wirtschaft Berlin; Bachelor\'s Degree in Economics, Chiang Mai University',
+                    experience: [
+                        'Product Manager, Labforward GmbH, Berlin (Nov 2024 - Present)',
+                        'Technical Product Manager, LabTwin GmbH, Berlin (Jan 2023 - Nov 2024)',
+                        'Product Owner, Thryve GmbH, Berlin (Oct 2019 - Dec 2022)'
+                    ],
+                    description: 'Mr. Matthew Thaokhamlue serves as Technology Advisor, bringing modern expertise in product management, AI implementation, and digital solutions. His international experience in B2B SaaS and technical product development supports TPEC\'s technology advancement and digital transformation initiatives.',
+                    image: '/assets/img/team/technology%20advisor.jpg'
+                }
+            ];
+
+            // If i18n is available, try to get localized data
+            if (window.i18n && window.i18n.isReady) {
+                teamMembers.forEach(member => {
+                    member.name = i18n.t(`team.${member.key}.name`, member.name);
+                    member.title = i18n.t(`team.${member.key}.title`, member.title);
+                    member.bio = i18n.t(`team.${member.key}.bio`, member.bio);
+                    member.education = i18n.t(`team.${member.key}.education`, member.education);
+                    member.description = i18n.t(`team.${member.key}.description`, member.description);
+                    const localizedExperience = i18n.t(`team.${member.key}.experience`, null);
+                    if (localizedExperience && Array.isArray(localizedExperience)) {
+                        member.experience = localizedExperience;
+                    }
+                });
+            }
+
+            teamGrid.innerHTML = '';
+
+            // Mark this grid as managed by about.html to prevent main.js override
+            teamGrid.setAttribute('data-managed-by', 'about-html');
+
+            teamMembers.forEach(member => {
+                const teamCard = createTeamCard(member);
+                teamGrid.appendChild(teamCard);
+            });
+        }
+
+        function createTeamCard(member) {
+            const card = document.createElement('div');
+            card.className = 'team-card card';
+            card.setAttribute('tabindex', '0');
+            card.setAttribute('role', 'button');
+            card.setAttribute('aria-label', `View details for ${member.name}`);
+
+            // Get initials for avatar fallback
+            const initials = member.name.split(' ').map(n => n.charAt(0)).join('').substring(0, 2);
+
+            // Create avatar content - use image if available, otherwise initials
+            let avatarContent;
+            if (member.image) {
+                avatarContent = `<img src="${escapeHtml(member.image)}" alt="${escapeHtml(member.name)}" class="team-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <span class="team-initials" style="display: none;">${escapeHtml(initials)}</span>`;
+            } else {
+                avatarContent = `<span class="team-initials">${escapeHtml(initials)}</span>`;
+            }
+
+            card.innerHTML = `
+                <div class="team-avatar">
+                    ${avatarContent}
+                </div>
+                <div class="team-info">
+                    <h3 class="team-name">${escapeHtml(member.name)}</h3>
+                    <p class="team-title">${escapeHtml(member.title)}</p>
+                    <p class="team-bio">${escapeHtml(member.bio.substring(0, 120))}...</p>
+                </div>
+            `;
+
+            // Add click handler to open modal
+            const handleClick = () => {
+                showTeamModal(member);
+            };
+
+            card.addEventListener('click', handleClick);
+            card.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    handleClick();
+                }
+            });
+
+            return card;
+        }
+
+        function showTeamModal(member) {
+            if (!teamModal || !member) return;
+
+            console.log('Opening modal for team member:', member.name);
+
+            // Populate modal content
+            const modalBody = teamModal.querySelector('.team-modal-body');
+            if (modalBody) {
+                modalBody.innerHTML = createTeamModalContent(member);
+            }
+
+            // Show modal
+            teamModal.classList.remove('hidden');
+            teamModal.setAttribute('aria-hidden', 'false');
+            
+            // Add visible class after a small delay for animation
+            setTimeout(() => {
+                teamModal.classList.add('visible');
+            }, 10);
+
+            // Focus management
+            const closeBtn = teamModal.querySelector('.team-modal-close');
+            if (closeBtn) {
+                closeBtn.focus();
+            }
+
+            // Prevent body scroll
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeTeamModal() {
+            if (!teamModal) return;
+
+            console.log('Closing team modal');
+
+            // Remove visible class
+            teamModal.classList.remove('visible');
+
+            // Hide modal after animation
+            setTimeout(() => {
+                teamModal.classList.add('hidden');
+                teamModal.setAttribute('aria-hidden', 'true');
+            }, 300);
+
+            // Restore body scroll
+            document.body.style.overflow = '';
+        }
+
+        function createTeamModalContent(member) {
+            // Get initials for avatar fallback
+            const initials = member.name.split(' ').map(n => n.charAt(0)).join('').substring(0, 2);
+
+            // Create modal avatar content - use image if available, otherwise initials
+            let modalAvatarContent;
+            if (member.image) {
+                modalAvatarContent = `<img src="${escapeHtml(member.image)}" alt="${escapeHtml(member.name)}" class="team-modal-photo" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                     <div class="team-modal-avatar-fallback" style="display: none; width: 120px; height: 120px; border-radius: 50%; background: var(--accent, #4da3ff); display: flex; align-items: center; justify-content: center; font-size: var(--font-size-2xl, 24px); font-weight: var(--font-weight-bold, 700); color: var(--bg, #0e1116);">${escapeHtml(initials)}</div>`;
+            } else {
+                modalAvatarContent = `<div class="team-modal-avatar">${escapeHtml(initials)}</div>`;
+            }
+
+            return `
+                <div class="team-modal-header">
+                    ${modalAvatarContent}
+                    <h2 class="team-modal-name" id="team-modal-title">${escapeHtml(member.name)}</h2>
+                    <p class="team-modal-title">${escapeHtml(member.title)}</p>
+                </div>
+
+                <div class="team-modal-description">
+                    <p>${escapeHtml(member.description)}</p>
+                </div>
+
+                <div class="team-modal-section">
+                    <h4>Education</h4>
+                    <p>${escapeHtml(member.education)}</p>
+                </div>
+
+                <div class="team-modal-section">
+                    <h4>Career Highlights</h4>
+                    <ul>
+                        ${Array.isArray(member.experience) ?
+                            member.experience.map(exp => `<li>${escapeHtml(exp)}</li>`).join('') :
+                            '<li>Extensive experience in public works engineering and consulting</li>'
+                        }
+                    </ul>
+                </div>
+
+                <div class="team-modal-section">
+                    <h4>Professional Background</h4>
+                    <p>${escapeHtml(member.bio)}</p>
+                </div>
+            `;
+        }
+
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+    </script>
+</body>
+</html>

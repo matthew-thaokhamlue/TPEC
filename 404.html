@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self';">
+    
+    <title data-i18n="meta.404.title">Page Not Found - Construction Consulting</title>
+    <meta name="description" data-i18n="meta.404.description" content="The page you're looking for could not be found">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" data-i18n="meta.404.og_title" content="Page Not Found - Construction Consulting">
+    <meta property="og:description" data-i18n="meta.404.og_description" content="The page you're looking for could not be found">
+    <meta property="og:image" content="https://example.com/assets/img/og-image.jpg">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="lo_LA">
+    <meta property="og:site_name" content="Construction Consulting Services">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" data-i18n="meta.404.twitter_title" content="Page Not Found - Construction Consulting">
+    <meta property="twitter:description" data-i18n="meta.404.twitter_description" content="The page you're looking for could not be found">
+    <meta property="twitter:image" content="https://example.com/assets/img/og-image.jpg">
+    
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="en" href="https://example.com/404.html">
+    <link rel="alternate" hreflang="lo" href="https://example.com/404.html">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Lao:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    <!-- Favicon and Touch Icons -->
+    <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/icons/android-chrome-512x512.png">
+    <link rel="manifest" href="/assets/icons/site.webmanifest">
+</head>
+<body>
+    <a href="#main" class="skip-link" data-i18n="accessibility.skip_to_content">Skip to main content</a>
+    
+    <header id="header">
+        <!-- Header content will be injected by shell.js -->
+    </header>
+
+    <main id="main">
+        <section class="error-page section">
+            <div class="container">
+                <div class="error-content">
+                    <h1 class="error-code">404</h1>
+                    <h2 data-i18n="error.404.title">Page Not Found</h2>
+                    <p data-i18n="error.404.message">The page you're looking for doesn't exist or has been moved.</p>
+                    <div class="error-actions">
+                        <a href="/" class="btn btn-primary" data-i18n="error.404.home_button">Go Home</a>
+                        <a href="/contact.html" class="btn btn-secondary" data-i18n="error.404.contact_button">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <!-- Footer content will be injected by shell.js -->
+    </footer>
+
+    <!-- Scripts -->
+    <script defer src="/assets/js/i18n.js"></script>
+    <script defer src="/assets/js/seo.js"></script>
+    <script defer src="/assets/js/shell.js"></script>
+    <script defer src="/assets/js/main.js"></script>
+    
+    <!-- 404 Deep-link Handler -->
+    <script>
+        // Handle potential deep-links that might have been broken
+        document.addEventListener('DOMContentLoaded', function() {
+            const path = window.location.pathname;
+            const hash = window.location.hash;
+            
+            // Check if this looks like a project deep-link
+            if (hash && hash.startsWith('#project-')) {
+                // Redirect to projects page with the hash
+                window.location.href = '/projects.html' + hash;
+                return;
+            }
+            
+            // Check for common page patterns that might be missing extensions
+            const pagePatterns = {
+                '/about': '/about.html',
+                '/projects': '/projects.html', 
+                '/contact': '/contact.html'
+            };
+            
+            if (pagePatterns[path]) {
+                window.location.href = pagePatterns[path] + hash;
+                return;
+            }
+            
+            // Log 404 for debugging (only in development)
+            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                console.log('404 Error - Path:', path, 'Hash:', hash);
+            }
+        });
+    </script>
+</body>
+</html>

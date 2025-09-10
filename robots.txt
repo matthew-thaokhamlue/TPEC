@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://example.com/sitemap.xml
+
+# Disallow crawling of assets that don't need indexing
+Disallow: /assets/js/
+Disallow: /assets/css/
+Disallow: /.github/

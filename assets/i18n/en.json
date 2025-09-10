@@ -1,0 +1,405 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "projects": "Projects",
+    "contact": "Contact",
+    "skip_to_content": "Skip to main content",
+    "logo": "TPEC Engineering Consulting",
+    "menu_title": "Main Navigation"
+  },
+  "hero": {
+    "title": "Professional Public Works Engineering Consulting",
+    "subtitle": "Expert guidance for infrastructure development projects across Laos with over 30 years of experience",
+    "cta": "View Our Projects",
+    "cta_contact": "Get In Touch"
+  },
+  "services": {
+    "heading": "Our Services",
+    "subheading": "Comprehensive public works engineering consulting solutions",
+    "items": [
+      {
+        "title": "Road Survey & Design",
+        "description": "Professional road surveying and engineering design services"
+      },
+      {
+        "title": "Bridge Survey & Design",
+        "description": "Comprehensive bridge engineering and structural design"
+      },
+      {
+        "title": "Construction Supervision",
+        "description": "Expert construction oversight and quality control management"
+      },
+      {
+        "title": "River Bank Protection",
+        "description": "Specialized river bank protection design and construction consulting"
+      },
+      {
+        "title": "Building Design & Construction",
+        "description": "Complete building design and construction management services"
+      },
+      {
+        "title": "Project Management & Procurement",
+        "description": "Comprehensive project management, bidding, and procurement consultation"
+      }
+    ]
+  },
+  "credibility": {
+    "heading": "Proven Track Record",
+    "years": {
+      "number": "30+",
+      "label": "Years Experience"
+    },
+    "projects": {
+      "number": "25+",
+      "label": "Major Projects Completed"
+    },
+    "regions": {
+      "number": "8",
+      "label": "Provinces Served"
+    }
+  },
+  "featured_projects": {
+    "heading": "Featured Projects",
+    "subheading": "Showcasing our expertise across diverse construction sectors",
+    "view_all": "View All Projects"
+  },
+  "cta_banner": {
+    "heading": "Ready to Start Your Project?",
+    "subheading": "Get expert construction consulting tailored to your needs",
+    "button": "Contact Us Today"
+  },
+  "about": {
+    "mission": {
+      "heading": "Our Mission",
+      "content": "To deliver exceptional public works consulting services that drive sustainable infrastructure development. We are committed to providing effective and efficient solutions while prioritizing social-economic factors and environmental responsibility."
+    },
+    "vision": {
+      "heading": "Our Vision",
+      "content": "To be the leading public works engineering consulting firm in Laos, recognized for our expertise, integrity, and contribution to national development through sustainable infrastructure projects."
+    },
+    "approach": {
+      "heading": "Our Approach",
+      "steps": [
+        {
+          "title": "Assessment",
+          "description": "Comprehensive project evaluation and requirements analysis"
+        },
+        {
+          "title": "Planning",
+          "description": "Strategic planning and detailed project roadmap development"
+        },
+        {
+          "title": "Implementation",
+          "description": "Expert guidance throughout project execution phases"
+        },
+        {
+          "title": "Delivery",
+          "description": "Quality assurance and successful project completion"
+        }
+      ]
+    },
+    "capabilities": {
+      "heading": "Our Capabilities",
+      "items": [
+        "Road and Highway Engineering Design",
+        "Bridge and Infrastructure Construction",
+        "River Bank Protection Systems",
+        "Government and Public Building Construction",
+        "Power Plant and Industrial Infrastructure",
+        "Construction Quality Control and Testing",
+        "Project Management and Supervision",
+        "Environmental Compliance and Safety",
+        "Materials Testing and Quality Assurance",
+        "Regulatory Approvals and Permitting"
+      ]
+    },
+    "leadership": {
+      "heading": "Leadership Team",
+      "subheading": "Experienced professionals leading our consulting excellence"
+    },
+    "anchor_nav": {
+      "mission_vision": "Mission & Vision",
+      "approach": "Our Approach",
+      "capabilities": "Capabilities",
+      "leadership": "Leadership",
+      "certifications": "Certifications"
+    },
+    "certifications": {
+      "heading": "Certifications & Insurance",
+      "items": [
+        "Licensed Construction Consulting Firm",
+        "ISO 9001:2015 Quality Management",
+        "Professional Liability Insurance",
+        "General Liability Coverage",
+        "Workers' Compensation Insurance"
+      ]
+    }
+  },
+  "projects": {
+    "heading": "Our Projects",
+    "subheading": "Explore our portfolio of successful construction consulting projects",
+    "empty": "No projects found in this category.",
+    "tabs": {
+      "ongoing": "Ongoing Projects",
+      "completed": "Completed Projects"
+    },
+    "filters": {
+      "all": "All Projects",
+      "road": "Road Projects",
+      "bridge": "Bridge Projects",
+      "infrastructure": "Infrastructure",
+      "industrial": "Industrial"
+    },
+    "details": {
+      "location": "Location",
+      "scope": "Project Scope",
+      "year": "Year",
+      "status": "Status",
+      "client": "Client",
+      "view_details": "View Details",
+      "close_details": "Close Details",
+      "overview": "Project Overview",
+      "services": "Services Provided",
+      "challenges": "Key Challenges",
+      "outcomes": "Project Outcomes"
+    },
+    "services": {
+      "road": [
+        "Road Survey and Design",
+        "Construction Supervision",
+        "Materials Testing and Quality Control",
+        "Progress Monitoring and Reporting",
+        "Technical Specification Compliance"
+      ],
+      "bridge": [
+        "Bridge Survey and Design",
+        "Structural Engineering",
+        "Construction Supervision",
+        "Quality Control and Testing",
+        "Safety Management"
+      ],
+      "infrastructure": [
+        "River Bank Protection Design",
+        "Government Building Construction",
+        "Power Plant Infrastructure",
+        "Environmental Compliance",
+        "Project Management"
+      ],
+      "industrial": [
+        "Industrial Facility Construction",
+        "Power Plant Development",
+        "Infrastructure Planning",
+        "Quality Assurance",
+        "Regulatory Compliance"
+      ]
+    },
+    "national_road_1e_lot1": {
+      "summary": "Major road construction supervision project for National Road 1E (Lot I) in Bolikhamxay Province, involving comprehensive construction oversight and quality control.",
+      "description": "One of our largest infrastructure projects, providing construction supervision for National Road 1E (Lot I) with a value of over 4.5 billion Kip. Our team of 8 engineers provided comprehensive construction oversight, materials testing, quality control, and progress reporting over 47 months from 2012 to 2017."
+    },
+    "national_road_1e_lot2": {
+      "summary": "Construction supervision for National Road 1E (Lot II) featuring double surface treatment road construction in Bolikhamxay Province.",
+      "description": "Complementing our work on Lot I, this project involved supervising the construction of National Road 1E (Lot II) with a value of 1.6 billion Kip. Our 3-engineer team ensured quality control and compliance with MPWT technical specifications over 32 months."
+    },
+    "mekong_bank_protection_paksan": {
+      "summary": "Mekong River bank protection construction project in Paksan District, protecting 1.52 km of riverbank infrastructure.",
+      "description": "Critical river bank protection project safeguarding communities and infrastructure along the Mekong River. Our team supervised the construction of 1.52 km of bank protection in Phoxai Village, ensuring environmental compliance and structural integrity over 5 years."
+    },
+    "concrete_bridges_road8": {
+      "summary": "Construction supervision for 4 concrete bridges on National Road No. 8, ensuring structural integrity and safety compliance.",
+      "description": "Major bridge infrastructure project involving the construction supervision of 4 concrete bridges on National Road No. 8. Our engineering team ensured compliance with technical specifications and safety standards throughout the construction process."
+    },
+    "nam_ngeip_hydroelectric": {
+      "summary": "Specialized topographic survey for Nam Ngeip 1 Hydroelectric Project re-regulation dam, funded by Japan.",
+      "description": "International project providing specialized surveying services for the Nam Ngeip 1 Hydroelectric Project. Our team conducted comprehensive topographic mapping and leveling surveys for the re-regulation dam area, working with Japanese funding and international standards."
+    },
+    "road_construction_vientiane": {
+      "summary": "Multiple road construction and supervision projects across Vientiane Province, including double bitumen surface treatment.",
+      "description": "Comprehensive road development projects across Vientiane Province, including the construction supervision of roads from Ban Thaxan to Ban Nanin and from Pakkayoung to Naxanglek Village. These projects involved advanced double bitumen surface treatment techniques and rigorous quality control."
+    }
+  },
+  "contact": {
+    "heading": "Contact Us",
+    "subheading": "Get in touch for your public works engineering consulting needs",
+    "disclaimer": "We typically respond to inquiries within 24 hours during business days.",
+    "info": {
+      "company": "Thephachanh Public Works Engineering Consultant Company (TPEC)",
+      "address": "Phokham Village, Xaythany District, Road No.13 South, Vientiane Capital, Lao PDR",
+      "phone": "+856 21 732131",
+      "email": "thephachanhtoto@hotmail.com"
+    },
+    "methods": {
+      "heading": "Get In Touch",
+      "subtitle": "Choose your preferred way to contact us",
+      "email": {
+        "title": "Email Us",
+        "description": "Send us a detailed message about your project",
+        "subject": "Construction Consulting Inquiry",
+        "body": "Hello,\n\nI would like to inquire about your construction consulting services.\n\nBest regards"
+      },
+      "whatsapp": {
+        "title": "WhatsApp",
+        "description": "Quick consultation via WhatsApp messaging",
+        "message": "Hello, I would like to inquire about your construction consulting services."
+      },
+      "facebook": {
+        "title": "Facebook",
+        "description": "Connect with us on our Facebook page"
+      }
+    },
+    "map": {
+      "heading": "Our Location",
+      "alt": "Map showing our office location in Vientiane, Lao PDR"
+    }
+  },
+  "footer": {
+    "company": {
+      "title": "TPEC Engineering Consulting",
+      "description": "Expert public works engineering consulting in Laos. Professional guidance for infrastructure development projects with over 30 years of experience."
+    },
+    "links": {
+      "title": "Quick Links",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    },
+    "contact": {
+      "title": "Contact Information"
+    },
+    "tagline": "Expert public works engineering consulting in Laos",
+    "copyright": "© 2025 TPEC. All rights reserved."
+  },
+  "meta": {
+    "home": {
+      "title": "TPEC Engineering Consulting",
+      "description": "Expert construction consulting services in Laos. Feasibility studies, project management, technical consulting, and quality assurance for your construction projects.",
+      "og_title": "Construction Consulting Services - Expert Guidance in Laos",
+      "og_description": "Professional construction consulting with 15+ years experience. Comprehensive project management and technical expertise across Laos and the region.",
+      "twitter_title": "Construction Consulting Services - Expert Guidance in Laos",
+      "twitter_description": "Professional construction consulting with 15+ years experience. Comprehensive project management and technical expertise across Laos and the region."
+    },
+    "about": {
+      "title": "About Us - Construction Consulting Experts",
+      "description": "Learn about our experienced team, mission, and comprehensive construction consulting capabilities. Serving Laos with expert guidance and innovative solutions.",
+      "og_title": "About Our Construction Consulting Team",
+      "og_description": "Experienced construction consulting professionals with proven track record in Laos. Learn about our mission, vision, and comprehensive capabilities.",
+      "twitter_title": "About Our Construction Consulting Team",
+      "twitter_description": "Experienced construction consulting professionals with proven track record in Laos. Learn about our mission, vision, and comprehensive capabilities."
+    },
+    "projects": {
+      "title": "Our Projects - Construction Consulting Portfolio",
+      "description": "Explore our portfolio of successful construction consulting projects across commercial, residential, infrastructure, and industrial sectors in Laos.",
+      "og_title": "Construction Consulting Project Portfolio",
+      "og_description": "View our successful construction consulting projects. From feasibility studies to project completion across diverse sectors in Laos and the region.",
+      "twitter_title": "Construction Consulting Project Portfolio",
+      "twitter_description": "View our successful construction consulting projects. From feasibility studies to project completion across diverse sectors in Laos and the region."
+    },
+    "contact": {
+      "title": "Contact Us - Construction Consulting Services",
+      "description": "Get in touch for expert construction consulting services. Multiple contact methods including email, WhatsApp, and Facebook. Based in Vientiane, Laos.",
+      "og_title": "Contact Construction Consulting Experts",
+      "og_description": "Ready to start your construction project? Contact our expert consulting team via email, WhatsApp, or Facebook. Professional guidance in Laos.",
+      "twitter_title": "Contact Construction Consulting Experts",
+      "twitter_description": "Ready to start your construction project? Contact our expert consulting team via email, WhatsApp, or Facebook. Professional guidance in Laos."
+    },
+    "404": {
+      "title": "Page Not Found - Construction Consulting",
+      "description": "The page you're looking for could not be found. Return to our construction consulting homepage or contact us for assistance.",
+      "og_title": "Page Not Found - Construction Consulting",
+      "og_description": "The page you're looking for could not be found. Return to our construction consulting homepage or contact us for assistance.",
+      "twitter_title": "Page Not Found - Construction Consulting",
+      "twitter_description": "The page you're looking for could not be found. Return to our construction consulting homepage or contact us for assistance."
+    }
+  },
+  "accessibility": {
+    "skip_to_content": "Skip to main content",
+    "menu_toggle": "Toggle navigation menu",
+    "language_switcher": "Change language",
+    "external_link": "Opens in new window",
+    "close_dialog": "Close dialog",
+    "loading": "Loading content",
+    "error": "Error loading content",
+    "image_alt": {
+      "logo": "Company logo",
+      "hero_background": "Construction site background image",
+      "service_icon": "Service icon",
+      "project_image": "Project image for {title}",
+      "team_photo": "Photo of {name}",
+      "map": "Map showing office location"
+    },
+    "navigation": {
+      "main": "Main navigation",
+      "page_sections": "Page sections",
+      "breadcrumb": "Breadcrumb navigation"
+    },
+    "buttons": {
+      "view_project": "View project details for {title}",
+      "contact_email": "Send email to {email}",
+      "contact_phone": "Call {phone}",
+      "contact_whatsapp": "Contact via WhatsApp",
+      "contact_facebook": "Visit Facebook page"
+    },
+    "status": {
+      "current_page": "Current page",
+      "selected": "Selected",
+      "expanded": "Expanded",
+      "collapsed": "Collapsed"
+    }
+  },
+  "loading": {
+    "projects": "Loading projects...",
+    "translations": "Loading translations...",
+    "error": "Failed to load content. Please try again."
+  },
+  "error": {
+    "404": {
+      "title": "Page Not Found",
+      "message": "The page you're looking for doesn't exist or has been moved.",
+      "home_button": "Go Home",
+      "contact_button": "Contact Us"
+    }
+  },
+  "team": {
+    "founder": {
+      "name": "Mr. Bounlieng Thephachanh",
+      "title": "Founder & Managing Director",
+      "bio": "With over 30 years of experience in public works engineering, Mr. Thephachanh founded TPEC after extensive international experience including education in Germany and consulting work with Swedish companies SKANSKA, HIFAB, and Sweroad. He has led capacity building initiatives for Department of Public Works and Transportation staff across all provinces of Lao PDR.",
+      "education": "Road-Bridge Construction Engineering graduate from Germany (1981)",
+      "experience": [
+        "Road-Bridge Maintenance Supervisor, State Enterprise No.1 Company (1982)",
+        "Head of Planning Department, Water Road Construction Enterprise",
+        "Chief of Construction Division, Road No.13 Construction Company (1985)",
+        "International training in Thailand for road-bridge supervision and construction",
+        "Trainer and Consultant with SKANSKA subsidiary (Swedish construction company)",
+        "Senior Consultant with HIFAB (Swedish consulting company)",
+        "Local Consultant with Sweroad Consultant Company (2001)",
+        "Nationwide capacity building for Department of Public Works and Transportation staff across all provinces of Lao PDR"
+      ],
+      "description": "Founded by Mr. Bounlieng Thephachanh, our company is built on over 30 years of engineering excellence and industry expertise. Our founder brings extensive international experience and has been instrumental in developing infrastructure consulting capabilities across Laos."
+    },
+    "vice_president": {
+      "name": "Ms. Sengdavanh Thepphachanh",
+      "title": "Vice President",
+      "bio": "Dr. Sengdavanh Thepphachanh brings advanced expertise in hydraulic and environmental engineering to TPEC. With a Doctor of Engineering degree from Technische Universität Dresden and extensive research experience, she leads our environmental compliance and sustainable engineering initiatives.",
+      "education": "Doctor of Engineering in Hydraulic Engineering, Technische Universität Dresden (2019-2022); Master's degree in Environmental Engineering, University of the Philippines Diliman (2013-2015)",
+      "experience": [
+        "Scientific Researcher, Technische Universität Dresden (Apr 2023 - Present)",
+        "Lecturer/Researcher, National University of Laos (NUOL) (Dec 2015 - Aug 2019)",
+        "Environmental Engineer, Archineer Associates (Mar 2017 - Jul 2019)"
+      ],
+      "description": "Dr. Sengdavanh Thepphachanh serves as Vice President, bringing cutting-edge expertise in hydraulic modeling, environmental engineering, and sustainable development. Her international education and research background strengthen TPEC's technical capabilities in environmental compliance and innovative engineering solutions."
+    },
+    "technology_advisor": {
+      "name": "Mr. Matthew Thaokhamlue",
+      "title": "Technology Advisor",
+      "bio": "Technical Product Manager with 5+ years in B2B SaaS, focusing on AI features and API integrations for health analytics and lab software. He brings expertise in product management, AI solutions, and technical integration to support TPEC's digital transformation initiatives.",
+      "education": "Master of International and Development Economics, Hochschule für Technik und Wirtschaft Berlin; Bachelor's Degree in Economics, Chiang Mai University",
+      "experience": [
+        "Product Manager, Labforward GmbH, Berlin (Nov 2024 - Present)",
+        "Technical Product Manager, LabTwin GmbH, Berlin (Jan 2023 - Nov 2024)",
+        "Product Owner, Thryve GmbH, Berlin (Oct 2019 - Dec 2022)"
+      ],
+      "description": "Mr. Matthew Thaokhamlue serves as Technology Advisor, bringing modern expertise in product management, AI implementation, and digital solutions. His international experience in B2B SaaS and technical product development supports TPEC's technology advancement and digital transformation initiatives."
+    }
+  }
+}

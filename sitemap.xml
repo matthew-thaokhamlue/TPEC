@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Home Page -->
+  <url>
+    <loc>https://example.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/"/>
+    <xhtml:link rel="alternate" hreflang="lo" href="https://example.com/"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2024-01-01</lastmod>
+  </url>
+  
+  <!-- About Page -->
+  <url>
+    <loc>https://example.com/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/about.html"/>
+    <xhtml:link rel="alternate" hreflang="lo" href="https://example.com/about.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-01-01</lastmod>
+  </url>
+  
+  <!-- Projects Page -->
+  <url>
+    <loc>https://example.com/projects.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/projects.html"/>
+    <xhtml:link rel="alternate" hreflang="lo" href="https://example.com/projects.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2024-01-01</lastmod>
+  </url>
+  
+  <!-- Contact Page -->
+  <url>
+    <loc>https://example.com/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="lo" href="https://example.com/contact.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2024-01-01</lastmod>
+  </url>
+  
+  <!-- Individual Project Pages (Deep Links) -->
+  <url>
+    <loc>https://example.com/projects.html#vientiane-commercial-complex</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/projects.html#vientiane-commercial-complex"/>
+    <xhtml:link rel="alternate" hreflang="lo" href="https://example.com/projects.html#vientiane-commercial-complex"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2024-01-01</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/projects.html#luang-prabang-resort</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/projects.html#luang-prabang-resort"/>
+    <xhtml:link rel="alternate" hreflang="lo" href="https://example.com/projects.html#luang-prabang-resort"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2024-01-01</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/projects.html#savannakhet-industrial-park</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/projects.html#savannakhet-industrial-park"/>
+    <xhtml:link rel="alternate" hreflang="lo" href="https://example.com/projects.html#savannakhet-industrial-park"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2024-01-01</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/projects.html#champasak-bridge-project</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/projects.html#champasak-bridge-project"/>
+    <xhtml:link rel="alternate" hreflang="lo" href="https://example.com/projects.html#champasak-bridge-project"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2024-01-01</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/projects.html#pakse-residential-development</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/projects.html#pakse-residential-development"/>
+    <xhtml:link rel="alternate" hreflang="lo" href="https://example.com/projects.html#pakse-residential-development"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2024-01-01</lastmod>
+  </url>
+  
+</urlset>

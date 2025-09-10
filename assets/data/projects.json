@@ -1,0 +1,107 @@
+{
+  "projects": [
+    {
+      "slug": "national-road-1e-lot1",
+      "title": "National Road 1E Construction Project (Lot I)",
+      "status": "completed",
+      "location": "Bolikhamxay Province, Laos",
+      "scope": "Road Construction Supervision",
+      "year": "2012-2017",
+      "client": "Department of Public Works and Transport, Bolikhamxay Province",
+      "value": "4,565,382,448 Kip",
+      "cover": "/assets/img/projects/national-road-1e-lot1-cover.jpg",
+      "gallery": [
+        "/assets/img/projects/national-road-1e-lot1-1.jpg",
+        "/assets/img/projects/national-road-1e-lot1-2.jpg"
+      ],
+      "summary_i18n_key": "projects.national_road_1e_lot1.summary",
+      "featured": true
+    },
+    {
+      "slug": "national-road-1e-lot2",
+      "title": "National Road 1E Construction Project (Lot II)",
+      "status": "completed",
+      "location": "Bolikhamxay Province, Laos",
+      "scope": "Road Construction Supervision",
+      "year": "2012-2014",
+      "client": "Department of Public Works and Transport, Bolikhamxay Province",
+      "value": "1,637,511,480 Kip",
+      "cover": "/assets/img/projects/national-road-1e-lot2-cover.jpg",
+      "gallery": [
+        "/assets/img/projects/national-road-1e-lot2-1.jpg",
+        "/assets/img/projects/national-road-1e-lot2-2.jpg"
+      ],
+      "summary_i18n_key": "projects.national_road_1e_lot2.summary",
+      "featured": true
+    },
+    {
+      "slug": "mekong-bank-protection-paksan",
+      "title": "Mekong River Bank Protection - Paksan District",
+      "status": "completed",
+      "location": "Phoxai Village, Paksan District, Borlikhamxay Province",
+      "scope": "River Bank Protection Construction",
+      "year": "2013-2018",
+      "client": "Department of Public Works and Transport, Borlikhamxay Province",
+      "value": "779,244,886 Kip",
+      "cover": "/assets/img/projects/mekong-bank-protection-cover.jpg",
+      "gallery": [
+        "/assets/img/projects/mekong-bank-protection-1.jpg",
+        "/assets/img/projects/mekong-bank-protection-2.jpg"
+      ],
+      "summary_i18n_key": "projects.mekong_bank_protection_paksan.summary",
+      "featured": true
+    },
+    {
+      "slug": "concrete-bridges-road8",
+      "title": "4 Concrete Bridges - National Road No. 8",
+      "status": "completed",
+      "location": "Borlikhamxay Province, Laos",
+      "scope": "Bridge Construction Supervision",
+      "year": "2014-2017",
+      "client": "Department of Public Works and Transport, Borlikhamxay Province",
+      "value": "1,050,000,000 Kip",
+      "cover": "/assets/img/projects/concrete-bridges-road8-cover.jpg",
+      "gallery": [
+        "/assets/img/projects/concrete-bridges-road8-1.jpg",
+        "/assets/img/projects/concrete-bridges-road8-2.jpg"
+      ],
+      "summary_i18n_key": "projects.concrete_bridges_road8.summary",
+      "featured": false
+    },
+    {
+      "slug": "nam-ngeip-hydroelectric",
+      "title": "Nam Ngeip 1 Hydroelectric Project Survey",
+      "status": "completed",
+      "location": "Lao PDR",
+      "scope": "Topographic Survey for Re-regulation Dam",
+      "year": "2013",
+      "client": "Obajasih Company (Construction Manager)",
+      "value": "6,950 USD",
+      "funding": "Japan Funded",
+      "cover": "/assets/img/projects/nam-ngeip-hydroelectric-cover.jpg",
+      "gallery": [
+        "/assets/img/projects/nam-ngeip-hydroelectric-1.jpg",
+        "/assets/img/projects/nam-ngeip-hydroelectric-2.jpg"
+      ],
+      "summary_i18n_key": "projects.nam_ngeip_hydroelectric.summary",
+      "featured": false
+    },
+    {
+      "slug": "road-construction-vientiane",
+      "title": "Road Construction Projects - Vientiane Province",
+      "status": "completed",
+      "location": "Vientiane Province, Laos",
+      "scope": "Multiple Road Construction and Supervision",
+      "year": "2013-2016",
+      "client": "Department of Public Works and Transport, Vientiane Province",
+      "value": "2,506,501,727 Kip",
+      "cover": "/assets/img/projects/road-construction-vientiane-cover.jpg",
+      "gallery": [
+        "/assets/img/projects/road-construction-vientiane-1.jpg",
+        "/assets/img/projects/road-construction-vientiane-2.jpg"
+      ],
+      "summary_i18n_key": "projects.road_construction_vientiane.summary",
+      "featured": true
+    }
+  ]
+}

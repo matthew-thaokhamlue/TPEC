@@ -1,0 +1,44 @@
+MATTHEW THAOKHAMLUE
+Dresden (and Berlin) | matthew.thaokhamlue@gmail.com | matthew-thaokhamlue.github.io/resume/
+SUMMARY
+Technical Product Manager with 5+ years in B2B SaaS, focusing on AI features and API integrations for
+health analytics and lab software. I have managed product development for third-party integrations and AI
+solutions, working closely with customers and internal teams (engineering and commercial) to deliver
+practical features that solve real problems.
+WORK EXPERIENCE
+Product Manager , Labforward GmbH | Berlin, Germany Nov 2024 - Present
+Work with CPO to create product roadmaps based on customer feedback and business goals
+Improve the team collaboration processes which helped secure a $500k contract renewal
+Introduced fast prototyping methods that reduced testing time from several days to a few hours
+Lead the BI team in building data pipelines and dashboards for better decision-making
+Technical Product Manager | LabTwin GmbH | Berlin, Germany
+Jan 2023 - Nov 2024
+Managed product roadmap for integration features and AI voice assistant solutions
+Collaborated with the whole engineering team to improve release process, increasing deployments
+from 4 to 12 times per year
+Worked on model re-training strategy to improve speech recognition model to maintain 95% accuracy
+for scientific terms
+Trained and mentored a junior AI product manager
+Product Owner | Thryve GmbH | Berlin, Germany
+Oct 2019 - Dec 2022
+Built and managed APIs and SDKs used by 1M+ users across 100+ B2B customers
+Managed full product lifecycle including delivery, customer success, and stakeholder relations
+Led development and expansion of features of 10+ wearable integrations (Fitbit, Garmin, Withings,
+Oura, Omron, Apple Health, etc.)
+Helped grow company to €1M ARR and team from 7 to 35 people
+Created onboarding program “Thryve Academy” for new employees with founding team
+EDUCATION
+Master of International and Development Economics
+Hochschule für Technik und Wirtschaft Berlin
+Thesis on "Technological Change and Human Capital Transformation in Banking Sector in Thailand"
+.
+Bachelor's Degree in Economics
+Chiang Mai University
+Major: Econometrics and Quantitative Economics
+ADDITIONAL INFORMATION
+Essential Skills: Product Roadmapping • User Research • A/B Testing • Stakeholder Management •
+Python • API Design • Machine Learning • GenAI Implementation
+Languages: English (IELTS 7.5), German (B1), Thai (Native)
+Certifications: Professional Product Owner, PMI-ACP, Google UX design, Google Business
+Intelligence, AWS Solutions Architect, Azure Solutions Architect
+Reference: Paul Burggraf

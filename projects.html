@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self';">
+    
+    <title data-i18n="meta.projects.title">Projects - Construction Consulting</title>
+    <meta name="description" data-i18n="meta.projects.description" content="Explore our construction consulting projects and case studies">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com/projects.html">
+    <meta property="og:title" data-i18n="meta.projects.og_title" content="Projects - Construction Consulting">
+    <meta property="og:description" data-i18n="meta.projects.og_description" content="Explore our construction consulting projects and case studies">
+    <meta property="og:image" content="https://example.com/assets/img/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Construction Consulting Project Portfolio">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="lo_LA">
+    <meta property="og:site_name" content="Construction Consulting Services">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://example.com/projects.html">
+    <meta property="twitter:title" data-i18n="meta.projects.twitter_title" content="Projects - Construction Consulting">
+    <meta property="twitter:description" data-i18n="meta.projects.twitter_description" content="Explore our construction consulting projects and case studies">
+    <meta property="twitter:image" content="https://example.com/assets/img/og-image.jpg">
+    <meta property="twitter:image:alt" content="Construction Consulting Project Portfolio">
+    
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="en" href="https://example.com/projects.html">
+    <link rel="alternate" hreflang="lo" href="https://example.com/projects.html">
+    
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    
+    <!-- Font Preloading -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/notosanslao/v30/bx6lNx2Ol_ixgdYWLm9BwxM3NW6BOkuf763Clj73CiQ_J1Djx9pidOt4ccbdf5MK3riB2g.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Lao:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    <!-- Scripts -->
+    <script src="/assets/js/i18n.js"></script>
+    <style>
+        /* Additional project-specific styles to ensure proper functionality */
+        .tab-controls {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-sm, 8px);
+            margin-bottom: 0;
+            padding: 0;
+        }
+
+        .tab-btn {
+            background: var(--card, #1a1d23);
+            border: 1px solid var(--line, #2a2d35);
+            color: var(--text-muted, #9ca3af);
+            padding: var(--space-md, 12px) var(--space-xl, 24px);
+            border-radius: var(--radius, 6px);
+            font-size: var(--font-size-base, 16px);
+            font-weight: var(--font-weight-medium, 500);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 120px;
+        }
+
+        .tab-btn:hover {
+            background: var(--card-hover, #22252c);
+            border-color: var(--accent, #4da3ff);
+            color: var(--text, #ffffff);
+        }
+
+        .tab-btn.active {
+            background: var(--accent, #4da3ff);
+            border-color: var(--accent, #4da3ff);
+            color: var(--bg, #0e1116);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: grid;
+            gap: var(--space-2xl, 32px);
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 768px) {
+            .tab-content.active {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .tab-content.active {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .project-card {
+            background: var(--card, #1a1d23);
+            border: 1px solid var(--line, #2a2d35);
+            border-radius: var(--radius-lg, 12px);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            background: var(--card-hover, #22252c);
+            border-color: var(--accent, #4da3ff);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-card-content {
+            padding: var(--space-xl, 24px);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card-title {
+            font-size: var(--font-size-lg, 18px);
+            font-weight: var(--font-weight-semibold, 600);
+            margin-bottom: var(--space-sm, 8px);
+            color: var(--text, #ffffff);
+        }
+
+        .project-card-summary {
+            color: var(--text-muted, #9ca3af);
+            margin-bottom: var(--space-md, 16px);
+            flex: 1;
+            line-height: 1.6;
+        }
+
+        .project-card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--space-sm, 8px);
+            font-size: var(--font-size-sm, 14px);
+            color: var(--text-muted, #9ca3af);
+        }
+
+        .project-card-scope {
+            font-size: var(--font-size-sm, 14px);
+            color: var(--accent, #4da3ff);
+            font-weight: var(--font-weight-medium, 500);
+        }
+
+        .empty-state, .error-message {
+            text-align: center;
+            padding: var(--space-4xl, 64px);
+            color: var(--text-muted, #9ca3af);
+            grid-column: 1 / -1;
+        }
+
+        .loading {
+            text-align: center;
+            padding: var(--space-4xl, 64px);
+            color: var(--text-muted, #9ca3af);
+            grid-column: 1 / -1;
+        }
+
+        /* Project Modal Styles */
+        .project-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .project-modal.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .project-modal-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(4px);
+        }
+
+        .project-modal-content {
+            position: relative;
+            background: var(--card, #1a1d23);
+            border: 1px solid var(--line, #2a2d35);
+            border-radius: var(--radius-lg, 12px);
+            max-width: 800px;
+            max-height: 90vh;
+            width: 90%;
+            overflow-y: auto;
+            transform: scale(0.9) translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .project-modal.visible .project-modal-content {
+            transform: scale(1) translateY(0);
+        }
+
+        .project-modal-close {
+            position: absolute;
+            top: var(--space-md, 16px);
+            right: var(--space-md, 16px);
+            background: var(--card-hover, #22252c);
+            border: 1px solid var(--line, #2a2d35);
+            color: var(--text-muted, #9ca3af);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 24px;
+            line-height: 1;
+            transition: all 0.2s ease;
+            z-index: 10001;
+        }
+
+        .project-modal-close:hover {
+            background: var(--accent, #4da3ff);
+            color: var(--bg, #0e1116);
+            border-color: var(--accent, #4da3ff);
+        }
+
+        .project-modal-body {
+            padding: var(--space-2xl, 32px);
+        }
+
+        .project-modal-header {
+            margin-bottom: var(--space-xl, 24px);
+        }
+
+        .project-modal-title {
+            font-size: var(--font-size-2xl, 24px);
+            font-weight: var(--font-weight-bold, 700);
+            color: var(--text, #ffffff);
+            margin-bottom: var(--space-sm, 8px);
+        }
+
+        .project-modal-meta {
+            display: flex;
+            gap: var(--space-lg, 20px);
+            margin-bottom: var(--space-md, 16px);
+            font-size: var(--font-size-sm, 14px);
+            color: var(--text-muted, #9ca3af);
+        }
+
+        .project-modal-scope {
+            color: var(--accent, #4da3ff);
+            font-weight: var(--font-weight-medium, 500);
+            font-size: var(--font-size-base, 16px);
+        }
+
+        .project-modal-image {
+            width: 100%;
+            height: 300px;
+            border-radius: var(--radius, 6px);
+            overflow: hidden;
+            margin-bottom: var(--space-xl, 24px);
+        }
+
+        .project-modal-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-modal-description {
+            color: var(--text, #ffffff);
+            line-height: 1.6;
+            margin-bottom: var(--space-xl, 24px);
+        }
+
+        .project-modal-details {
+            display: grid;
+            gap: var(--space-lg, 20px);
+        }
+
+        .project-modal-section {
+            background: var(--bg, #0e1116);
+            border: 1px solid var(--line, #2a2d35);
+            border-radius: var(--radius, 6px);
+            padding: var(--space-lg, 20px);
+        }
+
+        .project-modal-section h4 {
+            color: var(--text, #ffffff);
+            font-weight: var(--font-weight-semibold, 600);
+            margin-bottom: var(--space-md, 16px);
+        }
+
+        .project-modal-section p,
+        .project-modal-section ul {
+            color: var(--text-muted, #9ca3af);
+            line-height: 1.6;
+        }
+
+        .project-modal-section ul {
+            padding-left: var(--space-lg, 20px);
+        }
+
+        .project-modal-section li {
+            margin-bottom: var(--space-sm, 8px);
+        }
+
+        @media (max-width: 768px) {
+            .project-modal-content {
+                width: 95%;
+                max-height: 95vh;
+            }
+
+            .project-modal-body {
+                padding: var(--space-lg, 20px);
+            }
+
+            .project-modal-meta {
+                flex-direction: column;
+                gap: var(--space-sm, 8px);
+            }
+
+            .project-modal-image {
+                height: 200px;
+            }
+        }
+    </style>
+    
+    <!-- Favicon and Touch Icons -->
+    <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/icons/android-chrome-512x512.png">
+    <link rel="manifest" href="/assets/icons/site.webmanifest">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Construction Consulting Projects",
+      "description": "Portfolio of successful construction consulting projects across commercial, residential, infrastructure, and industrial sectors in Laos.",
+      "url": "https://example.com/projects.html",
+      "mainEntity": {
+        "@type": "ItemList",
+        "name": "Construction Projects Portfolio",
+        "itemListElement": [
+          {
+            "@type": "CreativeWork",
+            "name": "Vientiane Commercial Complex",
+            "description": "Comprehensive consulting for a modern commercial complex in central Vientiane, including feasibility studies, regulatory compliance, and construction oversight.",
+            "dateCompleted": "2023",
+            "location": {
+              "@type": "Place",
+              "name": "Vientiane, Laos"
+            },
+            "creator": {
+              "@type": "Organization",
+              "name": "Construction Consulting Services"
+            }
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Luang Prabang Eco Resort",
+            "description": "Sustainable tourism infrastructure development for an eco-friendly resort, focusing on environmental impact minimization and cultural preservation.",
+            "dateCreated": "2024",
+            "location": {
+              "@type": "Place",
+              "name": "Luang Prabang, Laos"
+            },
+            "creator": {
+              "@type": "Organization",
+              "name": "Construction Consulting Services"
+            }
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Savannakhet Industrial Park",
+            "description": "Industrial park development consulting, including infrastructure planning, environmental assessments, and regulatory approvals for manufacturing facilities.",
+            "dateCompleted": "2022",
+            "location": {
+              "@type": "Place",
+              "name": "Savannakhet, Laos"
+            },
+            "creator": {
+              "@type": "Organization",
+              "name": "Construction Consulting Services"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+</head>
+<body>
+    <a href="#main" class="skip-link" data-i18n="accessibility.skip_to_content">Skip to main content</a>
+    
+    <header id="header" role="banner">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo" data-i18n="nav.logo">TPEC Engineering Consultant</a>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="/" class="nav-link" data-i18n="nav.home">Home</a></li>
+                        <li><a href="/about.html" class="nav-link" data-i18n="nav.about">About Us</a></li>
+                        <li><a href="/projects.html" class="nav-link active" data-i18n="nav.projects">Projects</a></li>
+                        <li><a href="/contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="language-switcher">
+                    <button class="lang-option active" data-lang="en" aria-label="Switch to English">
+                        <span class="lang-code">EN</span>
+                        <span class="lang-name">English</span>
+                    </button>
+                    <button class="lang-option" data-lang="lo" aria-label="Switch to Lao">
+                        <span class="lang-code">ລາວ</span>
+                        <span class="lang-name">ລາວ</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main" role="main">
+        <!-- Page Header -->
+        <section class="page-header section" aria-labelledby="page-title">
+            <div class="container">
+                <h1 id="page-title" class="reveal-up" data-i18n="projects.heading">Our Projects</h1>
+                <p class="reveal-up" data-i18n="projects.subheading">Explore our portfolio of successful construction consulting projects</p>
+            </div>
+        </section>
+
+        <!-- Project Tabs -->
+        <section class="projects-tabs section" aria-labelledby="project-tabs-title">
+            <div class="container">
+                <h2 id="project-tabs-title" class="sr-only">Project Categories</h2>
+                <div class="tab-controls reveal-up" role="tablist" aria-label="Project status filter">
+                    <button class="tab-btn" data-tab="ongoing" data-i18n="projects.tabs.ongoing" role="tab" aria-selected="false" aria-controls="ongoing-projects" id="tab-ongoing">Ongoing</button>
+                    <button class="tab-btn active" data-tab="completed" data-i18n="projects.tabs.completed" role="tab" aria-selected="true" aria-controls="completed-projects" id="tab-completed">Completed</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Grid -->
+        <section class="projects-grid-section section" aria-labelledby="projects-grid-title">
+            <div class="container">
+                <h2 id="projects-grid-title" class="sr-only">Project Portfolio</h2>
+                <div id="ongoing-projects" class="projects-grid tab-content reveal-up" role="tabpanel" aria-labelledby="tab-ongoing" aria-label="Ongoing construction projects" aria-hidden="true">
+                    <!-- Ongoing project cards will be populated by JavaScript -->
+                </div>
+                <div id="completed-projects" class="projects-grid tab-content active reveal-up" role="tabpanel" aria-labelledby="tab-completed" aria-label="Completed construction projects">
+                    <!-- Completed project cards will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Detail Modal -->
+        <div id="project-modal" class="project-modal hidden" role="dialog" aria-modal="true" aria-labelledby="project-modal-title" aria-hidden="true">
+            <div class="project-modal-overlay"></div>
+            <div class="project-modal-content">
+                <button class="project-modal-close" aria-label="Close project details">&times;</button>
+                <div class="project-modal-body">
+                    <!-- Project detail content will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 data-i18n="footer.company.title">TPEC Engineering Consultant</h4>
+                    <p data-i18n="footer.company.description">Expert public works engineering consulting in Laos. Professional guidance for infrastructure development projects with over 30 years of experience.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-i18n="footer.links.title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/" data-i18n="nav.home">Home</a></li>
+                        <li><a href="/about.html" data-i18n="nav.about">About Us</a></li>
+                        <li><a href="/projects.html" data-i18n="nav.projects">Projects</a></li>
+                        <li><a href="/contact.html" data-i18n="nav.contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-i18n="footer.contact.title">Contact Information</h4>
+                    <ul class="footer-links">
+                        <li><a href="tel:021732131" data-i18n="contact.info.phone">021 732131, 020 55526224, 020 28778770, 020 91959555</a></li>
+                        <li><a href="mailto:thephachanhtoto@hotmail.com" data-i18n="contact.info.email">thephachanhtoto@hotmail.com</a></li>
+                        <li data-i18n="contact.info.address">Phokham Village, Xaythany District, Road No.13 South, Vientiane Capital, Lao PDR</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer.copyright">&copy; 2025 TPEC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Projects Page Script with Modal Functionality -->
+    <script>
+        let projectsData = [];
+        let projectModal = null;
+
+        // Initialize page when DOM is loaded
+        document.addEventListener('DOMContentLoaded', async function() {
+            console.log('Projects page loaded, setting up functionality');
+            
+            // Initialize i18n system first
+            try {
+                await i18n.init();
+                console.log('i18n system initialized successfully');
+            } catch (error) {
+                console.error('Failed to initialize i18n:', error);
+            }
+            
+            // Initialize modal
+            projectModal = document.getElementById('project-modal');
+            setupModalEvents();
+            
+            // Setup tabs
+            setupTabs();
+            
+            // Load and render projects
+            loadProjects();
+            
+            // Handle URL hash for direct project links
+            handleInitialHash();
+            
+            // Listen for language changes and re-render projects
+            window.addEventListener('languageChanged', function(e) {
+                console.log('Language changed, re-rendering projects');
+                if (projectsData && projectsData.length > 0) {
+                    renderProjectTabs();
+                }
+            });
+            
+            console.log('Projects page setup complete');
+        });
+
+        function setupTabs() {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            console.log('Found', tabButtons.length, 'tab buttons and', tabContents.length, 'tab contents');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('Tab clicked:', this.getAttribute('data-tab'));
+                    
+                    const targetTab = this.getAttribute('data-tab');
+                    
+                    // Update buttons
+                    tabButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                        btn.setAttribute('aria-selected', 'false');
+                    });
+                    this.classList.add('active');
+                    this.setAttribute('aria-selected', 'true');
+                    
+                    // Update content
+                    tabContents.forEach(content => {
+                        content.classList.remove('active');
+                        content.setAttribute('aria-hidden', 'true');
+                        if (content.id === `${targetTab}-projects`) {
+                            content.classList.add('active');
+                            content.setAttribute('aria-hidden', 'false');
+                            console.log('Activated tab content:', content.id);
+                        }
+                    });
+                });
+            });
+        }
+
+        function setupModalEvents() {
+            if (!projectModal) return;
+
+            // Close modal when clicking overlay
+            const overlay = projectModal.querySelector('.project-modal-overlay');
+            if (overlay) {
+                overlay.addEventListener('click', closeProjectModal);
+            }
+
+            // Close modal when clicking close button
+            const closeBtn = projectModal.querySelector('.project-modal-close');
+            if (closeBtn) {
+                closeBtn.addEventListener('click', closeProjectModal);
+            }
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && projectModal && !projectModal.classList.contains('hidden')) {
+                    closeProjectModal();
+                }
+            });
+
+            // Handle browser back/forward
+            window.addEventListener('popstate', function(e) {
+                if (window.location.hash) {
+                    const slug = window.location.hash.substring(1);
+                    const project = projectsData.find(p => p.slug === slug);
+                    if (project) {
+                        showProjectModal(project);
+                    }
+                } else {
+                    closeProjectModal();
+                }
+            });
+        }
+
+        async function loadProjects() {
+            try {
+                console.log('Loading projects...');
+                const response = await fetch('/assets/data/projects.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const data = await response.json();
+                projectsData = data.projects || [];
+                
+                console.log('Loaded', projectsData.length, 'projects');
+                
+                // Filter and render projects
+                const ongoingProjects = projectsData.filter(p => p.status === 'ongoing');
+                const completedProjects = projectsData.filter(p => p.status === 'completed');
+                
+                renderProjects('ongoing-projects', ongoingProjects);
+                renderProjects('completed-projects', completedProjects);
+                
+                console.log('Projects rendered successfully');
+            } catch (error) {
+                console.error('Failed to load projects:', error);
+                showError('Failed to load projects. Please try again.');
+            }
+        }
+
+        function renderProjects(containerId, projects) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            
+            container.innerHTML = '';
+            
+            if (projects.length === 0) {
+                container.innerHTML = '<div class="empty-state"><p>No projects found in this category.</p></div>';
+                return;
+            }
+            
+            projects.forEach((project, index) => {
+                const card = createProjectCard(project, index);
+                container.appendChild(card);
+            });
+        }
+
+        function createProjectCard(project, index) {
+            const card = document.createElement('div');
+            card.className = 'project-card';
+            card.setAttribute('data-project-slug', project.slug);
+            card.setAttribute('tabindex', '0');
+            card.setAttribute('role', 'button');
+            card.setAttribute('aria-label', `View details for ${project.title} project in ${project.location}`);
+            
+            const summary = getProjectSummary(project);
+            
+            card.innerHTML = `
+                <div class="project-card-content">
+                    <h3 class="project-card-title">${escapeHtml(project.title)}</h3>
+                    <p class="project-card-summary">${escapeHtml(summary)}</p>
+                    <div class="project-card-meta">
+                        <span class="project-location">${escapeHtml(project.location)}</span>
+                        <span class="project-year">${escapeHtml(project.year)}</span>
+                    </div>
+                    <div class="project-card-scope">${escapeHtml(project.scope)}</div>
+                </div>
+            `;
+
+            // Add click handler to open modal
+            const handleClick = () => {
+                showProjectModal(project);
+            };
+
+            card.addEventListener('click', handleClick);
+            card.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    handleClick();
+                }
+            });
+
+            return card;
+        }
+
+        function showProjectModal(project) {
+            if (!projectModal || !project) return;
+
+            console.log('Opening modal for project:', project.title);
+
+            // Update URL hash
+            history.pushState(null, null, `#${project.slug}`);
+
+            // Populate modal content
+            const modalBody = projectModal.querySelector('.project-modal-body');
+            if (modalBody) {
+                modalBody.innerHTML = createProjectModalContent(project);
+            }
+
+            // Show modal
+            projectModal.classList.remove('hidden');
+            projectModal.setAttribute('aria-hidden', 'false');
+            
+            // Add visible class after a small delay for animation
+            setTimeout(() => {
+                projectModal.classList.add('visible');
+            }, 10);
+
+            // Focus management
+            const closeBtn = projectModal.querySelector('.project-modal-close');
+            if (closeBtn) {
+                closeBtn.focus();
+            }
+
+            // Prevent body scroll
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProjectModal() {
+            if (!projectModal) return;
+
+            console.log('Closing project modal');
+
+            // Remove visible class
+            projectModal.classList.remove('visible');
+
+            // Hide modal after animation
+            setTimeout(() => {
+                projectModal.classList.add('hidden');
+                projectModal.setAttribute('aria-hidden', 'true');
+            }, 300);
+
+            // Clear URL hash
+            history.pushState(null, null, window.location.pathname);
+
+            // Restore body scroll
+            document.body.style.overflow = '';
+        }
+
+        function createProjectModalContent(project) {
+            const summary = getProjectSummary(project);
+            const description = getProjectDescription(project);
+            const statusText = project.status === 'ongoing' ? i18n.t('projects.tabs.ongoing', 'Ongoing') : i18n.t('projects.tabs.completed', 'Completed');
+            
+            return `
+                <div class="project-modal-header">
+                    <h2 class="project-modal-title" id="project-modal-title">${escapeHtml(project.title)}</h2>
+                    <div class="project-modal-meta">
+                        <span><strong>${i18n.t('projects.details.location', 'Location')}:</strong> ${escapeHtml(project.location)}</span>
+                        <span><strong>${i18n.t('projects.details.year', 'Year')}:</strong> ${escapeHtml(project.year)}</span>
+                        <span><strong>${i18n.t('projects.details.status', 'Status')}:</strong> ${escapeHtml(statusText)}</span>
+                    </div>
+                    <div class="project-modal-scope">${escapeHtml(project.scope)}</div>
+                </div>
+
+                ${project.cover ? `
+                <div class="project-modal-image">
+                    <img src="${escapeHtml(project.cover)}" alt="Project image for ${escapeHtml(project.title)}" loading="lazy">
+                </div>
+                ` : ''}
+
+                <div class="project-modal-description">
+                    <p>${escapeHtml(description)}</p>
+                </div>
+
+                <div class="project-modal-details">
+                    <div class="project-modal-section">
+                        <h4>${i18n.t('projects.details.overview', 'Project Overview')}</h4>
+                        <p>${escapeHtml(summary)}</p>
+                    </div>
+
+                    <div class="project-modal-section">
+                        <h4>${i18n.t('projects.details.services', 'Services Provided')}</h4>
+                        <ul>
+                            ${getProjectServices(project).map(service => `<li>${escapeHtml(service)}</li>`).join('')}
+                        </ul>
+                    </div>
+
+                    ${project.challenges ? `
+                    <div class="project-modal-section">
+                        <h4>${i18n.t('projects.details.challenges', 'Key Challenges')}</h4>
+                        <p>${escapeHtml(project.challenges)}</p>
+                    </div>
+                    ` : ''}
+
+                    ${project.outcomes ? `
+                    <div class="project-modal-section">
+                        <h4>${i18n.t('projects.details.outcomes', 'Project Outcomes')}</h4>
+                        <p>${escapeHtml(project.outcomes)}</p>
+                    </div>
+                    ` : ''}
+                </div>
+            `;
+        }
+
+        function getProjectSummary(project) {
+            // Use i18n keys for project summaries
+            const summaryKey = `projects.${project.slug.replace(/-/g, '_')}.summary`;
+            const fallbackSummary = 'Professional construction consulting services for this project.';
+            return i18n.t(summaryKey, fallbackSummary);
+        }
+
+        function getProjectDescription(project) {
+            // Use i18n keys for project descriptions
+            const descriptionKey = `projects.${project.slug.replace(/-/g, '_')}.description`;
+            const fallbackDescription = 'A comprehensive construction consulting project delivered with professional expertise and attention to detail.';
+            return i18n.t(descriptionKey, fallbackDescription);
+        }
+
+        function getProjectServices(project) {
+            // Determine project type based on scope or slug
+            let projectType = 'commercial'; // default
+            if (project.scope.toLowerCase().includes('tourism') || project.slug.includes('resort')) {
+                projectType = 'tourism';
+            } else if (project.scope.toLowerCase().includes('industrial') || project.slug.includes('industrial')) {
+                projectType = 'industrial';
+            } else if (project.scope.toLowerCase().includes('infrastructure') || project.slug.includes('bridge')) {
+                projectType = 'infrastructure';
+            } else if (project.scope.toLowerCase().includes('residential') || project.slug.includes('residential')) {
+                projectType = 'residential';
+            }
+
+            // Use i18n to get services for the project type
+            const servicesKey = `projects.services.${projectType}`;
+            const fallbackServices = ['Professional Consulting', 'Project Management', 'Quality Assurance'];
+            return i18n.t(servicesKey, fallbackServices);
+        }
+
+        function handleInitialHash() {
+            const hash = window.location.hash;
+            if (hash && hash.length > 1) {
+                const slug = hash.substring(1);
+                // Wait for projects to load, then show modal
+                const checkProjects = () => {
+                    if (projectsData.length > 0) {
+                        const project = projectsData.find(p => p.slug === slug);
+                        if (project) {
+                            showProjectModal(project);
+                        }
+                    } else {
+                        setTimeout(checkProjects, 100);
+                    }
+                };
+                checkProjects();
+            }
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function showError(message) {
+            const containers = ['ongoing-projects', 'completed-projects'];
+            containers.forEach(id => {
+                const container = document.getElementById(id);
+                if (container) {
+                    container.innerHTML = `<div class="error-message"><p>${escapeHtml(message)}</p></div>`;
+                }
+            });
+        }
+    </script>
+</body>
+</html>
