@@ -433,13 +433,13 @@
     <header id="header" role="banner">
         <div class="container">
             <div class="header-content">
-                <a href="/" class="logo" data-i18n="nav.logo">TPEC Engineering Consultant</a>
+                <a href="/TPEC/" class="logo" data-i18n="nav.logo">TPEC Engineering Consultant</a>
                 <nav class="nav">
                     <ul class="nav-list">
-                        <li><a href="/" class="nav-link" data-i18n="nav.home">Home</a></li>
-                        <li><a href="/about.html" class="nav-link" data-i18n="nav.about">About Us</a></li>
-                        <li><a href="/projects.html" class="nav-link active" data-i18n="nav.projects">Projects</a></li>
-                        <li><a href="/contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+                        <li><a href="/TPEC/" class="nav-link" data-i18n="nav.home">Home</a></li>
+                        <li><a href="/TPEC/about.html" class="nav-link" data-i18n="nav.about">About Us</a></li>
+                        <li><a href="/TPEC/projects.html" class="nav-link active" data-i18n="nav.projects">Projects</a></li>
+                        <li><a href="/TPEC/contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
                     </ul>
                 </nav>
                 <div class="language-switcher">
@@ -481,10 +481,128 @@
             <div class="container">
                 <h2 id="projects-grid-title" class="sr-only">Project Portfolio</h2>
                 <div id="ongoing-projects" class="projects-grid tab-content reveal-up" role="tabpanel" aria-labelledby="tab-ongoing" aria-label="Ongoing construction projects" aria-hidden="true">
-                    <!-- Ongoing project cards will be populated by JavaScript -->
+                    <!-- No ongoing projects currently -->
+                    <div class="no-projects">
+                        <p data-i18n="projects.no_ongoing">No ongoing projects at this time.</p>
+                    </div>
                 </div>
                 <div id="completed-projects" class="projects-grid tab-content active reveal-up" role="tabpanel" aria-labelledby="tab-completed" aria-label="Completed construction projects">
-                    <!-- Completed project cards will be populated by JavaScript -->
+                    <!-- Hardcoded Completed Project Cards -->
+
+                    <!-- Project 1: National Road 1E Lot I -->
+                    <article class="project-card reveal-up" data-project="national-road-1e-lot1">
+                        <div class="project-image">
+                            <img src="assets/img/projects/national-road-1e-lot1-cover.jpg" alt="National Road 1E Construction Project (Lot I)" loading="lazy">
+                            <div class="project-overlay">
+                                <button class="btn btn-secondary project-details-btn" data-i18n="projects.view_details">View Details</button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">National Road 1E Construction Project (Lot I)</h3>
+                            <p class="project-location">📍 Bolikhamxay Province, Laos</p>
+                            <p class="project-scope">Road Construction Supervision</p>
+                            <div class="project-meta">
+                                <span class="project-year">2012-2017</span>
+                                <span class="project-value">4,565,382,448 Kip</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2: National Road 1E Lot II -->
+                    <article class="project-card reveal-up" data-project="national-road-1e-lot2">
+                        <div class="project-image">
+                            <img src="assets/img/projects/national-road-1e-lot2-cover.jpg" alt="National Road 1E Construction Project (Lot II)" loading="lazy">
+                            <div class="project-overlay">
+                                <button class="btn btn-secondary project-details-btn" data-i18n="projects.view_details">View Details</button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">National Road 1E Construction Project (Lot II)</h3>
+                            <p class="project-location">📍 Bolikhamxay Province, Laos</p>
+                            <p class="project-scope">Road Construction Supervision</p>
+                            <div class="project-meta">
+                                <span class="project-year">2012-2014</span>
+                                <span class="project-value">1,637,511,480 Kip</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 3: Mekong River Bank Protection -->
+                    <article class="project-card reveal-up" data-project="mekong-bank-protection-paksan">
+                        <div class="project-image">
+                            <img src="assets/img/projects/mekong-bank-protection-cover.jpg" alt="Mekong River Bank Protection - Paksan District" loading="lazy">
+                            <div class="project-overlay">
+                                <button class="btn btn-secondary project-details-btn" data-i18n="projects.view_details">View Details</button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Mekong River Bank Protection - Paksan District</h3>
+                            <p class="project-location">📍 Phoxai Village, Paksan District, Borlikhamxay Province</p>
+                            <p class="project-scope">River Bank Protection Construction</p>
+                            <div class="project-meta">
+                                <span class="project-year">2013-2018</span>
+                                <span class="project-value">779,244,886 Kip</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 4: 4 Concrete Bridges -->
+                    <article class="project-card reveal-up" data-project="concrete-bridges-road8">
+                        <div class="project-image">
+                            <img src="assets/img/projects/concrete-bridges-road8-cover.jpg" alt="4 Concrete Bridges - National Road No. 8" loading="lazy">
+                            <div class="project-overlay">
+                                <button class="btn btn-secondary project-details-btn" data-i18n="projects.view_details">View Details</button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">4 Concrete Bridges - National Road No. 8</h3>
+                            <p class="project-location">📍 Borlikhamxay Province, Laos</p>
+                            <p class="project-scope">Bridge Construction Supervision</p>
+                            <div class="project-meta">
+                                <span class="project-year">2014-2017</span>
+                                <span class="project-value">1,050,000,000 Kip</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 5: Nam Ngeip Hydroelectric -->
+                    <article class="project-card reveal-up" data-project="nam-ngeip-hydroelectric">
+                        <div class="project-image">
+                            <img src="assets/img/projects/nam-ngeip-hydroelectric-cover.jpg" alt="Nam Ngeip 1 Hydroelectric Project Survey" loading="lazy">
+                            <div class="project-overlay">
+                                <button class="btn btn-secondary project-details-btn" data-i18n="projects.view_details">View Details</button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Nam Ngeip 1 Hydroelectric Project Survey</h3>
+                            <p class="project-location">📍 Lao PDR</p>
+                            <p class="project-scope">Topographic Survey for Re-regulation Dam</p>
+                            <div class="project-meta">
+                                <span class="project-year">2013</span>
+                                <span class="project-value">6,950 USD</span>
+                                <span class="project-funding">Japan Funded</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 6: Road Construction Vientiane -->
+                    <article class="project-card reveal-up" data-project="road-construction-vientiane">
+                        <div class="project-image">
+                            <img src="assets/img/projects/road-construction-vientiane-cover.jpg" alt="Road Construction Projects - Vientiane Province" loading="lazy">
+                            <div class="project-overlay">
+                                <button class="btn btn-secondary project-details-btn" data-i18n="projects.view_details">View Details</button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Road Construction Projects - Vientiane Province</h3>
+                            <p class="project-location">📍 Vientiane Province, Laos</p>
+                            <p class="project-scope">Multiple Road Construction and Supervision</p>
+                            <div class="project-meta">
+                                <span class="project-year">2013-2016</span>
+                                <span class="project-value">2,506,501,727 Kip</span>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -511,10 +629,10 @@
                 <div class="footer-section">
                     <h4 data-i18n="footer.links.title">Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="/" data-i18n="nav.home">Home</a></li>
-                        <li><a href="/about.html" data-i18n="nav.about">About Us</a></li>
-                        <li><a href="/projects.html" data-i18n="nav.projects">Projects</a></li>
-                        <li><a href="/contact.html" data-i18n="nav.contact">Contact</a></li>
+                        <li><a href="/TPEC/" data-i18n="nav.home">Home</a></li>
+                        <li><a href="/TPEC/about.html" data-i18n="nav.about">About Us</a></li>
+                        <li><a href="/TPEC/projects.html" data-i18n="nav.projects">Projects</a></li>
+                        <li><a href="/TPEC/contact.html" data-i18n="nav.contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -532,45 +650,24 @@
         </div>
     </footer>
 
-    <!-- Projects Page Script with Modal Functionality -->
+    <!-- Simplified Projects Page Script -->
     <script>
-        let projectsData = [];
         let projectModal = null;
 
         // Initialize page when DOM is loaded
-        document.addEventListener('DOMContentLoaded', async function() {
-            console.log('Projects page loaded, setting up functionality');
-            
-            // Initialize i18n system first
-            try {
-                await i18n.init();
-                console.log('i18n system initialized successfully');
-            } catch (error) {
-                console.error('Failed to initialize i18n:', error);
-            }
-            
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 Projects page loaded with hardcoded content');
+
             // Initialize modal
             projectModal = document.getElementById('project-modal');
-            setupModalEvents();
-            
+
             // Setup tabs
             setupTabs();
-            
-            // Load and render projects
-            loadProjects();
-            
-            // Handle URL hash for direct project links
-            handleInitialHash();
-            
-            // Listen for language changes and re-render projects
-            window.addEventListener('languageChanged', function(e) {
-                console.log('Language changed, re-rendering projects');
-                if (projectsData && projectsData.length > 0) {
-                    renderProjectTabs();
-                }
-            });
-            
-            console.log('Projects page setup complete');
+
+            // Setup modal events
+            setupModalEvents();
+
+            console.log('✅ Projects functionality initialized successfully');
         });
 
         function setupTabs() {
@@ -611,6 +708,8 @@
         function setupModalEvents() {
             if (!projectModal) return;
 
+            console.log('🔧 Setting up modal events');
+
             // Close modal when clicking overlay
             const overlay = projectModal.querySelector('.project-modal-overlay');
             if (overlay) {
@@ -630,121 +729,127 @@
                 }
             });
 
-            // Handle browser back/forward
-            window.addEventListener('popstate', function(e) {
-                if (window.location.hash) {
-                    const slug = window.location.hash.substring(1);
-                    const project = projectsData.find(p => p.slug === slug);
-                    if (project) {
-                        showProjectModal(project);
-                    }
-                } else {
-                    closeProjectModal();
-                }
+            // Setup project detail buttons
+            const detailButtons = document.querySelectorAll('.project-details-btn');
+            detailButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const projectCard = this.closest('.project-card');
+                    const projectSlug = projectCard.getAttribute('data-project');
+                    console.log('🔍 Opening project details for:', projectSlug);
+                    showProjectModal(projectSlug);
+                });
             });
         }
 
-        async function loadProjects() {
-            try {
-                console.log('Loading projects...');
-                const response = await fetch('/assets/data/projects.json');
-                if (!response.ok) {
-                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-                }
-                
-                const data = await response.json();
-                projectsData = data.projects || [];
-                
-                console.log('Loaded', projectsData.length, 'projects');
-                
-                // Filter and render projects
-                const ongoingProjects = projectsData.filter(p => p.status === 'ongoing');
-                const completedProjects = projectsData.filter(p => p.status === 'completed');
-                
-                renderProjects('ongoing-projects', ongoingProjects);
-                renderProjects('completed-projects', completedProjects);
-                
-                console.log('Projects rendered successfully');
-            } catch (error) {
-                console.error('Failed to load projects:', error);
-                showError('Failed to load projects. Please try again.');
+        // Hardcoded project data for modal display
+        const projectsData = {
+            'national-road-1e-lot1': {
+                title: 'National Road 1E Construction Project (Lot I)',
+                location: 'Bolikhamxay Province, Laos',
+                scope: 'Road Construction Supervision',
+                year: '2012-2017',
+                client: 'Department of Public Works and Transport, Bolikhamxay Province',
+                value: '4,565,382,448 Kip',
+                cover: 'assets/img/projects/national-road-1e-lot1-cover.jpg',
+                summary: 'Comprehensive supervision of road construction project ensuring quality standards and timely completion.'
+            },
+            'national-road-1e-lot2': {
+                title: 'National Road 1E Construction Project (Lot II)',
+                location: 'Bolikhamxay Province, Laos',
+                scope: 'Road Construction Supervision',
+                year: '2012-2014',
+                client: 'Department of Public Works and Transport, Bolikhamxay Province',
+                value: '1,637,511,480 Kip',
+                cover: 'assets/img/projects/national-road-1e-lot2-cover.jpg',
+                summary: 'Professional supervision services for the second lot of National Road 1E construction project.'
+            },
+            'mekong-bank-protection-paksan': {
+                title: 'Mekong River Bank Protection - Paksan District',
+                location: 'Phoxai Village, Paksan District, Borlikhamxay Province',
+                scope: 'River Bank Protection Construction',
+                year: '2013-2018',
+                client: 'Department of Public Works and Transport, Borlikhamxay Province',
+                value: '779,244,886 Kip',
+                cover: 'assets/img/projects/mekong-bank-protection-cover.jpg',
+                summary: 'Critical infrastructure project protecting communities from river erosion and flooding.'
+            },
+            'concrete-bridges-road8': {
+                title: '4 Concrete Bridges - National Road No. 8',
+                location: 'Borlikhamxay Province, Laos',
+                scope: 'Bridge Construction Supervision',
+                year: '2014-2017',
+                client: 'Department of Public Works and Transport, Borlikhamxay Province',
+                value: '1,050,000,000 Kip',
+                cover: 'assets/img/projects/concrete-bridges-road8-cover.jpg',
+                summary: 'Supervision of four concrete bridge constructions improving transportation infrastructure.'
+            },
+            'nam-ngeip-hydroelectric': {
+                title: 'Nam Ngeip 1 Hydroelectric Project Survey',
+                location: 'Lao PDR',
+                scope: 'Topographic Survey for Re-regulation Dam',
+                year: '2013',
+                client: 'Obajasih Company (Construction Manager)',
+                value: '6,950 USD',
+                funding: 'Japan Funded',
+                cover: 'assets/img/projects/nam-ngeip-hydroelectric-cover.jpg',
+                summary: 'Precision topographic survey supporting hydroelectric dam development project.'
+            },
+            'road-construction-vientiane': {
+                title: 'Road Construction Projects - Vientiane Province',
+                location: 'Vientiane Province, Laos',
+                scope: 'Multiple Road Construction and Supervision',
+                year: '2013-2016',
+                client: 'Department of Public Works and Transport, Vientiane Province',
+                value: '2,506,501,727 Kip',
+                cover: 'assets/img/projects/road-construction-vientiane-cover.jpg',
+                summary: 'Comprehensive road construction and supervision services across multiple sites in Vientiane Province.'
             }
-        }
+        };
 
-        function renderProjects(containerId, projects) {
-            const container = document.getElementById(containerId);
-            if (!container) return;
-            
-            container.innerHTML = '';
-            
-            if (projects.length === 0) {
-                container.innerHTML = '<div class="empty-state"><p>No projects found in this category.</p></div>';
+        function showProjectModal(projectSlug) {
+            const project = projectsData[projectSlug];
+            if (!project || !projectModal) {
+                console.warn('❌ Project not found or modal not available:', projectSlug);
                 return;
             }
-            
-            projects.forEach((project, index) => {
-                const card = createProjectCard(project, index);
-                container.appendChild(card);
-            });
-        }
 
-        function createProjectCard(project, index) {
-            const card = document.createElement('div');
-            card.className = 'project-card';
-            card.setAttribute('data-project-slug', project.slug);
-            card.setAttribute('tabindex', '0');
-            card.setAttribute('role', 'button');
-            card.setAttribute('aria-label', `View details for ${project.title} project in ${project.location}`);
-            
-            const summary = getProjectSummary(project);
-            
-            card.innerHTML = `
-                <div class="project-card-content">
-                    <h3 class="project-card-title">${escapeHtml(project.title)}</h3>
-                    <p class="project-card-summary">${escapeHtml(summary)}</p>
-                    <div class="project-card-meta">
-                        <span class="project-location">${escapeHtml(project.location)}</span>
-                        <span class="project-year">${escapeHtml(project.year)}</span>
-                    </div>
-                    <div class="project-card-scope">${escapeHtml(project.scope)}</div>
-                </div>
-            `;
+            console.log('📋 Showing modal for:', project.title);
 
-            // Add click handler to open modal
-            const handleClick = () => {
-                showProjectModal(project);
-            };
-
-            card.addEventListener('click', handleClick);
-            card.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    handleClick();
-                }
-            });
-
-            return card;
-        }
-
-        function showProjectModal(project) {
-            if (!projectModal || !project) return;
-
-            console.log('Opening modal for project:', project.title);
-
-            // Update URL hash
-            history.pushState(null, null, `#${project.slug}`);
-
-            // Populate modal content
+            // Create modal content
             const modalBody = projectModal.querySelector('.project-modal-body');
             if (modalBody) {
-                modalBody.innerHTML = createProjectModalContent(project);
+                modalBody.innerHTML = `
+                    <div class="project-modal-header">
+                        <h2 class="project-modal-title" id="project-modal-title">${project.title}</h2>
+                        <div class="project-modal-meta">
+                            <span class="project-location">📍 ${project.location}</span>
+                            <span class="project-year">📅 ${project.year}</span>
+                            <span class="project-value">💰 ${project.value}</span>
+                            ${project.funding ? `<span class="project-funding">🏦 ${project.funding}</span>` : ''}
+                        </div>
+                    </div>
+                    <div class="project-modal-content">
+                        <div class="project-image">
+                            <img src="${project.cover}" alt="${project.title}" loading="lazy">
+                        </div>
+                        <div class="project-details">
+                            <h3>Project Scope</h3>
+                            <p>${project.scope}</p>
+                            <h3>Client</h3>
+                            <p>${project.client}</p>
+                            <h3>Summary</h3>
+                            <p>${project.summary}</p>
+                        </div>
+                    </div>
+                `;
             }
 
             // Show modal
             projectModal.classList.remove('hidden');
             projectModal.setAttribute('aria-hidden', 'false');
-            
-            // Add visible class after a small delay for animation
+
+            // Add visible class for animation
             setTimeout(() => {
                 projectModal.classList.add('visible');
             }, 10);
@@ -758,11 +863,10 @@
             // Prevent body scroll
             document.body.style.overflow = 'hidden';
         }
-
         function closeProjectModal() {
             if (!projectModal) return;
 
-            console.log('Closing project modal');
+            console.log('🔒 Closing project modal');
 
             // Remove visible class
             projectModal.classList.remove('visible');
@@ -773,135 +877,8 @@
                 projectModal.setAttribute('aria-hidden', 'true');
             }, 300);
 
-            // Clear URL hash
-            history.pushState(null, null, window.location.pathname);
-
             // Restore body scroll
             document.body.style.overflow = '';
-        }
-
-        function createProjectModalContent(project) {
-            const summary = getProjectSummary(project);
-            const description = getProjectDescription(project);
-            const statusText = project.status === 'ongoing' ? i18n.t('projects.tabs.ongoing', 'Ongoing') : i18n.t('projects.tabs.completed', 'Completed');
-            
-            return `
-                <div class="project-modal-header">
-                    <h2 class="project-modal-title" id="project-modal-title">${escapeHtml(project.title)}</h2>
-                    <div class="project-modal-meta">
-                        <span><strong>${i18n.t('projects.details.location', 'Location')}:</strong> ${escapeHtml(project.location)}</span>
-                        <span><strong>${i18n.t('projects.details.year', 'Year')}:</strong> ${escapeHtml(project.year)}</span>
-                        <span><strong>${i18n.t('projects.details.status', 'Status')}:</strong> ${escapeHtml(statusText)}</span>
-                    </div>
-                    <div class="project-modal-scope">${escapeHtml(project.scope)}</div>
-                </div>
-
-                ${project.cover ? `
-                <div class="project-modal-image">
-                    <img src="${escapeHtml(project.cover)}" alt="Project image for ${escapeHtml(project.title)}" loading="lazy">
-                </div>
-                ` : ''}
-
-                <div class="project-modal-description">
-                    <p>${escapeHtml(description)}</p>
-                </div>
-
-                <div class="project-modal-details">
-                    <div class="project-modal-section">
-                        <h4>${i18n.t('projects.details.overview', 'Project Overview')}</h4>
-                        <p>${escapeHtml(summary)}</p>
-                    </div>
-
-                    <div class="project-modal-section">
-                        <h4>${i18n.t('projects.details.services', 'Services Provided')}</h4>
-                        <ul>
-                            ${getProjectServices(project).map(service => `<li>${escapeHtml(service)}</li>`).join('')}
-                        </ul>
-                    </div>
-
-                    ${project.challenges ? `
-                    <div class="project-modal-section">
-                        <h4>${i18n.t('projects.details.challenges', 'Key Challenges')}</h4>
-                        <p>${escapeHtml(project.challenges)}</p>
-                    </div>
-                    ` : ''}
-
-                    ${project.outcomes ? `
-                    <div class="project-modal-section">
-                        <h4>${i18n.t('projects.details.outcomes', 'Project Outcomes')}</h4>
-                        <p>${escapeHtml(project.outcomes)}</p>
-                    </div>
-                    ` : ''}
-                </div>
-            `;
-        }
-
-        function getProjectSummary(project) {
-            // Use i18n keys for project summaries
-            const summaryKey = `projects.${project.slug.replace(/-/g, '_')}.summary`;
-            const fallbackSummary = 'Professional construction consulting services for this project.';
-            return i18n.t(summaryKey, fallbackSummary);
-        }
-
-        function getProjectDescription(project) {
-            // Use i18n keys for project descriptions
-            const descriptionKey = `projects.${project.slug.replace(/-/g, '_')}.description`;
-            const fallbackDescription = 'A comprehensive construction consulting project delivered with professional expertise and attention to detail.';
-            return i18n.t(descriptionKey, fallbackDescription);
-        }
-
-        function getProjectServices(project) {
-            // Determine project type based on scope or slug
-            let projectType = 'commercial'; // default
-            if (project.scope.toLowerCase().includes('tourism') || project.slug.includes('resort')) {
-                projectType = 'tourism';
-            } else if (project.scope.toLowerCase().includes('industrial') || project.slug.includes('industrial')) {
-                projectType = 'industrial';
-            } else if (project.scope.toLowerCase().includes('infrastructure') || project.slug.includes('bridge')) {
-                projectType = 'infrastructure';
-            } else if (project.scope.toLowerCase().includes('residential') || project.slug.includes('residential')) {
-                projectType = 'residential';
-            }
-
-            // Use i18n to get services for the project type
-            const servicesKey = `projects.services.${projectType}`;
-            const fallbackServices = ['Professional Consulting', 'Project Management', 'Quality Assurance'];
-            return i18n.t(servicesKey, fallbackServices);
-        }
-
-        function handleInitialHash() {
-            const hash = window.location.hash;
-            if (hash && hash.length > 1) {
-                const slug = hash.substring(1);
-                // Wait for projects to load, then show modal
-                const checkProjects = () => {
-                    if (projectsData.length > 0) {
-                        const project = projectsData.find(p => p.slug === slug);
-                        if (project) {
-                            showProjectModal(project);
-                        }
-                    } else {
-                        setTimeout(checkProjects, 100);
-                    }
-                };
-                checkProjects();
-            }
-        }
-
-        function escapeHtml(text) {
-            const div = document.createElement('div');
-            div.textContent = text;
-            return div.innerHTML;
-        }
-
-        function showError(message) {
-            const containers = ['ongoing-projects', 'completed-projects'];
-            containers.forEach(id => {
-                const container = document.getElementById(id);
-                if (container) {
-                    container.innerHTML = `<div class="error-message"><p>${escapeHtml(message)}</p></div>`;
-                }
-            });
         }
     </script>
 </body>

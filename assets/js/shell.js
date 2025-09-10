@@ -38,15 +38,15 @@ class Shell {
     header.innerHTML = `
       <div class="container">
         <div class="header-content">
-          <a href="/" class="logo" data-i18n="nav.logo">ConstructCo</a>
+          <a href="/TPEC/" class="logo" data-i18n="nav.logo">ConstructCo</a>
           
           <!-- Desktop Navigation -->
           <nav class="nav" role="navigation" aria-label="Main navigation">
             <ul class="nav-list">
-              <li><a href="index.html" class="nav-link ${this.currentPage === 'home' ? 'active' : ''}" data-i18n="nav.home" ${this.currentPage === 'home' ? 'aria-current="page"' : ''}>Home</a></li>
-              <li><a href="about.html" class="nav-link ${this.currentPage === 'about' ? 'active' : ''}" data-i18n="nav.about" ${this.currentPage === 'about' ? 'aria-current="page"' : ''}>About Us</a></li>
-              <li><a href="projects.html" class="nav-link ${this.currentPage === 'projects' ? 'active' : ''}" data-i18n="nav.projects" ${this.currentPage === 'projects' ? 'aria-current="page"' : ''}>Projects</a></li>
-              <li><a href="contact.html" class="nav-link ${this.currentPage === 'contact' ? 'active' : ''}" data-i18n="nav.contact" ${this.currentPage === 'contact' ? 'aria-current="page"' : ''}>Contact</a></li>
+              <li><a href="/TPEC/" class="nav-link ${this.currentPage === 'home' ? 'active' : ''}" data-i18n="nav.home" ${this.currentPage === 'home' ? 'aria-current="page"' : ''}>Home</a></li>
+              <li><a href="/TPEC/about.html" class="nav-link ${this.currentPage === 'about' ? 'active' : ''}" data-i18n="nav.about" ${this.currentPage === 'about' ? 'aria-current="page"' : ''}>About Us</a></li>
+              <li><a href="/TPEC/projects.html" class="nav-link ${this.currentPage === 'projects' ? 'active' : ''}" data-i18n="nav.projects" ${this.currentPage === 'projects' ? 'aria-current="page"' : ''}>Projects</a></li>
+              <li><a href="/TPEC/contact.html" class="nav-link ${this.currentPage === 'contact' ? 'active' : ''}" data-i18n="nav.contact" ${this.currentPage === 'contact' ? 'aria-current="page"' : ''}>Contact</a></li>
             </ul>
             
             <!-- Language Switcher -->
@@ -79,10 +79,10 @@ class Shell {
         
         <nav role="navigation" aria-label="Mobile navigation">
           <ul class="mobile-nav-list">
-            <li><a href="index.html" class="mobile-nav-link ${this.currentPage === 'home' ? 'active' : ''}" data-i18n="nav.home" ${this.currentPage === 'home' ? 'aria-current="page"' : ''}>Home</a></li>
-            <li><a href="about.html" class="mobile-nav-link ${this.currentPage === 'about' ? 'active' : ''}" data-i18n="nav.about" ${this.currentPage === 'about' ? 'aria-current="page"' : ''}>About Us</a></li>
-            <li><a href="projects.html" class="mobile-nav-link ${this.currentPage === 'projects' ? 'active' : ''}" data-i18n="nav.projects" ${this.currentPage === 'projects' ? 'aria-current="page"' : ''}>Projects</a></li>
-            <li><a href="contact.html" class="mobile-nav-link ${this.currentPage === 'contact' ? 'active' : ''}" data-i18n="nav.contact" ${this.currentPage === 'contact' ? 'aria-current="page"' : ''}>Contact</a></li>
+            <li><a href="/TPEC/" class="mobile-nav-link ${this.currentPage === 'home' ? 'active' : ''}" data-i18n="nav.home" ${this.currentPage === 'home' ? 'aria-current="page"' : ''}>Home</a></li>
+            <li><a href="/TPEC/about.html" class="mobile-nav-link ${this.currentPage === 'about' ? 'active' : ''}" data-i18n="nav.about" ${this.currentPage === 'about' ? 'aria-current="page"' : ''}>About Us</a></li>
+            <li><a href="/TPEC/projects.html" class="mobile-nav-link ${this.currentPage === 'projects' ? 'active' : ''}" data-i18n="nav.projects" ${this.currentPage === 'projects' ? 'aria-current="page"' : ''}>Projects</a></li>
+            <li><a href="/TPEC/contact.html" class="mobile-nav-link ${this.currentPage === 'contact' ? 'active' : ''}" data-i18n="nav.contact" ${this.currentPage === 'contact' ? 'aria-current="page"' : ''}>Contact</a></li>
           </ul>
         </nav>
         
@@ -109,10 +109,10 @@ class Shell {
           <div class="footer-section">
             <h4 data-i18n="footer.links.title">Quick Links</h4>
             <ul class="footer-links">
-              <li><a href="index.html" data-i18n="nav.home">Home</a></li>
-              <li><a href="about.html" data-i18n="nav.about">About Us</a></li>
-              <li><a href="projects.html" data-i18n="nav.projects">Projects</a></li>
-              <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+              <li><a href="/TPEC/" data-i18n="nav.home">Home</a></li>
+              <li><a href="/TPEC/about.html" data-i18n="nav.about">About Us</a></li>
+              <li><a href="/TPEC/projects.html" data-i18n="nav.projects">Projects</a></li>
+              <li><a href="/TPEC/contact.html" data-i18n="nav.contact">Contact</a></li>
             </ul>
           </div>
           
@@ -332,7 +332,7 @@ class Shell {
       
       const href = link.getAttribute('href');
       if (
-        (page === 'home' && (href === 'index.html' || href === './' || href === '/index.html' || href === '/' || href === './index.html')) ||
+        (page === 'home' && (href === 'index.html' || href === './' || href === '/index.html' || href === '/' || href === './index.html' || href === '/TPEC/' || href === '/TPEC/index.html')) ||
         (page === 'about' && href.includes('about')) ||
         (page === 'projects' && href.includes('projects')) ||
         (page === 'contact' && href.includes('contact'))
