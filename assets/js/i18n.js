@@ -8,6 +8,7 @@ class I18n {
     this.translations = {};
     this.fallbackLang = 'en';
     this.storageKey = 'preferred-language';
+    this.isReady = false;
   }
 
   /**
@@ -33,10 +34,12 @@ class I18n {
       this.initLanguageSwitcher();
 
       console.log(`i18n initialized with language: ${this.currentLang}`);
+      this.isReady = true;
     } catch (error) {
       console.error('Failed to initialize i18n:', error);
       // Fallback to English if initialization fails
       this.currentLang = 'en';
+      this.isReady = true; // Still ready, but with fallback
     }
   }
 
