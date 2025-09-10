@@ -37,7 +37,7 @@ echo "   - Save"
 echo ""
 
 echo "7. Your site will be available at:"
-echo "   https://yourusername.github.io/your-repo-name"
+echo "   https://matthew-thaokhamlue.github.io/TPEC"
 echo ""
 
 echo "🎉 Deployment will happen automatically when you push to main branch!"
