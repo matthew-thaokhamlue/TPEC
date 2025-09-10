@@ -605,17 +605,8 @@
             card.setAttribute('role', 'button');
             card.setAttribute('aria-label', `View details for ${member.name}`);
 
-            // Get initials for avatar fallback
-            const initials = member.name.split(' ').map(n => n.charAt(0)).join('').substring(0, 2);
-
-            // Create avatar content - use image if available, otherwise initials
-            let avatarContent;
-            if (member.image) {
-                avatarContent = `<img src="${escapeHtml(member.image)}" alt="${escapeHtml(member.name)}" class="team-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                <span class="team-initials" style="display: none;">${escapeHtml(initials)}</span>`;
-            } else {
-                avatarContent = `<span class="team-initials">${escapeHtml(initials)}</span>`;
-            }
+            // Create avatar content - use only the image (no text fallback)
+            const avatarContent = `<img src="${escapeHtml(member.image)}" alt="${escapeHtml(member.name)}" class="team-photo">`;
 
             card.innerHTML = `
                 <div class="team-avatar">
