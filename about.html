@@ -606,7 +606,7 @@
             card.setAttribute('aria-label', `View details for ${member.name}`);
 
             // Create avatar content - use only the image (no text fallback)
-            const avatarContent = `<img src="${escapeHtml(member.image)}" alt="${escapeHtml(member.name)}" class="team-photo">`;
+            const avatarContent = `<img src="${escapeHtml(member.image)}" alt="${escapeHtml(member.name)}" class="team-photo" onerror="this.style.display='none'">`;
 
             card.innerHTML = `
                 <div class="team-avatar">
@@ -684,17 +684,8 @@
         }
 
         function createTeamModalContent(member) {
-            // Get initials for avatar fallback
-            const initials = member.name.split(' ').map(n => n.charAt(0)).join('').substring(0, 2);
-
-            // Create modal avatar content - use image if available, otherwise initials
-            let modalAvatarContent;
-            if (member.image) {
-                modalAvatarContent = `<img src="${escapeHtml(member.image)}" alt="${escapeHtml(member.name)}" class="team-modal-photo" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                     <div class="team-modal-avatar-fallback" style="display: none; width: 120px; height: 120px; border-radius: 50%; background: var(--accent, #4da3ff); display: flex; align-items: center; justify-content: center; font-size: var(--font-size-2xl, 24px); font-weight: var(--font-weight-bold, 700); color: var(--bg, #0e1116);">${escapeHtml(initials)}</div>`;
-            } else {
-                modalAvatarContent = `<div class="team-modal-avatar">${escapeHtml(initials)}</div>`;
-            }
+            // Create modal avatar content - use only the image
+            const modalAvatarContent = `<img src="${escapeHtml(member.image)}" alt="${escapeHtml(member.name)}" class="team-modal-photo">`;
 
             return `
                 <div class="team-modal-header">
