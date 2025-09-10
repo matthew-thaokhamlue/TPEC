@@ -617,5 +617,18 @@ class Motion {
   }
 }
 
-// Create global instance, but do not initialize yet.
+// Create global instance
 window.Motion = new Motion();
+
+// Auto-initialize when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    window.Motion.init().then(() => {
+      window.Motion.testScrollSmootherModes();
+    });
+  });
+} else {
+  window.Motion.init().then(() => {
+    window.Motion.testScrollSmootherModes();
+  });
+}
