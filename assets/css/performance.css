@@ -228,17 +228,6 @@
   .no-print {
     display: none !important;
   }
-  
-  * {
-    background: white !important;
-    color: black !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-  
-  a[href]:after {
-    content: " (" attr(href) ")";
-  }
 }
 
 /* High Contrast Mode */
