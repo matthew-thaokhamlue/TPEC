@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="lo">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self';">
+
+    <title>ກ່ຽວກັບພວກເຮົາ - ຜູ້ຊ່ຽວຊານປຶກສາກໍ່ສ້າງ</title>
+    <meta name="description" content="ຮຽນຮູ້ກ່ຽວກັບທີມງານທີ່ມີປະສົບການ, ພາລະກິດ, ແລະ ຄວາມສາມາດການປຶກສາກໍ່ສ້າງແບບຄົບຖ້ວນຂອງພວກເຮົາ. ໃຫ້ບໍລິການໃນລາວດ້ວຍການແນະນຳຈາກຜູ້ຊ່ຽວຊານ ແລະ ການແກ້ໄຂທີ່ສ້າງສັນ.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com/about.lo.html">
+    <meta property="og:title" content="ກ່ຽວກັບທີມງານປຶກສາກໍ່ສ້າງຂອງພວກເຮົາ">
+    <meta property="og:description" content="ຜູ້ຊ່ຽວຊານການປຶກສາກໍ່ສ້າງທີ່ມີປະສົບການດ້ວຍປະຫວັດການເຮັດວຽກທີ່ພິສູດໄດ້ໃນລາວ. ຮຽນຮູ້ກ່ຽວກັບພາລະກິດ, ວິໄສທັດ, ແລະ ຄວາມສາມາດແບບຄົບຖ້ວນຂອງພວກເຮົາ.">
+    <meta property="og:image" content="https://example.com/assets/img/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="ກ່ຽວກັບທີມງານປຶກສາກໍ່ສ້າງຂອງພວກເຮົາ">
+    <meta property="og:locale" content="lo_LA">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:site_name" content="ບໍລິການປຶກສາກໍ່ສ້າງ">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://example.com/about.lo.html">
+    <meta property="twitter:title" content="ກ່ຽວກັບທີມງານປຶກສາກໍ່ສ້າງຂອງພວກເຮົາ">
+    <meta property="twitter:description" content="ຜູ້ຊ່ຽວຊານການປຶກສາກໍ່ສ້າງທີ່ມີປະສົບການດ້ວຍປະຫວັດການເຮັດວຽກທີ່ພິສູດໄດ້ໃນລາວ. ຮຽນຮູ້ກ່ຽວກັບພາລະກິດ, ວິໄສທັດ, ແລະ ຄວາມສາມາດແບບຄົບຖ້ວນຂອງພວກເຮົາ.">
+    <meta property="twitter:image" content="https://example.com/assets/img/og-image.jpg">
+    <meta property="twitter:image:alt" content="ກ່ຽວກັບທີມງານປຶກສາກໍ່ສ້າງຂອງພວກເຮົາ">
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="en" href="https://example.com/about.html">
+    <link rel="alternate" hreflang="lo" href="https://example.com/about.lo.html">
+
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+    <!-- Font Preloading -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/notosanslao/v30/bx6lNx2Ol_ixgdYWLm9BwxM3NW6BOkuf763Clj73CiQ_J1Djx9pidOt4ccbdf5MK3riB2g.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Lao:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/tokens.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/performance.css">
+
+    <style>
+        /* Team Modal Styles */
+        .team-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .team-modal.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .team-modal-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(4px);
+        }
+
+        .team-modal-content {
+            position: relative;
+            background: var(--card, #1a1d23);
+            border: 1px solid var(--line, #2a2d35);
+            border-radius: var(--radius-lg, 12px);
+            max-width: 700px;
+            max-height: 90vh;
+            width: 90%;
+            overflow-y: auto;
+            transform: scale(0.9) translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .team-modal.visible .team-modal-content {
+            transform: scale(1) translateY(0);
+        }
+
+        .team-modal-close {
+            position: absolute;
+            top: var(--space-md, 16px);
+            right: var(--space-md, 16px);
+            background: var(--card-hover, #22252c);
+            border: 1px solid var(--line, #2a2d35);
+            color: var(--text-muted, #9ca3af);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 24px;
+            line-height: 1;
+            transition: all 0.2s ease;
+            z-index: 10001;
+        }
+
+        .team-modal-close:hover {
+            background: var(--accent, #4da3ff);
+            color: var(--bg, #0e1116);
+            border-color: var(--accent, #4da3ff);
+        }
+
+        .team-modal-body {
+            padding: var(--space-2xl, 32px);
+        }
+
+        .team-modal-header {
+            text-align: center;
+            margin-bottom: var(--space-xl, 24px);
+        }
+
+        .team-modal-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto var(--space-lg, 20px);
+            background: var(--accent, #4da3ff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-2xl, 24px);
+            font-weight: var(--font-weight-bold, 700);
+            color: var(--bg, #0e1116);
+        }
+
+        .team-modal-name {
+            font-size: var(--font-size-xl, 20px);
+            font-weight: var(--font-weight-bold, 700);
+            color: var(--text, #ffffff);
+            margin-bottom: var(--space-sm, 8px);
+        }
+
+        .team-modal-title {
+            color: var(--accent, #4da3ff);
+            font-weight: var(--font-weight-medium, 500);
+            margin-bottom: var(--space-lg, 20px);
+        }
+
+        .team-modal-description {
+            color: var(--text, #ffffff);
+            line-height: 1.6;
+            margin-bottom: var(--space-xl, 24px);
+        }
+
+        .team-modal-section {
+            background: var(--bg, #0e1116);
+            border: 1px solid var(--line, #2a2d35);
+            border-radius: var(--radius, 6px);
+            padding: var(--space-lg, 20px);
+            margin-bottom: var(--space-lg, 20px);
+        }
+
+        .team-modal-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .team-modal-section h4 {
+            color: var(--text, #ffffff);
+            font-weight: var(--font-weight-semibold, 600);
+            margin-bottom: var(--space-md, 16px);
+        }
+
+        .team-modal-section p {
+            color: var(--text-muted, #9ca3af);
+            line-height: 1.6;
+            margin-bottom: var(--space-md, 16px);
+        }
+
+        .team-modal-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .team-modal-section ul {
+            color: var(--text-muted, #9ca3af);
+            line-height: 1.6;
+            padding-left: var(--space-lg, 20px);
+        }
+
+        .team-modal-section li {
+            margin-bottom: var(--space-sm, 8px);
+        }
+
+        .team-card {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .team-photo {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .team-modal-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto var(--space-lg, 20px);
+        }
+
+        @media (max-width: 768px) {
+            .team-modal-content {
+                width: 95%;
+                max-height: 95vh;
+            }
+
+            .team-modal-body {
+                padding: var(--space-lg, 20px);
+            }
+
+            .team-modal-avatar {
+                width: 100px;
+                height: 100px;
+                font-size: var(--font-size-xl, 20px);
+            }
+        }
+    </style>
+
+    <!-- Favicon and Touch Icons -->
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/android-chrome-512x512.png">
+    <link rel="manifest" href="assets/icons/site.webmanifest">
+</head>
+<body>
+    <a href="#main" class="skip-link">ຂ້າມໄປເນື້ອຫາຫຼັກ</a>
+
+    <header id="header" role="banner">
+      <div class="container">
+        <div class="header-content">
+          <a href="/TPEC/index.lo.html" class="logo">TPEC Engineering Consulting</a>
+
+          <!-- Desktop Navigation -->
+          <nav class="nav" role="navigation" aria-label="ການນຳທາງຫຼັກ">
+            <ul class="nav-list">
+              <li><a href="/TPEC/index.lo.html" class="nav-link">ໜ້າຫຼັກ</a></li>
+              <li><a href="/TPEC/about.lo.html" class="nav-link active" aria-current="page">ກ່ຽວກັບພວກເຮົາ</a></li>
+              <li><a href="/TPEC/projects.lo.html" class="nav-link">ໂຄງການ</a></li>
+              <li><a href="/TPEC/contact.lo.html" class="nav-link">ຕິດຕໍ່</a></li>
+            </ul>
+
+            <!-- Language Switcher -->
+            <div class="language-switcher" role="group" aria-label="ປ່ຽນພາສາ">
+              <a href="/TPEC/about.html" class="lang-option" data-lang="en" aria-label="Switch to English">
+                <span class="lang-code">EN</span>
+                <span class="lang-name">English</span>
+              </a>
+              <a href="/TPEC/about.lo.html" class="lang-option active" data-lang="lo" aria-label="Switch to Lao">
+                <span class="lang-code">ລາວ</span>
+                <span class="lang-name">ລາວ</span>
+              </a>
+            </div>
+          </nav>
+
+          <!-- Mobile Menu Button -->
+          <button class="mobile-menu-btn" aria-label="ເປີດເມນູການນຳທາງ" aria-expanded="false" aria-controls="mobile-menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
+        <button class="mobile-menu-close" aria-label="ປິດເມນູການນຳທາງ">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <h2 id="mobile-menu-title" class="sr-only">ການນຳທາງຫຼັກ</h2>
+
+        <nav role="navigation" aria-label="ການນຳທາງມືຖື">
+          <ul class="mobile-nav-list">
+            <li><a href="/TPEC/index.lo.html" class="mobile-nav-link">ໜ້າຫຼັກ</a></li>
+            <li><a href="/TPEC/about.lo.html" class="mobile-nav-link active" aria-current="page">ກ່ຽວກັບພວກເຮົາ</a></li>
+            <li><a href="/TPEC/projects.lo.html" class="mobile-nav-link">ໂຄງການ</a></li>
+            <li><a href="/TPEC/contact.lo.html" class="mobile-nav-link">ຕິດຕໍ່</a></li>
+          </ul>
+        </nav>
+
+        <!-- Mobile Language Switcher -->
+        <div class="language-switcher" role="group" aria-label="ປ່ຽນພາສາ">
+            <a href="/TPEC/about.html" class="lang-option" data-lang="en" aria-label="Switch to English">
+                <span class="lang-code">EN</span>
+                <span class="lang-name">English</span>
+            </a>
+            <a href="/TPEC/about.lo.html" class="lang-option active" data-lang="lo" aria-label="Switch to Lao">
+                <span class="lang-code">ລາວ</span>
+                <span class="lang-name">ລາວ</span>
+            </a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" role="main">
+        <!-- Page Header -->
+        <section class="page-header section" aria-labelledby="page-title">
+            <div class="container">
+                <h1 id="page-title" class="reveal-up">ກ່ຽວກັບພວກເຮົາ</h1>
+                <p class="reveal-up">ຜູ້ຊ່ຽວຊານທີ່ມີປະສົບການນຳພາຄວາມເປັນເລີດໃນການປຶກສາຂອງພວກເຮົາ</p>
+            </div>
+        </section>
+
+        <!-- Anchor Navigation -->
+        <nav class="anchor-nav" id="anchor-nav" role="navigation" aria-label="Page sections navigation">
+            <ul class="anchor-nav-list">
+                <li><a href="#mission-vision" class="anchor-nav-link">ພາລະກິດ ແລະ ວິໄສທັດ</a></li>
+                <li><a href="#approach" class="anchor-nav-link">ວິທີການຂອງພວກເຮົາ</a></li>
+                <li><a href="#capabilities" class="anchor-nav-link">ຄວາມສາມາດ</a></li>
+                <li><a href="#leadership" class="anchor-nav-link">ຜູ້ນຳ</a></li>
+                <li><a href="#certifications" class="anchor-nav-link">ໃບຢັ້ງຢືນ</a></li>
+            </ul>
+        </nav>
+
+        <!-- Mission & Vision -->
+        <section id="mission-vision" class="mission-vision section" aria-labelledby="mission-vision-title">
+            <div class="container">
+                <h2 id="mission-vision-title" class="sr-only">ພາລະກິດ ແລະ ວິໄສທັດ</h2>
+                <div class="two-column reveal-up">
+                    <div class="column">
+                        <h3>ພາລະກິດຂອງພວກເຮົາ</h3>
+                        <p>ເພື່ອໃຫ້ບໍລິການປຶກສາກໍ່ສ້າງທີ່ດີເລີດ ເຊິ່ງຮັບປະກັນຄວາມສຳເລັດຂອງໂຄງການຜ່ານການແນະນຳຈາກຜູ້ຊ່ຽວຊານ, ການແກ້ໄຂທີ່ສ້າງສັນ, ແລະ ຄຳໝັ້ນສັນຍາທີ່ບໍ່ຫວັ່ນໄຫວຕໍ່ຄຸນນະພາບ ແລະ ຄວາມປອດໄພ.</p>
+                    </div>
+                    <div class="column">
+                        <h3>ວິໄສທັດຂອງພວກເຮົາ</h3>
+                        <p>ເປັນບໍລິສັດປຶກສາກໍ່ສ້າງຊັ້ນນຳໃນລາວ ແລະ ພາກພື້ນ, ທີ່ໄດ້ຮັບການຍອມຮັບສຳລັບຄວາມຊ່ຽວຊານ, ຄວາມຊື່ສັດ, ແລະ ການປະກອບສ່ວນໃນການພັດທະນາໂຄງສ້າງພື້ນຖານແບບຍືນຍົງ.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Approach -->
+        <section id="approach" class="approach section" aria-labelledby="approach-title">
+            <div class="container">
+                <h2 id="approach-title" class="reveal-up">ວິທີການຂອງພວກເຮົາ</h2>
+                <div class="timeline reveal-up" role="list" aria-label="ວິທີການປຶກສາສີ່ຂັ້ນຕອນຂອງພວກເຮົາ">
+                    <div class="timeline-step reveal-up" data-step="1" role="listitem" aria-label="ຂັ້ນຕອນທີ 1: ການປະເມີນ" style="--delay:0s;">
+                        <h3>ການປະເມີນ</h3>
+                        <p>ການປະເມີນໂຄງການແບບຄົບຖ້ວນ ແລະ ການວິເຄາະຄວາມຕ້ອງການ</p>
+                    </div>
+                    <div class="timeline-step reveal-up" data-step="2" role="listitem" aria-label="ຂັ້ນຕອນທີ 2: ການວາງແຜນ" style="--delay:0.2s;">
+                        <h3>ການວາງແຜນ</h3>
+                        <p>ການວາງແຜນຍຸດທະສາດ ແລະ ການພັດທະນາແຜນທີ່ລາງໂຄງການລະອຽດ</p>
+                    </div>
+                    <div class="timeline-step reveal-up" data-step="3" role="listitem" aria-label="ຂັ້ນຕອນທີ 3: ການປະຕິບັດ" style="--delay:0.4s;">
+                        <h3>ການປະຕິບັດ</h3>
+                        <p>ການແນະນຳຈາກຜູ້ຊ່ຽວຊານຕະຫຼອດໄລຍະການປະຕິບັດໂຄງການ</p>
+                    </div>
+                    <div class="timeline-step reveal-up" data-step="4" role="listitem" aria-label="ຂັ້ນຕອນທີ 4: ການສົ່ງມອບ" style="--delay:0.6s;">
+                        <h3>ການສົ່ງມອບ</h3>
+                        <p>ການຮັບປະກັນຄຸນນະພາບ ແລະ ການສຳເລັດໂຄງການຢ່າງສຳເລັດຜົນ</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Capabilities -->
+        <section id="capabilities" class="capabilities section" aria-labelledby="capabilities-title">
+            <div class="container">
+                <h2 id="capabilities-title" class="reveal-up">ຄວາມສາມາດຂອງພວກເຮົາ</h2>
+                <div class="capabilities-grid reveal-up" role="list" aria-label="ຄວາມສາມາດການປຶກສາກໍ່ສ້າງຂອງພວກເຮົາ">
+                    <div class="capability-item reveal-up" role="listitem" style="--delay:0s;"><span>ການປຶກສາການພັດທະນາໂຄງສ້າງພື້ນຖານ</span></div>
+                    <div class="capability-item reveal-up" role="listitem" style="--delay:0.1s;"><span>ການກໍ່ສ້າງທາງການຄ້າ ແລະ ທີ່ຢູ່ອາໄສ</span></div>
+                    <div class="capability-item reveal-up" role="listitem" style="--delay:0.2s;"><span>ການວາງແຜນສິ່ງປຸກສ້າງອຸດສາຫະກຳ</span></div>
+                    <div class="capability-item reveal-up" role="listitem" style="--delay:0.3s;"><span>ການປະເມີນຜົນກະທົບສິ່ງແວດລ້ອມ</span></div>
+                    <div class="capability-item reveal-up" role="listitem" style="--delay:0.4s;"><span>ການປະຕິບັດຕາມກົດລະບຽບ ແລະ ການອະນຸຍາດ</span></div>
+                    <div class="capability-item reveal-up" role="listitem" style="--delay:0.5s;"><span>ການຄຸ້ມຄອງຄວາມປອດໄພການກໍ່ສ້າງ</span></div>
+                    <div class="capability-item reveal-up" role="listitem" style="--delay:0.6s;"><span>ການຄວບຄຸມຄ່າໃຊ້ຈ່າຍໂຄງການ ແລະ ການວາງງົບປະມານ</span></div>
+                    <div class="capability-item reveal-up" role="listitem" style="--delay:0.7s;"><span>ການຄວບຄຸມ ແລະ ຮັບປະກັນຄຸນນະພາບ</span></div>
+                    <div class="capability-item reveal-up" role="listitem" style="--delay:0.8s;"><span>ການຄຸ້ມຄອງ ແລະ ຫຼຸດຜ່ອນຄວາມສ່ຽງ</span></div>
+                    <div class="capability-item reveal-up" role="listitem" style="--delay:0.9s;"><span>ການປະຕິບັດການກໍ່ສ້າງແບບຍືນຍົງ</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership -->
+        <section id="leadership" class="leadership section" aria-labelledby="leadership-title">
+            <div class="container">
+                <h2 id="leadership-title" class="reveal-up">ທີມງານຜູ້ນຳ</h2>
+                <p class="reveal-up">ຜູ້ຊ່ຽວຊານທີ່ມີປະສົບການນຳພາຄວາມເປັນເລີດໃນການປຶກສາຂອງພວກເຮົາ</p>
+                <div class="team-grid reveal-up" role="list" aria-label="ສະມາຊິກທີມງານຜູ້ນຳ">
+                    <!-- Team members will be populated by the script below -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Member Detail Modal -->
+        <div id="team-modal" class="team-modal hidden" role="dialog" aria-modal="true" aria-labelledby="team-modal-title" aria-hidden="true">
+            <div class="team-modal-overlay"></div>
+            <div class="team-modal-content">
+                <button class="team-modal-close" aria-label="ປິດລາຍລະອຽດສະມາຊິກທີມ">&times;</button>
+                <div class="team-modal-body">
+                    <!-- Team member detail content will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Certifications -->
+        <section id="certifications" class="certifications section" aria-labelledby="certifications-title">
+            <div class="container">
+                <h2 id="certifications-title" class="reveal-up">ໃບຢັ້ງຢືນ ແລະ ການປະກັນໄພ</h2>
+                <div class="certifications-list reveal-up" role="list" aria-label="ໃບຢັ້ງຢືນ ແລະ ການປະກັນໄພຂອງບໍລິສັດ">
+                    <div class="certification-item reveal-up" role="listitem" style="--delay:0s;"><span>ບໍລິສັດປຶກສາກໍ່ສ້າງທີ່ມີໃບອະນຸຍາດ</span></div>
+                    <div class="certification-item reveal-up" role="listitem" style="--delay:0.1s;"><span>ການຄຸ້ມຄອງຄຸນນະພາບ ISO 9001:2015</span></div>
+                    <div class="certification-item reveal-up" role="listitem" style="--delay:0.2s;"><span>ການປະກັນໄພຄວາມຮັບຜິດຊອບວິຊາຊີບ</span></div>
+                    <div class="certification-item reveal-up" role="listitem" style="--delay:0.3s;"><span>ການປົກຄອງການປະກັນໄພຄວາມຮັບຜິດຊອບທົ່ວໄປ</span></div>
+                    <div class="certification-item reveal-up" role="listitem" style="--delay:0.4s;"><span>ການປະກັນໄພຄ່າຊົດເຊີຍຄົນງານ</span></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>TPEC Engineering Consulting</h4>
+                    <p>ການປຶກສາກໍ່ສ້າງຈາກຜູ້ຊ່ຽວຊານໃນລາວ</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/TPEC/index.lo.html">ໜ້າຫຼັກ</a></li>
+                        <li><a href="/TPEC/about.lo.html">ກ່ຽວກັບພວກເຮົາ</a></li>
+                        <li><a href="/TPEC/projects.lo.html">ໂຄງການ</a></li>
+                        <li><a href="/TPEC/contact.lo.html">ຕິດຕໍ່</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>ຂໍ້ມູນການຕິດຕໍ່</h4>
+                    <ul class="footer-links">
+                        <li><a href="tel:+85621732131">+856 21 732131</a></li>
+                        <li><a href="mailto:thephachanhtoto@hotmail.com">thephachanhtoto@hotmail.com</a></li>
+                        <li><span>ບ້ານໂພຄຳ, ເມືອງໄຊທານີ, ຖະໜົນເລກທີ 13 ໃຕ້, ນະຄອນຫຼວງວຽງຈັນ, ສປປ ລາວ</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TPEC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Critical Scripts (loaded immediately) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="console.warn('GSAP failed to load, using CSS fallbacks')"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="console.warn('ScrollTrigger failed to load')"></script>
+
+    <!-- Error Handler (loaded first for global error catching) -->
+    <script src="assets/js/error-handler.js"></script>
+
+    <!-- Application Scripts (deferred for better performance) -->
+    <script defer src="assets/js/performance.js" onerror="console.warn('Performance script failed to load')"></script>
+    <script defer src="assets/js/image-optimizer.js" onerror="console.warn('Image optimizer script failed to load')"></script>
+    <script defer src="assets/js/motion.js" onerror="console.warn('Motion script failed to load')"></script>
+    <script defer src="assets/js/seo.js" onerror="console.warn('SEO script failed to load')"></script>
+
+    <!-- About Page Team Modal Script -->
+    <script>
+        let teamModal = null;
+
+        function initializeTeam() {
+            if (!teamModal) {
+                teamModal = document.getElementById('team-modal');
+                setupTeamModalEvents();
+            }
+            populateTeamGrid();
+        }
+
+        document.addEventListener('DOMContentLoaded', initializeTeam);
+
+        function setupTeamModalEvents() {
+            if (!teamModal) return;
+            const overlay = teamModal.querySelector('.team-modal-overlay');
+            if (overlay) overlay.addEventListener('click', closeTeamModal);
+            const closeBtn = teamModal.querySelector('.team-modal-close');
+            if (closeBtn) closeBtn.addEventListener('click', closeTeamModal);
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && teamModal && !teamModal.classList.contains('hidden')) {
+                    closeTeamModal();
+                }
+            });
+        }
+
+        function populateTeamGrid() {
+            const teamGrid = document.querySelector('.team-grid');
+            if (!teamGrid) return;
+            const teamMembers = [
+                {
+                    key: 'founder',
+                    name: 'ທ້າວ ບຸນລຽງ ເທບພະຈັນ',
+                    title: 'ຜູ້ກໍ່ຕັ້ງ ແລະ ຜູ້ອຳນວຍການບໍລິຫານ',
+                    bio: 'ດ້ວຍປະສົບການຫຼາຍກວ່າ 30 ປີໃນວິສະວະກຳໂຄງການສາທາລະນະ, ທ້າວເທບພະຈັນໄດ້ກໍ່ຕັ້ງ TPEC ຫຼັງຈາກມີປະສົບການສາກົນຢ່າງກວ້າງຂວາງລວມທັງການສຶກສາໃນເຢຍລະມັນ ແລະ ວຽກງານປຶກສາກັບບໍລິສັດສະວີເດັນ SKANSKA, HIFAB, ແລະ Sweroad. ທ່ານໄດ້ນຳພາການສ້າງຄວາມສາມາດໃຫ້ພະນັກງານກົມໂຍທາທິການ ແລະ ຂົນສົ່ງໃນທຸກແຂວງຂອງ ສປປ ລາວ.',
+                    education: 'ຈົບການສຶກສາວິສະວະກຳກໍ່ສ້າງຖະໜົນ-ຂົວຈາກເຢຍລະມັນ (1981)',
+                    experience: [
+                        'ຫົວໜ້າກວດກາບຳລຸງຮັກສາຖະໜົນ-ຂົວ, ບໍລິສັດລັດວິສາຫະກິດເລກທີ 1 (1982)',
+                        'ຫົວໜ້າພະແນກວາງແຜນ, ວິສາຫະກິດກໍ່ສ້າງຖະໜົນນ້ຳ',
+                        'ຫົວໜ້າພະແນກກໍ່ສ້າງ, ບໍລິສັດກໍ່ສ້າງຖະໜົນເລກທີ 13 (1985)',
+                        'ການຝຶກອົບຮົມສາກົນໃນໄທເພື່ອການກວດກາ ແລະ ກໍ່ສ້າງຖະໜົນ-ຂົວ',
+                        'ຄູຝຶກ ແລະ ທີ່ປຶກສາກັບບໍລິສັດຍ່ອຍ SKANSKA (ບໍລິສັດກໍ່ສ້າງສະວີເດັນ)',
+                        'ທີ່ປຶກສາອາວຸໂສກັບ HIFAB (ບໍລິສັດປຶກສາສະວີເດັນ)',
+                        'ທີ່ປຶກສາທ້ອງຖິ່ນກັບບໍລິສັດ Sweroad Consultant (2001)',
+                        'ການສ້າງຄວາມສາມາດທົ່ວປະເທດໃຫ້ພະນັກງານກົມໂຍທາທິການ ແລະ ຂົນສົ່ງໃນທຸກແຂວງຂອງ ສປປ ລາວ'
+                    ],
+                    description: 'ກໍ່ຕັ້ງໂດຍທ້າວບຸນລຽງ ເທບພະຈັນ, ບໍລິສັດຂອງພວກເຮົາຖືກສ້າງຂຶ້ນໂດຍອີງໃສ່ຄວາມເປັນເລີດດ້ານວິສະວະກຳຫຼາຍກວ່າ 30 ປີ ແລະ ຄວາມຊ່ຽວຊານໃນອຸດສາຫະກຳ. ຜູ້ກໍ່ຕັ້ງຂອງພວກເຮົານຳເອົາປະສົບການສາກົນທີ່ກວ້າງຂວາງ ແລະ ມີບົດບາດສຳຄັນໃນການພັດທະນາຄວາມສາມາດການປຶກສາໂຄງສ້າງພື້ນຖານທົ່ວລາວ.',
+                    image: 'assets/img/team/founder.jpg'
+                },
+                {
+                    key: 'vice_president',
+                    name: 'ນາງ ເສັງດາວັນ ເທບພະຈັນ',
+                    title: 'ຮອງປະທານ',
+                    bio: 'ດຣ. ເສັງດາວັນ ເທບພະຈັນ ນຳເອົາຄວາມຊ່ຽວຊານຂັ້ນສູງດ້ານວິສະວະກຳໄຮໂດຼລິກ ແລະ ສິ່ງແວດລ້ອມມາສູ່ TPEC. ດ້ວຍປະລິນຍາເອກວິສະວະກຳຈາກ Technische Universität Dresden ແລະ ປະສົບການການຄົ້ນຄວ້າທີ່ກວ້າງຂວາງ, ນາງນຳພາການປະຕິບັດຕາມກົດລະບຽບສິ່ງແວດລ້ອມ ແລະ ການລິເລີ່ມວິສະວະກຳແບບຍືນຍົງຂອງພວກເຮົາ.',
+                    education: 'ປະລິນຍາເອກວິສະວະກຳໄຮໂດຼລິກ, Technische Universität Dresden (2019-2022); ປະລິນຍາໂທວິສະວະກຳສິ່ງແວດລ້ອມ, University of the Philippines Diliman (2013-2015)',
+                    experience: [
+                        'ນັກຄົ້ນຄວ້າວິທະຍາສາດ, Technische Universität Dresden (ເມສາ 2023 - ປັດຈຸບັນ)',
+                        'ອາຈານ/ນັກຄົ້ນຄວ້າ, ມະຫາວິທະຍາໄລແຫ່ງຊາດລາວ (NUOL) (ທັນວາ 2015 - ສິງຫາ 2019)',
+                        'ວິສະວະກອນສິ່ງແວດລ້ອມ, Archineer Associates (ມີນາ 2017 - ກໍລະກົດ 2019)'
+                    ],
+                    description: 'ດຣ. ເສັງດາວັນ ເທບພະຈັນ ດຳລົງຕຳແໜ່ງຮອງປະທານ, ນຳເອົາຄວາມຊ່ຽວຊານທີ່ທັນສະໄໝໃນການສ້າງແບບຈຳລອງໄຮໂດຼລິກ, ວິສະວະກຳສິ່ງແວດລ້ອມ, ແລະ ການພັດທະນາແບບຍືນຍົງ. ການສຶກສາສາກົນ ແລະ ພື້ນຖານການຄົ້ນຄວ້າຂອງນາງເສີມສ້າງຄວາມສາມາດດ້ານເຕັກນິກຂອງ TPEC ໃນການປະຕິບັດຕາມກົດລະບຽບສິ່ງແວດລ້ອມ ແລະ ການແກ້ໄຂວິສະວະກຳທີ່ສ້າງສັນ.',
+                    image: 'assets/img/team/vice%20president.jpg'
+                },
+                {
+                    key: 'technology_advisor',
+                    name: 'ທ້າວ ແມັດທິວ ເທົ້າຄຳລື',
+                    title: 'ທີ່ປຶກສາດ້ານເຕັກໂນໂລຊີ',
+                    bio: 'ຜູ້ຈັດການຜະລິດຕະພັນດ້ານເຕັກນິກທີ່ມີປະສົບການ 5+ ປີໃນ B2B SaaS, ສຸມໃສ່ຄຸນສົມບັດ AI ແລະ ການເຊື່ອມຕໍ່ API ສຳລັບການວິເຄາະສຸຂະພາບ ແລະ ຊອບແວຫ້ອງທົດລອງ. ທ່ານນຳເອົາຄວາມຊ່ຽວຊານໃນການຄຸ້ມຄອງຜະລິດຕະພັນ, ການແກ້ໄຂ AI, ແລະ ການເຊື່ອມຕໍ່ດ້ານເຕັກນິກເພື່ອສະໜັບສະໜູນການລິເລີ່ມການປ່ຽນແປງດິຈິຕອນຂອງ TPEC.',
+                    education: 'ປະລິນຍາໂທເສດຖະກິດສາກົນ ແລະ ການພັດທະນາ, Hochschule für Technik und Wirtschaft Berlin; ປະລິນຍາຕີເສດຖະສາດ, ມະຫາວິທະຍາໄລເຊຍງໃໝ່',
+                    experience: [
+                        'ຜູ້ຈັດການຜະລິດຕະພັນ, Labforward GmbH, Berlin (ພະຈິກ 2024 - ປັດຈຸບັນ)',
+                        'ຜູ້ຈັດການຜະລິດຕະພັນດ້ານເຕັກນິກ, LabTwin GmbH, Berlin (ມັງກອນ 2023 - ພະຈິກ 2024)',
+                        'ເຈົ້າຂອງຜະລິດຕະພັນ, Thryve GmbH, Berlin (ຕຸລາ 2019 - ທັນວາ 2022)'
+                    ],
+                    description: 'ທ້າວແມັດທິວ ເທົ້າຄຳລື ດຳລົງຕຳແໜ່ງທີ່ປຶກສາດ້ານເຕັກໂນໂລຊີ, ນຳເອົາຄວາມຊ່ຽວຊານທີ່ທັນສະໄໝໃນການຄຸ້ມຄອງຜະລິດຕະພັນ, ການປະຕິບັດ AI, ແລະ ການແກ້ໄຂດິຈິຕອນ. ປະສົບການສາກົນຂອງທ່ານໃນ B2B SaaS ແລະ ການພັດທະນາຜະລິດຕະພັນດ້ານເຕັກນິກສະໜັບສະໜູນການກ້າວໜ້າດ້ານເຕັກໂນໂລຊີ ແລະ ການລິເລີ່ມການປ່ຽນແປງດິຈິຕອນຂອງ TPEC.',
+                    image: 'assets/img/team/technology%20advisor.jpg'
+                }
+            ];
+            teamGrid.innerHTML = '';
+            teamMembers.forEach(member => {
+                const teamCard = createTeamCard(member);
+                teamGrid.appendChild(teamCard);
+            });
+        }
+
+        function createTeamCard(member) {
+            const card = document.createElement('div');
+            card.className = 'team-card card';
+            card.setAttribute('tabindex', '0');
+            card.setAttribute('role', 'button');
+            card.setAttribute('aria-label', `ເບິ່ງລາຍລະອຽດຂອງ ${member.name}`);
+            const avatarContent = `<img src="${escapeHtml(member.image)}" alt="${escapeHtml(member.name)}" class="team-photo" onerror="this.style.display='none'">`;
+            card.innerHTML = `
+                <div class="team-avatar">
+                    ${avatarContent}
+                </div>
+                <div class="team-info">
+                    <h3 class="team-name">${escapeHtml(member.name)}</h3>
+                    <p class="team-title">${escapeHtml(member.title)}</p>
+                    <p class="team-bio">${escapeHtml(member.bio.substring(0, 120))}...</p>
+                </div>
+            `;
+            const handleClick = () => {
+                showTeamModal(member);
+            };
+            card.addEventListener('click', handleClick);
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    handleClick();
+                }
+            });
+            return card;
+        }
+
+        function showTeamModal(member) {
+            if (!teamModal || !member) return;
+            const modalBody = teamModal.querySelector('.team-modal-body');
+            if (modalBody) {
+                modalBody.innerHTML = createTeamModalContent(member);
+            }
+            teamModal.classList.remove('hidden');
+            teamModal.setAttribute('aria-hidden', 'false');
+            setTimeout(() => teamModal.classList.add('visible'), 10);
+            const closeBtn = teamModal.querySelector('.team-modal-close');
+            if (closeBtn) closeBtn.focus();
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeTeamModal() {
+            if (!teamModal) return;
+            teamModal.classList.remove('visible');
+            setTimeout(() => {
+                teamModal.classList.add('hidden');
+                teamModal.setAttribute('aria-hidden', 'true');
+            }, 300);
+            document.body.style.overflow = '';
+        }
+
+        function createTeamModalContent(member) {
+            const modalAvatarContent = `<img src="${escapeHtml(member.image)}" alt="${escapeHtml(member.name)}" class="team-modal-photo">`;
+            return `
+                <div class="team-modal-header">
+                    ${modalAvatarContent}
+                    <h2 class="team-modal-name" id="team-modal-title">${escapeHtml(member.name)}</h2>
+                    <p class="team-modal-title">${escapeHtml(member.title)}</p>
+                </div>
+                <div class="team-modal-description">
+                    <p>${escapeHtml(member.description)}</p>
+                </div>
+                <div class="team-modal-section">
+                    <h4>ການສຶກສາ</h4>
+                    <p>${escapeHtml(member.education)}</p>
+                </div>
+                <div class="team-modal-section">
+                    <h4>ຈຸດເດັ່ນໃນອາຊີບ</h4>
+                    <ul>
+                        ${Array.isArray(member.experience) ?
+                            member.experience.map(exp => `<li>${escapeHtml(exp)}</li>`).join('') :
+                            '<li>ມີປະສົບການຢ່າງກວ້າງຂວາງໃນວິສະວະກຳໂຄງການສາທາລະນະ ແລະ ການປຶກສາ</li>'
+                        }
+                    </ul>
+                </div>
+                <div class="team-modal-section">
+                    <h4>ປະຫວັດວິຊາຊີບ</h4>
+                    <p>${escapeHtml(member.bio)}</p>
+                </div>
+            `;
+        }
+
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+    </script>
+</body>
+</html>

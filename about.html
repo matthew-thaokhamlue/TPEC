@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self';">
     
-    <title data-i18n="meta.about.title">About Us - Construction Consulting</title>
-    <meta name="description" data-i18n="meta.about.description" content="Learn about our construction consulting expertise and team">
+    <title>About Us - Construction Consulting</title>
+    <meta name="description" content="Learn about our construction consulting expertise and team">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://example.com/about.html">
-    <meta property="og:title" data-i18n="meta.about.og_title" content="About Us - Construction Consulting">
-    <meta property="og:description" data-i18n="meta.about.og_description" content="Learn about our construction consulting expertise and team">
+    <meta property="og:title" content="About Us - Construction Consulting">
+    <meta property="og:description" content="Learn about our construction consulting expertise and team">
     <meta property="og:image" content="https://example.com/assets/img/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -24,8 +24,8 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://example.com/about.html">
-    <meta property="twitter:title" data-i18n="meta.about.twitter_title" content="About Us - Construction Consulting">
-    <meta property="twitter:description" data-i18n="meta.about.twitter_description" content="Learn about our construction consulting expertise and team">
+    <meta property="twitter:title" content="About Us - Construction Consulting">
+    <meta property="twitter:description" content="Learn about our construction consulting expertise and team">
     <meta property="twitter:image" content="https://example.com/assets/img/og-image.jpg">
     <meta property="twitter:image:alt" content="About Our Construction Consulting Team">
     
@@ -303,29 +303,97 @@
     </script>
 </head>
 <body>
-    <a href="#main" class="skip-link" data-i18n="accessibility.skip_to_content">Skip to main content</a>
+    <a href="#main" class="skip-link">Skip to main content</a>
     
     <header id="header" role="banner">
-        <!-- Header content will be injected by shell.js -->
+      <div class="container">
+        <div class="header-content">
+          <a href="/TPEC/" class="logo">TPEC Engineering Consulting</a>
+
+          <!-- Desktop Navigation -->
+          <nav class="nav" role="navigation" aria-label="Main navigation">
+            <ul class="nav-list">
+              <li><a href="/TPEC/" class="nav-link">Home</a></li>
+              <li><a href="/TPEC/about.html" class="nav-link active" aria-current="page">About Us</a></li>
+              <li><a href="/TPEC/projects.html" class="nav-link">Projects</a></li>
+              <li><a href="/TPEC/contact.html" class="nav-link">Contact</a></li>
+            </ul>
+
+            <!-- Language Switcher -->
+            <div class="language-switcher" role="group" aria-label="Language selection">
+              <a href="/TPEC/about.html" class="lang-option active" data-lang="en" aria-label="Switch to English">
+                <span class="lang-code">EN</span>
+                <span class="lang-name">English</span>
+              </a>
+              <a href="/TPEC/about.lo.html" class="lang-option" data-lang="lo" aria-label="Switch to Lao">
+                <span class="lang-code">ລາວ</span>
+                <span class="lang-name">ລາວ</span>
+              </a>
+            </div>
+          </nav>
+
+          <!-- Mobile Menu Button -->
+          <button class="mobile-menu-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
+        <button class="mobile-menu-close" aria-label="Close navigation menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <h2 id="mobile-menu-title" class="sr-only">Navigation Menu</h2>
+
+        <nav role="navigation" aria-label="Mobile navigation">
+          <ul class="mobile-nav-list">
+            <li><a href="/TPEC/" class="mobile-nav-link">Home</a></li>
+            <li><a href="/TPEC/about.html" class="mobile-nav-link active" aria-current="page">About Us</a></li>
+            <li><a href="/TPEC/projects.html" class="mobile-nav-link">Projects</a></li>
+            <li><a href="/TPEC/contact.html" class="mobile-nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- Mobile Language Switcher -->
+        <div class="language-switcher" role="group" aria-label="Language selection">
+            <a href="/TPEC/about.html" class="lang-option active" data-lang="en" aria-label="Switch to English">
+                <span class="lang-code">EN</span>
+                <span class="lang-name">English</span>
+            </a>
+            <a href="/TPEC/about.lo.html" class="lang-option" data-lang="lo" aria-label="Switch to Lao">
+                <span class="lang-code">ລາວ</span>
+                <span class="lang-name">ລາວ</span>
+            </a>
+        </div>
+      </div>
     </header>
 
     <main id="main" role="main">
         <!-- Page Header -->
         <section class="page-header section" aria-labelledby="page-title">
             <div class="container">
-                <h1 id="page-title" class="reveal-up" data-i18n="nav.about">About Us</h1>
-                <p class="reveal-up" data-i18n="about.leadership.subheading">Experienced professionals leading our consulting excellence</p>
+                <h1 id="page-title" class="reveal-up">About Us</h1>
+                <p class="reveal-up">Experienced professionals leading our consulting excellence</p>
             </div>
         </section>
 
         <!-- Anchor Navigation -->
         <nav class="anchor-nav" id="anchor-nav" role="navigation" aria-label="Page sections navigation">
             <ul class="anchor-nav-list">
-                <li><a href="#mission-vision" class="anchor-nav-link" data-i18n="about.anchor_nav.mission_vision">Mission & Vision</a></li>
-                <li><a href="#approach" class="anchor-nav-link" data-i18n="about.anchor_nav.approach">Our Approach</a></li>
-                <li><a href="#capabilities" class="anchor-nav-link" data-i18n="about.anchor_nav.capabilities">Capabilities</a></li>
-                <li><a href="#leadership" class="anchor-nav-link" data-i18n="about.anchor_nav.leadership">Leadership</a></li>
-                <li><a href="#certifications" class="anchor-nav-link" data-i18n="about.anchor_nav.certifications">Certifications</a></li>
+                <li><a href="#mission-vision" class="anchor-nav-link">Mission & Vision</a></li>
+                <li><a href="#approach" class="anchor-nav-link">Our Approach</a></li>
+                <li><a href="#capabilities" class="anchor-nav-link">Capabilities</a></li>
+                <li><a href="#leadership" class="anchor-nav-link">Leadership</a></li>
+                <li><a href="#certifications" class="anchor-nav-link">Certifications</a></li>
             </ul>
         </nav>
 
@@ -335,12 +403,12 @@
                 <h2 id="mission-vision-title" class="sr-only">Mission and Vision</h2>
                 <div class="two-column reveal-up">
                     <div class="column">
-                        <h3 data-i18n="about.mission.heading">Our Mission</h3>
-                        <p data-i18n="about.mission.content">To provide exceptional construction consulting services that ensure project success through expert guidance, innovative solutions, and unwavering commitment to quality and safety.</p>
+                        <h3>Our Mission</h3>
+                        <p>To deliver exceptional public works consulting services that drive sustainable infrastructure development. We are committed to providing effective and efficient solutions while prioritizing social-economic factors and environmental responsibility.</p>
                     </div>
                     <div class="column">
-                        <h3 data-i18n="about.vision.heading">Our Vision</h3>
-                        <p data-i18n="about.vision.content">To be the leading construction consulting firm in Laos and the region, recognized for our expertise, integrity, and contribution to sustainable infrastructure development.</p>
+                        <h3>Our Vision</h3>
+                        <p>To be the leading public works engineering consulting firm in Laos, recognized for our expertise, integrity, and contribution to national development through sustainable infrastructure projects.</p>
                     </div>
                 </div>
             </div>
@@ -349,9 +417,24 @@
         <!-- Our Approach -->
         <section id="approach" class="approach section" aria-labelledby="approach-title">
             <div class="container">
-                <h2 id="approach-title" class="reveal-up" data-i18n="about.approach.heading">Our Approach</h2>
+                <h2 id="approach-title" class="reveal-up">Our Approach</h2>
                 <div class="timeline reveal-up" role="list" aria-label="Our four-step consulting approach">
-                    <!-- Timeline steps will be populated by JavaScript -->
+                    <div class="timeline-step reveal-up" data-step="1" role="listitem" aria-label="Step 1: Assessment" style="--delay:0s;">
+                        <h3>Assessment</h3>
+                        <p>Comprehensive project evaluation and requirements analysis</p>
+                    </div>
+                    <div class="timeline-step reveal-up" data-step="2" role="listitem" aria-label="Step 2: Planning" style="--delay:0.2s;">
+                        <h3>Planning</h3>
+                        <p>Strategic planning and detailed project roadmap development</p>
+                    </div>
+                    <div class="timeline-step reveal-up" data-step="3" role="listitem" aria-label="Step 3: Implementation" style="--delay:0.4s;">
+                        <h3>Implementation</h3>
+                        <p>Expert guidance throughout project execution phases</p>
+                    </div>
+                    <div class="timeline-step reveal-up" data-step="4" role="listitem" aria-label="Step 4: Delivery" style="--delay:0.6s;">
+                        <h3>Delivery</h3>
+                        <p>Quality assurance and successful project completion</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -359,9 +442,18 @@
         <!-- Capabilities -->
         <section id="capabilities" class="capabilities section" aria-labelledby="capabilities-title">
             <div class="container">
-                <h2 id="capabilities-title" class="reveal-up" data-i18n="about.capabilities.heading">Our Capabilities</h2>
+                <h2 id="capabilities-title" class="reveal-up">Our Capabilities</h2>
                 <div class="capabilities-grid reveal-up" role="list" aria-label="Our construction consulting capabilities">
-                    <!-- Capabilities will be populated by JavaScript -->
+                    <div class="capability-item reveal-up" role="listitem" style="--delay:0s;"><span>Road and Highway Engineering Design</span></div>
+                    <div class="capability-item reveal-up" role="listitem" style="--delay:0.1s;"><span>Bridge and Infrastructure Construction</span></div>
+                    <div class="capability-item reveal-up" role="listitem" style="--delay:0.2s;"><span>River Bank Protection Systems</span></div>
+                    <div class="capability-item reveal-up" role="listitem" style="--delay:0.3s;"><span>Government and Public Building Construction</span></div>
+                    <div class="capability-item reveal-up" role="listitem" style="--delay:0.4s;"><span>Power Plant and Industrial Infrastructure</span></div>
+                    <div class="capability-item reveal-up" role="listitem" style="--delay:0.5s;"><span>Construction Quality Control and Testing</span></div>
+                    <div class="capability-item reveal-up" role="listitem" style="--delay:0.6s;"><span>Project Management and Supervision</span></div>
+                    <div class="capability-item reveal-up" role="listitem" style="--delay:0.7s;"><span>Environmental Compliance and Safety</span></div>
+                    <div class="capability-item reveal-up" role="listitem" style="--delay:0.8s;"><span>Materials Testing and Quality Assurance</span></div>
+                    <div class="capability-item reveal-up" role="listitem" style="--delay:0.9s;"><span>Regulatory Approvals and Permitting</span></div>
                 </div>
             </div>
         </section>
@@ -369,10 +461,10 @@
         <!-- Leadership -->
         <section id="leadership" class="leadership section" aria-labelledby="leadership-title">
             <div class="container">
-                <h2 id="leadership-title" class="reveal-up" data-i18n="about.leadership.heading">Leadership Team</h2>
-                <p class="reveal-up" data-i18n="about.leadership.subheading">Experienced professionals leading our consulting excellence</p>
+                <h2 id="leadership-title" class="reveal-up">Leadership Team</h2>
+                <p class="reveal-up">Experienced professionals leading our consulting excellence</p>
                 <div class="team-grid reveal-up" role="list" aria-label="Leadership team members">
-                    <!-- Team members will be populated by JavaScript -->
+                    <!-- Team members will be populated by the script below -->
                 </div>
             </div>
         </section>
@@ -391,16 +483,47 @@
         <!-- Certifications -->
         <section id="certifications" class="certifications section" aria-labelledby="certifications-title">
             <div class="container">
-                <h2 id="certifications-title" class="reveal-up" data-i18n="about.certifications.heading">Certifications & Insurance</h2>
+                <h2 id="certifications-title" class="reveal-up">Certifications & Insurance</h2>
                 <div class="certifications-list reveal-up" role="list" aria-label="Company certifications and insurance coverage">
-                    <!-- Certifications will be populated by JavaScript -->
+                    <div class="certification-item reveal-up" role="listitem" style="--delay:0s;"><span>Licensed Construction Consulting Firm</span></div>
+                    <div class="certification-item reveal-up" role="listitem" style="--delay:0.1s;"><span>ISO 9001:2015 Quality Management</span></div>
+                    <div class="certification-item reveal-up" role="listitem" style="--delay:0.2s;"><span>Professional Liability Insurance</span></div>
+                    <div class="certification-item reveal-up" role="listitem" style="--delay:0.3s;"><span>General Liability Coverage</span></div>
+                    <div class="certification-item reveal-up" role="listitem" style="--delay:0.4s;"><span>Workers' Compensation Insurance</span></div>
                 </div>
             </div>
         </section>
     </main>
 
     <footer id="footer" role="contentinfo">
-        <!-- Footer content will be injected by shell.js -->
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>TPEC Engineering Consulting</h4>
+                    <p>Expert public works engineering consulting in Laos. Professional guidance for infrastructure development projects with over 30 years of experience.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/TPEC/">Home</a></li>
+                        <li><a href="/TPEC/about.html">About Us</a></li>
+                        <li><a href="/TPEC/projects.html">Projects</a></li>
+                        <li><a href="/TPEC/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <ul class="footer-links">
+                        <li><a href="tel:+85621732131">+856 21 732131</a></li>
+                        <li><a href="mailto:thephachanhtoto@hotmail.com">thephachanhtoto@hotmail.com</a></li>
+                        <li><span>Phokham Village, Xaythany District, Road No.13 South, Vientiane Capital, Lao PDR</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TPEC. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
     <!-- Critical Scripts (loaded immediately) -->
@@ -413,104 +536,30 @@
     <!-- Application Scripts (deferred for better performance) -->
     <script defer src="assets/js/performance.js" onerror="console.warn('Performance script failed to load')"></script>
     <script defer src="assets/js/image-optimizer.js" onerror="console.warn('Image optimizer script failed to load')"></script>
-    <script defer src="assets/js/i18n.js" onerror="console.warn('i18n script failed to load')"></script>
     <script defer src="assets/js/motion.js" onerror="console.warn('Motion script failed to load')"></script>
     <script defer src="assets/js/seo.js" onerror="console.warn('SEO script failed to load')"></script>
-    <script defer src="assets/js/shell.js" onerror="console.warn('Shell script failed to load')"></script>
-    <script defer src="assets/js/main.js" onerror="console.warn('Main script failed to load')"></script>
 
     <!-- About Page Team Modal Script -->
     <script>
         let teamModal = null;
 
-        // Robust team initialization that ensures 3 members always show
-        function initializeTeamRobustly() {
-            console.log('🚀 Robust team initialization');
-
-            // Initialize modal if not already done
+        function initializeTeam() {
             if (!teamModal) {
                 teamModal = document.getElementById('team-modal');
                 setupTeamModalEvents();
             }
-
-            // Always populate team grid with all 3 members
             populateTeamGrid();
-
-            // Mark grid as protected and track update time
-            const teamGrid = document.querySelector('.team-grid');
-            if (teamGrid) {
-                teamGrid.setAttribute('data-protected', 'true');
-                teamGrid.setAttribute('data-last-update', Date.now());
-
-                // Verify we have 3 team cards
-                const teamCards = teamGrid.querySelectorAll('.team-card');
-                console.log(`✅ Team grid now has ${teamCards.length} members`);
-            }
         }
 
-        // Initialize when DOM is ready
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('About page loaded, setting up team functionality');
-            initializeTeamRobustly();
-
-            // Also wait for i18n to load for localized content
-            const checkI18n = () => {
-                if (window.i18n && window.i18n.isReady) {
-                    console.log('i18n ready, re-populating with localized data');
-                    initializeTeamRobustly();
-                } else {
-                    setTimeout(checkI18n, 100);
-                }
-            };
-            checkI18n();
-
-            // Listen for language changes
-            window.addEventListener('languageChanged', function(e) {
-                console.log('🌐 Language changed, re-populating team');
-                setTimeout(initializeTeamRobustly, 100);
-            });
-        });
-
-        // Run multiple times to override main.js interference
-        setTimeout(() => {
-            console.log('🔄 Override protection: Ensuring 3 team members show');
-            initializeTeamRobustly();
-        }, 2000);
-
-        setTimeout(() => {
-            console.log('🔄 Final override: Ensuring 3 team members show');
-            initializeTeamRobustly();
-        }, 4000);
-
-        // Periodic check to maintain 3 team members
-        setInterval(() => {
-            const teamGrid = document.querySelector('.team-grid');
-            if (teamGrid) {
-                const teamCards = teamGrid.querySelectorAll('.team-card');
-                if (teamCards.length !== 3) {
-                    console.log(`⚠️ Team grid has ${teamCards.length} members, should be 3. Fixing...`);
-                    initializeTeamRobustly();
-                }
-            }
-        }, 5000);
+        document.addEventListener('DOMContentLoaded', initializeTeam);
 
         function setupTeamModalEvents() {
             if (!teamModal) return;
-
-            // Close modal when clicking overlay
             const overlay = teamModal.querySelector('.team-modal-overlay');
-            if (overlay) {
-                overlay.addEventListener('click', closeTeamModal);
-            }
-
-            // Close modal when clicking close button
+            if (overlay) overlay.addEventListener('click', closeTeamModal);
             const closeBtn = teamModal.querySelector('.team-modal-close');
-            if (closeBtn) {
-                closeBtn.addEventListener('click', closeTeamModal);
-            }
-
-            // Close modal with Escape key
-            document.addEventListener('keydown', function(e) {
+            if (closeBtn) closeBtn.addEventListener('click', closeTeamModal);
+            document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape' && teamModal && !teamModal.classList.contains('hidden')) {
                     closeTeamModal();
                 }
@@ -520,14 +569,12 @@
         function populateTeamGrid() {
             const teamGrid = document.querySelector('.team-grid');
             if (!teamGrid) return;
-
-            // Fallback team data (works without i18n)
             const teamMembers = [
                 {
                     key: 'founder',
                     name: 'Mr. Bounlieng Thephachanh',
                     title: 'Founder & Managing Director',
-                    bio: 'With over 30 years of experience in public works engineering, Mr. Thephachanh founded TPEC after extensive international experience including education in Germany and consulting work with Swedish companies SKANSKA, HIFAB, and Sweroad.',
+                    bio: 'With over 30 years of experience in public works engineering, Mr. Thephachanh founded TPEC after extensive international experience including education in Germany and consulting work with Swedish companies SKANSKA, HIFAB, and Sweroad. He has led capacity building initiatives for Department of Public Works and Transportation staff across all provinces of Lao PDR.',
                     education: 'Road-Bridge Construction Engineering graduate from Germany (1981)',
                     experience: [
                         'Road-Bridge Maintenance Supervisor, State Enterprise No.1 Company (1982)',
@@ -571,27 +618,7 @@
                     image: 'assets/img/team/technology%20advisor.jpg'
                 }
             ];
-
-            // If i18n is available, try to get localized data
-            if (window.i18n && window.i18n.isReady) {
-                teamMembers.forEach(member => {
-                    member.name = i18n.t(`team.${member.key}.name`, member.name);
-                    member.title = i18n.t(`team.${member.key}.title`, member.title);
-                    member.bio = i18n.t(`team.${member.key}.bio`, member.bio);
-                    member.education = i18n.t(`team.${member.key}.education`, member.education);
-                    member.description = i18n.t(`team.${member.key}.description`, member.description);
-                    const localizedExperience = i18n.t(`team.${member.key}.experience`, null);
-                    if (localizedExperience && Array.isArray(localizedExperience)) {
-                        member.experience = localizedExperience;
-                    }
-                });
-            }
-
             teamGrid.innerHTML = '';
-
-            // Mark this grid as managed by about.html to prevent main.js override
-            teamGrid.setAttribute('data-managed-by', 'about-html');
-
             teamMembers.forEach(member => {
                 const teamCard = createTeamCard(member);
                 teamGrid.appendChild(teamCard);
@@ -604,10 +631,7 @@
             card.setAttribute('tabindex', '0');
             card.setAttribute('role', 'button');
             card.setAttribute('aria-label', `View details for ${member.name}`);
-
-            // Create avatar content - use only the image (no text fallback)
             const avatarContent = `<img src="${escapeHtml(member.image)}" alt="${escapeHtml(member.name)}" class="team-photo" onerror="this.style.display='none'">`;
-
             card.innerHTML = `
                 <div class="team-avatar">
                     ${avatarContent}
@@ -618,91 +642,58 @@
                     <p class="team-bio">${escapeHtml(member.bio.substring(0, 120))}...</p>
                 </div>
             `;
-
-            // Add click handler to open modal
             const handleClick = () => {
                 showTeamModal(member);
             };
-
             card.addEventListener('click', handleClick);
-            card.addEventListener('keydown', function(e) {
+            card.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
                     handleClick();
                 }
             });
-
             return card;
         }
 
         function showTeamModal(member) {
             if (!teamModal || !member) return;
-
-            console.log('Opening modal for team member:', member.name);
-
-            // Populate modal content
             const modalBody = teamModal.querySelector('.team-modal-body');
             if (modalBody) {
                 modalBody.innerHTML = createTeamModalContent(member);
             }
-
-            // Show modal
             teamModal.classList.remove('hidden');
             teamModal.setAttribute('aria-hidden', 'false');
-            
-            // Add visible class after a small delay for animation
-            setTimeout(() => {
-                teamModal.classList.add('visible');
-            }, 10);
-
-            // Focus management
+            setTimeout(() => teamModal.classList.add('visible'), 10);
             const closeBtn = teamModal.querySelector('.team-modal-close');
-            if (closeBtn) {
-                closeBtn.focus();
-            }
-
-            // Prevent body scroll
+            if (closeBtn) closeBtn.focus();
             document.body.style.overflow = 'hidden';
         }
 
         function closeTeamModal() {
             if (!teamModal) return;
-
-            console.log('Closing team modal');
-
-            // Remove visible class
             teamModal.classList.remove('visible');
-
-            // Hide modal after animation
             setTimeout(() => {
                 teamModal.classList.add('hidden');
                 teamModal.setAttribute('aria-hidden', 'true');
             }, 300);
-
-            // Restore body scroll
             document.body.style.overflow = '';
         }
 
         function createTeamModalContent(member) {
-            // Create modal avatar content - use only the image
             const modalAvatarContent = `<img src="${escapeHtml(member.image)}" alt="${escapeHtml(member.name)}" class="team-modal-photo">`;
-
             return `
                 <div class="team-modal-header">
                     ${modalAvatarContent}
                     <h2 class="team-modal-name" id="team-modal-title">${escapeHtml(member.name)}</h2>
                     <p class="team-modal-title">${escapeHtml(member.title)}</p>
                 </div>
-
                 <div class="team-modal-description">
                     <p>${escapeHtml(member.description)}</p>
                 </div>
-
                 <div class="team-modal-section">
                     <h4>Education</h4>
                     <p>${escapeHtml(member.education)}</p>
                 </div>
-
                 <div class="team-modal-section">
                     <h4>Career Highlights</h4>
                     <ul>
@@ -712,7 +703,6 @@
                         }
                     </ul>
                 </div>
-
                 <div class="team-modal-section">
                     <h4>Professional Background</h4>
                     <p>${escapeHtml(member.bio)}</p>
