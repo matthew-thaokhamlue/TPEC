@@ -119,7 +119,7 @@
     }
     </script>
 </head>
-<body>
+<body class="no-gsap">
     <a href="#main" class="skip-link">Skip to main content</a>
     
     <header id="header" role="banner">
@@ -203,138 +203,122 @@
             </div>
         </section>
 
-        <!-- Project Tabs -->
-        <section class="projects-tabs section" aria-labelledby="project-tabs-title">
-            <div class="container">
-                <h2 id="project-tabs-title" class="sr-only">Project Categories</h2>
-                <div class="tab-controls reveal-up" role="tablist" aria-label="Project status filter">
-                    <button class="tab-btn" data-tab="ongoing" role="tab" aria-selected="false" aria-controls="ongoing-projects" id="tab-ongoing">Ongoing</button>
-                    <button class="tab-btn active" data-tab="completed" role="tab" aria-selected="true" aria-controls="completed-projects" id="tab-completed">Completed</button>
-                </div>
-            </div>
-        </section>
-
         <!-- Projects Grid -->
         <section class="projects-grid-section section" aria-labelledby="projects-grid-title">
             <div class="container">
                 <h2 id="projects-grid-title" class="sr-only">Project Portfolio</h2>
-                <div id="ongoing-projects" class="projects-grid tab-content reveal-up" role="tabpanel" aria-labelledby="tab-ongoing" aria-label="Ongoing construction projects" aria-hidden="true">
-                    <!-- No ongoing projects currently -->
-                    <div class="no-projects">
-                        <p>No ongoing projects at this time.</p>
-                    </div>
-                </div>
                 <div id="completed-projects" class="projects-grid tab-content active reveal-up" role="tabpanel" aria-labelledby="tab-completed" aria-label="Completed construction projects" aria-hidden="false">
-                    <article class="project-card card reveal-up" data-project="national-road-1e-lot1" tabindex="0" role="button" aria-label="View details for National Road 1E Construction Project (Lot I)">
-                        <div class="project-avatar">
-                            <img src="assets/img/projects/national-road-1e-lot1-cover.jpg" alt="National Road 1E Construction Project (Lot I)" class="project-photo" loading="lazy">
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-name">National Road 1E Construction Project (Lot I)</h3>
-                            <p class="project-scope">Road Construction Supervision</p>
-                            <p class="project-summary">Comprehensive construction supervision for a major road infrastructure project.</p>
-                            <div class="project-details">
-                                <p class="project-location">📍 Bolikhamxay Province, Laos</p>
-                                <p class="project-duration">⏱️ April 2012 - March 2017 (47 months)</p>
-                                <p class="project-budget">💰 4,565,382,448 Kip</p>
-                                <p class="project-client">🏢 Department of Public Works and Transport, Bolikhamxay Province</p>
+                    <div class="project-card card reveal-up">
+                        <a href="project-national-road-1e-lot1.html">
+                            <div class="project-avatar">
+                                <img src="assets/img/projects/national-road-1e-lot1-cover.jpg" alt="National Road 1E Construction Project (Lot I)" class="project-photo" loading="lazy">
                             </div>
-                        </div>
-                    </article>
-                    <article class="project-card card reveal-up" data-project="national-road-1e-lot2" tabindex="0" role="button" aria-label="View details for National Road 1E Construction Project (Lot II)">
-                        <div class="project-avatar">
-                            <img src="assets/img/projects/national-road-1e-lot2-cover.jpg" alt="National Road 1E Construction Project (Lot II)" class="project-photo" loading="lazy">
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-name">National Road 1E Construction Project (Lot II)</h3>
-                            <p class="project-scope">Road Construction Supervision</p>
-                            <p class="project-summary">A 32-month road construction supervision project.</p>
-                            <div class="project-details">
-                                <p class="project-location">📍 Bolikhamxay Province, Laos</p>
-                                <p class="project-duration">⏱️ April 2012 - December 2014 (32 months)</p>
-                                <p class="project-budget">💰 1,637,511,480 Kip</p>
-                                <p class="project-client">🏢 Department of Public Works and Transport, Bolikhamxay Province</p>
+                            <div class="project-info">
+                                <h3 class="project-name">National Road 1E Construction Project (Lot I)</h3>
+                                <p class="project-scope">Road Construction Supervision</p>
+                                <p class="project-summary">Comprehensive construction supervision for a major road infrastructure project.</p>
+                                <div class="project-details">
+                                    <p class="project-location">📍 Bolikhamxay Province, Laos</p>
+                                    <p class="project-duration">⏱️ April 2012 - March 2017 (47 months)</p>
+                                    <p class="project-budget">💰 4,565,382,448 Kip</p>
+                                    <p class="project-client">🏢 Department of Public Works and Transport, Bolikhamxay Province</p>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                    <article class="project-card card reveal-up" data-project="mekong-bank-protection-paksan" tabindex="0" role="button" aria-label="View details for Mekong River Bank Protection - Paksan District">
-                        <div class="project-avatar">
-                            <img src="assets/img/projects/mekong-bank-protection-cover.jpg" alt="Mekong River Bank Protection - Paksan District" class="project-photo" loading="lazy">
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-name">Mekong River Bank Protection - Paksan District</h3>
-                            <p class="project-scope">River Bank Protection Construction</p>
-                            <p class="project-summary">Supervised the construction of 1.52 km of Mekong river bank protection.</p>
-                            <div class="project-details">
-                                <p class="project-location">📍 Phoxai Village, Paksan District, Borlikhamxay Province</p>
-                                <p class="project-duration">⏱️ October 2013 - April 2018 (4.5 years)</p>
-                                <p class="project-budget">💰 779,244,886 Kip</p>
-                                <p class="project-client">🏢 Department of Public Works and Transport, Borlikhamxay Province</p>
+                        </a>
+                    </div>
+                    <div class="project-card card reveal-up">
+                        <a href="project-national-road-1e-lot2.html">
+                            <div class="project-avatar">
+                                <img src="assets/img/projects/national-road-1e-lot2-cover.jpg" alt="National Road 1E Construction Project (Lot II)" class="project-photo" loading="lazy">
                             </div>
-                        </div>
-                    </article>
-                    <article class="project-card card reveal-up" data-project="concrete-bridges-road8" tabindex="0" role="button" aria-label="View details for 4 Concrete Bridges - National Road No. 8">
-                        <div class="project-avatar">
-                            <img src="assets/img/projects/concrete-bridges-road8-cover.jpg" alt="4 Concrete Bridges - National Road No. 8" class="project-photo" loading="lazy">
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-name">4 Concrete Bridges - National Road No. 8</h3>
-                            <p class="project-scope">Bridge Construction Supervision</p>
-                            <p class="project-summary">A comprehensive bridge construction supervision project.</p>
-                            <div class="project-details">
-                                <p class="project-location">📍 Borlikhamxay Province, Laos</p>
-                                <p class="project-duration">⏱️ December 2014 - May 2017 (2.5 years)</p>
-                                <p class="project-budget">💰 1,050,000,000 Kip</p>
-                                <p class="project-client">🏢 Department of Public Works and Transport, Borlikhamxay Province</p>
+                            <div class="project-info">
+                                <h3 class="project-name">National Road 1E Construction Project (Lot II)</h3>
+                                <p class="project-scope">Road Construction Supervision</p>
+                                <p class="project-summary">A 32-month road construction supervision project.</p>
+                                <div class="project-details">
+                                    <p class="project-location">📍 Bolikhamxay Province, Laos</p>
+                                    <p class="project-duration">⏱️ April 2012 - December 2014 (32 months)</p>
+                                    <p class="project-budget">💰 1,637,511,480 Kip</p>
+                                    <p class="project-client">🏢 Department of Public Works and Transport, Bolikhamxay Province</p>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                    <article class="project-card card reveal-up" data-project="nam-ngeip-hydroelectric" tabindex="0" role="button" aria-label="View details for Nam Ngeip 1 Hydroelectric Project Survey">
-                        <div class="project-avatar">
-                            <img src="assets/img/projects/nam-ngeip-hydroelectric-cover.jpg" alt="Nam Ngeip 1 Hydroelectric Project Survey" class="project-photo" loading="lazy">
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-name">Nam Ngeip 1 Hydroelectric Project Survey</h3>
-                            <p class="project-scope">Topographic Survey for Re-regulation Dam</p>
-                            <p class="project-summary">Specialized topographic mapping and leveling survey services for a hydroelectric project.</p>
-                            <div class="project-details">
-                                <p class="project-location">📍 Lao PDR</p>
-                                <p class="project-duration">⏱️ March - May 2013 (3 months)</p>
-                                <p class="project-budget">💰 6,950 USD</p>
-                                <p class="project-client">🏢 Obajasih Company (Construction Manager)</p>
+                        </a>
+                    </div>
+                    <div class="project-card card reveal-up">
+                        <a href="project-mekong-river-bank-protection.html">
+                            <div class="project-avatar">
+                                <img src="assets/img/projects/mekong-bank-protection-cover.jpg" alt="Mekong River Bank Protection - Paksan District" class="project-photo" loading="lazy">
                             </div>
-                        </div>
-                    </article>
-                    <article class="project-card card reveal-up" data-project="road-construction-vientiane" tabindex="0" role="button" aria-label="View details for Road Construction Projects - Vientiane Province">
-                        <div class="project-avatar">
-                            <img src="assets/img/projects/road-construction-vientiane-cover.jpg" alt="Road Construction Projects - Vientiane Province" class="project-photo" loading="lazy">
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-name">Road Construction Projects - Vientiane Province</h3>
-                            <p class="project-scope">Multiple Road Construction and Supervision</p>
-                            <p class="project-summary">Managed multiple road construction and supervision projects across Vientiane Province.</p>
-                            <div class="project-details">
-                                <p class="project-location">📍 Vientiane Province, Laos</p>
-                                <p class="project-duration">⏱️ March 2013 - September 2016 (3.5 years)</p>
-                                <p class="project-budget">💰 2,506,501,727 Kip</p>
-                                <p class="project-client">🏢 Department of Public Works and Transport, Vientiane Province</p>
+                            <div class="project-info">
+                                <h3 class="project-name">Mekong River Bank Protection - Paksan District</h3>
+                                <p class="project-scope">River Bank Protection Construction</p>
+                                <p class="project-summary">Supervised the construction of 1.52 km of Mekong river bank protection.</p>
+                                <div class="project-details">
+                                    <p class="project-location">📍 Phoxai Village, Paksan District, Borlikhamxay Province</p>
+                                    <p class="project-duration">⏱️ October 2013 - April 2018 (4.5 years)</p>
+                                    <p class="project-budget">💰 779,244,886 Kip</p>
+                                    <p class="project-client">🏢 Department of Public Works and Transport, Borlikhamxay Province</p>
+                                </div>
                             </div>
-                        </div>
-                    </article>
+                        </a>
+                    </div>
+                    <div class="project-card card reveal-up">
+                        <a href="project-concrete-bridges-road8.html">
+                            <div class="project-avatar">
+                                <img src="assets/img/projects/concrete-bridges-road8-cover.jpg" alt="4 Concrete Bridges - National Road No. 8" class="project-photo" loading="lazy">
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-name">4 Concrete Bridges - National Road No. 8</h3>
+                                <p class="project-scope">Bridge Construction Supervision</p>
+                                <p class="project-summary">A comprehensive bridge construction supervision project.</p>
+                                <div class="project-details">
+                                    <p class="project-location">📍 Borlikhamxay Province, Laos</p>
+                                    <p class="project-duration">⏱️ December 2014 - May 2017 (2.5 years)</p>
+                                    <p class="project-budget">💰 1,050,000,000 Kip</p>
+                                    <p class="project-client">🏢 Department of Public Works and Transport, Borlikhamxay Province</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="project-card card reveal-up">
+                        <a href="project-nam-ngeip-hydroelectric.html">
+                            <div class="project-avatar">
+                                <img src="assets/img/projects/nam-ngeip-hydroelectric-cover.jpg" alt="Nam Ngeip 1 Hydroelectric Project Survey" class="project-photo" loading="lazy">
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-name">Nam Ngeip 1 Hydroelectric Project Survey</h3>
+                                <p class="project-scope">Topographic Survey for Re-regulation Dam</p>
+                                <p class="project-summary">Specialized topographic mapping and leveling survey services for a hydroelectric project.</p>
+                                <div class="project-details">
+                                    <p class="project-location">📍 Lao PDR</p>
+                                    <p class="project-duration">⏱️ March - May 2013 (3 months)</p>
+                                    <p class="project-budget">💰 6,950 USD</p>
+                                    <p class="project-client">🏢 Obajasih Company (Construction Manager)</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="project-card card reveal-up">
+                        <a href="project-road-construction-vientiane.html">
+                            <div class="project-avatar">
+                                <img src="assets/img/projects/road-construction-vientiane-cover.jpg" alt="Road Construction Projects - Vientiane Province" class="project-photo" loading="lazy">
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-name">Road Construction Projects - Vientiane Province</h3>
+                                <p class="project-scope">Multiple Road Construction and Supervision</p>
+                                <p class="project-summary">Managed multiple road construction and supervision projects across Vientiane Province.</p>
+                                <div class="project-details">
+                                    <p class="project-location">📍 Vientiane Province, Laos</p>
+                                    <p class="project-duration">⏱️ March 2013 - September 2016 (3.5 years)</p>
+                                    <p class="project-budget">💰 2,506,501,727 Kip</p>
+                                    <p class="project-client">🏢 Department of Public Works and Transport, Vientiane Province</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
-
-        <!-- Project Detail Modal -->
-        <div id="project-modal" class="project-modal hidden" role="dialog" aria-modal="true" aria-labelledby="project-modal-title" aria-hidden="true">
-            <div class="project-modal-overlay"></div>
-            <div class="project-modal-content">
-                <button class="project-modal-close" aria-label="Close project details">&times;</button>
-                <div class="project-modal-body">
-                    <!-- Project detail content will be populated by JavaScript -->
-                </div>
-            </div>
-        </div>
     </main>
 
     <footer id="footer" role="contentinfo">
@@ -367,313 +351,5 @@
             </div>
         </div>
     </footer>
-
-    <!-- Critical Scripts (loaded immediately) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="console.warn('GSAP failed to load, using CSS fallbacks')"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="console.warn('ScrollTrigger failed to load')"></script>
-
-    <!-- Error Handler (loaded first for global error catching) -->
-    <script src="assets/js/error-handler.js"></script>
-
-    <!-- Application Scripts (deferred for better performance) -->
-
-    <!-- Simplified Projects Page Script -->
-    <script>
-        let projectModal = null;
-
-        // Initialize page when DOM is loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('🚀 Projects page loaded');
-
-            // Initialize modal
-            projectModal = document.getElementById('project-modal');
-
-            // Setup tabs
-            setupTabs();
-
-            // Setup modal events
-            setupModalEvents();
-
-            // Add click handlers to project cards
-            document.querySelectorAll('.project-card').forEach(card => {
-                const projectSlug = card.getAttribute('data-project');
-                if (projectSlug) {
-                    const handleClick = () => {
-                        showProjectModal(projectSlug);
-                    };
-                    card.addEventListener('click', handleClick);
-                    card.addEventListener('keydown', function(e) {
-                        if (e.key === 'Enter' || e.key === ' ') {
-                            e.preventDefault();
-                            handleClick();
-                        }
-                    });
-                }
-            });
-
-            console.log('✅ Projects functionality initialized');
-        });
-
-        function setupTabs() {
-            const tabButtons = document.querySelectorAll('.tab-btn');
-            const tabContents = document.querySelectorAll('.tab-content');
-
-            console.log('Found', tabButtons.length, 'tab buttons and', tabContents.length, 'tab contents');
-
-            tabButtons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    console.log('Tab clicked:', this.getAttribute('data-tab'));
-                    
-                    const targetTab = this.getAttribute('data-tab');
-                    
-                    // Update buttons
-                    tabButtons.forEach(btn => {
-                        btn.classList.remove('active');
-                        btn.setAttribute('aria-selected', 'false');
-                    });
-                    this.classList.add('active');
-                    this.setAttribute('aria-selected', 'true');
-                    
-                    // Update content
-                    tabContents.forEach(content => {
-                        content.classList.remove('active');
-                        content.setAttribute('aria-hidden', 'true');
-                        if (content.id === `${targetTab}-projects`) {
-                            content.classList.add('active');
-                            content.setAttribute('aria-hidden', 'false');
-                            console.log('Activated tab content:', content.id);
-                        }
-                    });
-                });
-            });
-        }
-
-        function setupModalEvents() {
-            if (!projectModal) return;
-
-            console.log('🔧 Setting up modal events');
-
-            // Close modal when clicking overlay
-            const overlay = projectModal.querySelector('.project-modal-overlay');
-            if (overlay) {
-                overlay.addEventListener('click', closeProjectModal);
-            }
-
-            // Close modal when clicking close button
-            const closeBtn = projectModal.querySelector('.project-modal-close');
-            if (closeBtn) {
-                closeBtn.addEventListener('click', closeProjectModal);
-            }
-
-            // Close modal with Escape key
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && projectModal && !projectModal.classList.contains('hidden')) {
-                    closeProjectModal();
-                }
-            });
-        }
-
-        // Hardcoded project data for modal display
-        const projectsData = {
-            'national-road-1e-lot1': {
-                title: 'National Road 1E Construction Project (Lot I)',
-                title_lo: 'ໂຄງການກໍ່ສ້າງផ្លូវជាតិເລກທີ 1E (ຕອນທີ I)',
-                location: 'Bolikhamxay Province, Laos',
-                location_lo: 'ແຂວງບໍລິຄຳໄຊ, ລາວ',
-                scope: 'Road Construction Supervision',
-                scope_lo: 'ການກວດກາການກໍ່ສ້າງຖະໜົນ',
-                year: '2012-2017',
-                duration: 'April 2012 - March 2017 (47 months)',
-                duration_lo: 'ເມສາ 2012 - ມີນາ 2017 (47 ເດືອນ)',
-                client: 'Department of Public Works and Transport, Bolikhamxay Province',
-                client_lo: 'ກົມໂຍທາທິການ ແລະ ຂົນສົ່ງ, ແຂວງບໍລິຄຳໄຊ',
-                value: '4,565,382,448 Kip',
-                value_lo: '4,565,382,448 ກີບ',
-                cover: 'assets/img/projects/national-road-1e-lot1-cover.jpg',
-                short_summary: 'Comprehensive construction supervision for a major road infrastructure project.',
-                short_summary_lo: 'ການກວດກາການກໍ່ສ້າງແບບຄົບວົງຈອນສຳລັບໂຄງການພື້ນຖານໂຄງລ່າງທາງຫຼວງທີ່ສຳຄັນ.',
-                summary: 'TPEC provided comprehensive construction supervision for this major road infrastructure project spanning 47 months. Our team of 8 engineers and 1 team leader delivered construction supervision, materials testing, quality control, and progress reporting for road construction with double surface treatment, ensuring project completion to the highest standards.',
-                summary_lo: 'TPEC ໄດ້ໃຫ້ການກວດກາການກໍ່ສ້າງແບບຄົບວົງຈອນສຳລັບໂຄງການພື້ນຖານໂຄງລ່າງທາງຫຼວງທີ່ສຳຄັນນີ້ ເຊິ່ງໃຊ້ເວລາ 47 ເດືອນ. ທີມງານຂອງພວກເຮົາປະກອບດ້ວຍວິສະວະກອນ 8 ຄົນ ແລະ ຫົວໜ້າທີມ 1 ຄົນ ໄດ້ດຳເນີນການກວດກາການກໍ່ສ້າງ, ທົດສອບວັດສະດຸ, ຄວບຄຸມຄຸນນະພາບ ແລະ ລາຍງານຄວາມຄືບໜ້າຂອງການກໍ່ສ້າງຖະໜົນດ້ວຍການປູຢາງສອງຊັ້ນ, ເພື່ອຮັບປະກັນໃຫ້ໂຄງການສຳເລັດຕາມມາດຕະຖານສູງສຸດ.'
-            },
-            'national-road-1e-lot2': {
-                title: 'National Road 1E Construction Project (Lot II)',
-                title_lo: 'ໂຄງການກໍ່ສ້າງផ្លូវជាតិເລກທີ 1E (ຕອນທີ II)',
-                location: 'Bolikhamxay Province, Laos',
-                location_lo: 'ແຂວງບໍລິຄຳໄຊ, ລາວ',
-                scope: 'Road Construction Supervision',
-                scope_lo: 'ການກວດກາການກໍ່ສ້າງຖະໜົນ',
-                year: '2012-2014',
-                duration: 'April 2012 - December 2014 (32 months)',
-                duration_lo: 'ເມສາ 2012 - ທັນວາ 2014 (32 ເດືອນ)',
-                client: 'Department of Public Works and Transport, Bolikhamxay Province',
-                client_lo: 'ກົມໂຍທາທິການ ແລະ ຂົນສົ່ງ, ແຂວງບໍລິຄຳໄຊ',
-                value: '1,637,511,480 Kip',
-                value_lo: '1,637,511,480 ກີບ',
-                cover: 'assets/img/projects/national-road-1e-lot2-cover.jpg',
-                short_summary: 'A 32-month road construction supervision project.',
-                short_summary_lo: 'ໂຄງການກວດກາການກໍ່ສ້າງຖະໜົນ 32 ເດືອນ.',
-                summary: 'A 32-month road construction supervision project where TPEC\'s team of 3 engineers and 1 team leader provided construction supervision, materials testing, and quality control for road double surface treatment construction, demonstrating our expertise in large-scale infrastructure projects.',
-                summary_lo: 'ໂຄງການກວດກາການກໍ່ສ້າງຖະໜົນ 32 ເດືອນ ເຊິ່ງທີມງານ TPEC ປະກອບດ້ວຍວິສະວະກອນ 3 ຄົນ ແລະ ຫົວໜ້າທີມ 1 ຄົນ ໄດ້ໃຫ້ການກວດກາການກໍ່ສ້າງ, ທົດສອບວັດສະດຸ ແລະ ຄວບຄຸມຄຸນນະພາບສຳລັບການກໍ່ສ້າງຖະໜົນປູຢາງສອງຊັ້ນ, ເຊິ່ງສະແດງໃຫ້ເຫັນເຖິງຄວາມຊ່ຽວຊານຂອງພວກເຮົາໃນໂຄງການພື້ນຖານໂຄງລ່າງຂະໜາດໃຫຍ່.'
-            },
-            'mekong-bank-protection-paksan': {
-                title: 'Mekong River Bank Protection - Paksan District',
-                title_lo: 'ການປ້ອງກັນຕາຝັ່ງแม่น้ำຂອງ - ເມືອງປາກຊັນ',
-                location: 'Phoxai Village, Paksan District, Borlikhamxay Province',
-                location_lo: 'ບ້ານໂພໄຊ, ເມືອງປາກຊັນ, ແຂວງບໍລິຄຳໄຊ',
-                scope: 'River Bank Protection Construction',
-                scope_lo: 'ການກໍ່ສ້າງການປ້ອງກັນຕາຝັ່ງแม่น้ำ',
-                year: '2013-2018',
-                duration: 'October 2013 - April 2018 (4.5 years)',
-                duration_lo: 'ຕຸລາ 2013 - ເມສາ 2018 (4.5 ປີ)',
-                client: 'Department of Public Works and Transport, Borlikhamxay Province',
-                client_lo: 'ກົມໂຍທາທິການ ແລະ ຂົນສົ່ງ, ແຂວງບໍລິຄຳໄຊ',
-                value: '779,244,886 Kip',
-                value_lo: '779,244,886 ກີບ',
-                cover: 'assets/img/projects/mekong-bank-protection-cover.jpg',
-                short_summary: 'Supervised the construction of 1.52 km of Mekong river bank protection.',
-                short_summary_lo: 'ກວດກາການກໍ່ສ້າງການປ້ອງກັນຕາຝັ່ງแม่น้ำຂອງ 1.52 ກິໂລແມັດ.',
-                summary: 'TPEC supervised the construction of 1.52 km of Mekong river bank protection in Phoxai Village over 4.5 years. Our team of 2 engineers and 1 team leader ensured proper construction techniques and quality control for this critical flood protection infrastructure project.',
-                summary_lo: 'TPEC ໄດ້ກວດກາການກໍ່ສ້າງການປ້ອງກັນຕາຝັ່ງแม่น้ำຂອງ 1.52 ກິໂລແມັດ ຢູ່ບ້ານໂພໄຊ ເປັນເວລາ 4.5 ປີ. ທີມງານຂອງພວກເຮົາປະກອບດ້ວຍວິສະວະກອນ 2 ຄົນ ແລະ ຫົວໜ້າທີມ 1 ຄົນ ໄດ້ຮັບປະກັນເຕັກນິກການກໍ່ສ້າງທີ່ເໝາະສົມ ແລະ ການຄວບຄຸມຄຸນນະພາບສຳລັບໂຄງການພື້ນຖານໂຄງລ່າງປ້ອງກັນນ້ຳຖ້ວມທີ່ສຳຄັນນີ້.'
-            },
-            'concrete-bridges-road8': {
-                title: '4 Concrete Bridges - National Road No. 8',
-                title_lo: 'ຂົວຄອນກຣີດ 4 ແຫ່ງ - ផ្លូវជាតិເລກທີ 8',
-                location: 'Borlikhamxay Province, Laos',
-                location_lo: 'ແຂວງບໍລິຄຳໄຊ, ລາວ',
-                scope: 'Bridge Construction Supervision',
-                scope_lo: 'ການກວດກາການກໍ່ສ້າງຂົວ',
-                year: '2014-2017',
-                duration: 'December 2014 - May 2017 (2.5 years)',
-                duration_lo: 'ທັນວາ 2014 - ພຶດສະພາ 2017 (2.5 ປີ)',
-                client: 'Department of Public Works and Transport, Borlikhamxay Province',
-                client_lo: 'ກົມໂຍທາທິການ ແລະ ຂົນສົ່ງ, ແຂວງບໍລິຄຳໄຊ',
-                value: '1,050,000,000 Kip',
-                value_lo: '1,050,000,000 ກີບ',
-                cover: 'assets/img/projects/concrete-bridges-road8-cover.jpg',
-                short_summary: 'A comprehensive bridge construction supervision project.',
-                short_summary_lo: 'ໂຄງການກວດກາການກໍ່ສ້າງຂົວແບບຄົບວົງຈອນ.',
-                summary: 'A comprehensive bridge construction supervision project where TPEC\'s team of 3 engineers and 1 team leader provided technical oversight for the construction of 4 concrete bridges, ensuring structural integrity and compliance with engineering standards over a 2.5-year period.',
-                summary_lo: 'ໂຄງການກວດກາການກໍ່ສ້າງຂົວແບບຄົບວົງຈອນ ເຊິ່ງທີມງານ TPEC ປະກອບດ້ວຍວິສະວະກອນ 3 ຄົນ ແລະ ຫົວໜ້າທີມ 1 ຄົນ ໄດ້ໃຫ້ການກວດກາດ້ານເຕັກນິກສຳລັບການກໍ່ສ້າງຂົວຄອນກຣີດ 4 ແຫ່ງ, ເພື່ອຮັບປະກັນຄວາມສົມບູນຂອງໂຄງສ້າງ ແລະ ການປະຕິບັດຕາມມາດຕະຖານວິສະວະກຳຕະຫຼອດໄລຍະເວລາ 2.5 ປີ.'
-            },
-            'nam-ngeip-hydroelectric': {
-                title: 'Nam Ngeip 1 Hydroelectric Project Survey',
-                title_lo: 'ການສຳຫຼວດໂຄງການໄຟຟ້ານ້ຳຕົກນ້ຳງຽບ 1',
-                location: 'Lao PDR',
-                location_lo: 'ສປປ ລາວ',
-                scope: 'Topographic Survey for Re-regulation Dam',
-                scope_lo: 'ການສຳຫຼວດພູມສັນຖານສຳລັບເຂື່ອນ નિયಂತ್ರణ',
-                year: '2013',
-                duration: 'March - May 2013 (3 months)',
-                duration_lo: 'ມີນາ - ພຶດສະພາ 2013 (3 ເດືອນ)',
-                client: 'Obajasih Company (Construction Manager)',
-                client_lo: 'ບໍລິສັດ Obajasih (ຜູ້ຈັດການກໍ່ສ້າງ)',
-                value: '6,950 USD',
-                value_lo: '6,950 ໂດລາສະຫະລັດ',
-                funding: 'Japan Funded',
-                funding_lo: 'ທຶນຈາກປະເທດຍີ່ປຸ່ນ',
-                cover: 'assets/img/projects/nam-ngeip-hydroelectric-cover.jpg',
-                short_summary: 'Specialized topographic mapping and leveling survey services for a hydroelectric project.',
-                short_summary_lo: 'ການບໍລິການສຳຫຼວດພູມສັນຖານ ແລະ ການສຳຫຼວດລະດັບພິເສດສຳລັບໂຄງການໄຟຟ້ານ້ຳຕົກ.',
-                summary: 'TPEC conducted specialized topographic mapping and leveling survey services for this Japan-funded hydroelectric project. Our services included grid 15x15 mapping, river section surveying, and HWL/LWL determination for the re-regulation dam, showcasing our expertise in precision surveying for power infrastructure.',
-                summary_lo: 'TPEC ໄດ້ດຳເນີນການບໍລິການສຳຫຼວດພູມສັນຖານ ແລະ ການສຳຫຼວດລະດັບພິເສດສຳລັບໂຄງການໄຟຟ້ານ້ຳຕົກທີ່ໄດ້ຮັບທຶນຈາກປະເທດຍີ່ປຸ່ນນີ້. ການບໍລິການຂອງພວກເຮົາລວມມີການສ້າງແຜນທີ່ຕາຂ່າຍ 15x15, ການສຳຫຼວດພາກສ່ວນแม่น้ำ ແລະ ການກຳນົດ HWL/LWL ສຳລັບເຂື່ອນ નિયಂತ್ರణ, ເຊິ່ງສະແດງໃຫ້ເຫັນເຖິງຄວາມຊ່ຽວຊານຂອງພວກເຮົາໃນການສຳຫຼວດທີ່แม่นยำສຳລັບພື້ນຖານໂຄງລ່າງດ້ານພະລັງງານ.'
-            },
-            'road-construction-vientiane': {
-                title: 'Road Construction Projects - Vientiane Province',
-                title_lo: 'ໂຄງການກໍ່ສ້າງຖະໜົນ - ແຂວງວຽງຈັນ',
-                location: 'Vientiane Province, Laos',
-                location_lo: 'ແຂວງວຽງຈັນ, ລາວ',
-                scope: 'Multiple Road Construction and Supervision',
-                scope_lo: 'ການກໍ່ສ້າງ ແລະ ກວດກາຖະໜົນຫຼາຍສາຍ',
-                year: '2013-2016',
-                duration: 'March 2013 - September 2016 (3.5 years)',
-                duration_lo: 'ມີນາ 2013 - ກັນຍາ 2016 (3.5 ປີ)',
-                client: 'Department of Public Works and Transport, Vientiane Province',
-                client_lo: 'ກົມໂຍທາທິການ ແລະ ຂົນສົ່ງ, ແຂວງວຽງຈັນ',
-                value: '2,506,501,727 Kip',
-                value_lo: '2,506,501,727 ກີບ',
-                cover: 'assets/img/projects/road-construction-vientiane-cover.jpg',
-                short_summary: 'Managed multiple road construction and supervision projects across Vientiane Province.',
-                short_summary_lo: 'ຄຸ້ມຄອງໂຄງການກໍ່ສ້າງ ແລະ ກວດກາຖະໜົນຫຼາຍສາຍທົ່ວແຂວງວຽງຈັນ.',
-                summary: 'TPEC managed multiple road construction and supervision projects across Vientiane Province, including double bitumen surface treatment construction. Our team of 3 engineers and 1 team leader delivered comprehensive project management and quality control services over a 3-year period.',
-                summary_lo: 'TPEC ໄດ້ຄຸ້ມຄອງໂຄງການກໍ່ສ້າງ ແລະ ກວດກາຖະໜົນຫຼາຍສາຍທົ່ວແຂວງວຽງຈັນ, ລວມທັງການກໍ່ສ້າງປູຢາງສອງຊັ້ນ. ທີມງານຂອງພວກເຮົາປະກອບດ້ວຍວິສະວະກອນ 3 ຄົນ ແລະ ຫົວໜ້າທີມ 1 ຄົນ ໄດ້ໃຫ້ບໍລິການຄຸ້ມຄອງໂຄງການ ແລະ ຄວບຄຸມຄຸນນະພາບແບບຄົບວົງຈອນຕະຫຼອດໄລຍະເວລາ 3 ປີ.'
-            }
-        };
-
-        function showProjectModal(projectSlug) {
-            const project = projectsData[projectSlug];
-            if (!project || !projectModal) {
-                console.warn('❌ Project not found or modal not available:', projectSlug);
-                return;
-            }
-
-            const title = project.title;
-            console.log('📋 Showing modal for:', title);
-
-            // Create modal content
-            const modalBody = projectModal.querySelector('.project-modal-body');
-            if (modalBody) {
-                modalBody.innerHTML = `
-                    <div class="project-modal-header">
-                        <h2 class="project-modal-title" id="project-modal-title">${title}</h2>
-                        <div class="project-modal-meta">
-                            <span class="project-location">📍 ${project.location}</span>
-                            <span class="project-year">📅 ${project.year}</span>
-                            <span class="project-value">💰 ${project.value}</span>
-                            ${project.funding ? `<span class="project-funding">🏦 ${project.funding}</span>` : ''}
-                        </div>
-                    </div>
-                    <div class="project-modal-content">
-                        <div class="project-image">
-                            <img src="${project.cover}" alt="${title}" loading="lazy">
-                        </div>
-                        <div class="project-details">
-                            <h3>Project Scope</h3>
-                            <p>${project.scope}</p>
-                            <h3>Client</h3>
-                            <p>${project.client}</p>
-                            <h3>Summary</h3>
-                            <p>${project.summary}</p>
-                        </div>
-                    </div>
-                `;
-            }
-
-            // Show modal
-            projectModal.classList.remove('hidden');
-            projectModal.setAttribute('aria-hidden', 'false');
-
-            // Add visible class for animation
-            setTimeout(() => {
-                projectModal.classList.add('visible');
-            }, 10);
-
-            // Focus management
-            const closeBtn = projectModal.querySelector('.project-modal-close');
-            if (closeBtn) {
-                closeBtn.focus();
-            }
-
-            // Prevent body scroll
-            document.body.style.overflow = 'hidden';
-        }
-        function closeProjectModal() {
-            if (!projectModal) return;
-
-            console.log('🔒 Closing project modal');
-
-            // Remove visible class
-            projectModal.classList.remove('visible');
-
-            // Hide modal after animation
-            setTimeout(() => {
-                projectModal.classList.add('hidden');
-                projectModal.setAttribute('aria-hidden', 'true');
-            }, 300);
-
-            // Restore body scroll
-            document.body.style.overflow = '';
-        }
-    </script>
 </body>
 </html>
