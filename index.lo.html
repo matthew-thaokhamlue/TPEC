@@ -95,7 +95,6 @@
     <!-- Styles -->
     <link rel="stylesheet" href="assets/css/tokens.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/performance.css" />
 
     <!-- Favicon and Touch Icons -->
     <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico" />
@@ -130,7 +129,7 @@
     />
     <link rel="manifest" href="assets/icons/site.webmanifest" />
   </head>
-  <body>
+  <body class="no-gsap">
     <a href="#main" class="skip-link">ຂ້າມໄປເນື້ອຫາຫຼັກ</a>
 
     <header id="header" role="banner">
@@ -489,46 +488,5 @@
         </div>
       </div>
     </footer>
-
-    <!-- Error Handler (loaded first for global error catching) -->
-    <script src="assets/js/error-handler.js"></script>
-
-    <!-- Critical Scripts (loaded immediately) -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
-      integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-      onerror="console.warn('GSAP failed to load, using CSS fallbacks'); document.body.classList.add('no-gsap', 'no-animations');"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
-      integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-      onerror="console.warn('ScrollTrigger failed to load'); document.body.classList.add('no-scroll-trigger');"
-    ></script>
-
-    <!-- Application Scripts (deferred for better performance) -->
-    <script
-      defer
-      src="assets/js/performance.js"
-      onerror="console.warn('Performance script failed to load')"
-    ></script>
-    <script
-      defer
-      src="assets/js/image-optimizer.js"
-      onerror="console.warn('Image optimizer script failed to load')"
-    ></script>
-    <script
-      defer
-      src="assets/js/motion.js"
-      onerror="console.warn('Motion script failed to load')"
-    ></script>
-    <script
-      defer
-      src="assets/js/seo.js"
-      onerror="console.warn('SEO script failed to load')"
-    ></script>
   </body>
 </html>

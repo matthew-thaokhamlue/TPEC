@@ -51,336 +51,6 @@
     <link rel="stylesheet" href="assets/css/tokens.css">
     <link rel="stylesheet" href="assets/css/main.css">
 
-    <style>
-        /* Additional project-specific styles to ensure proper functionality */
-        .tab-controls {
-            display: flex;
-            justify-content: center;
-            gap: var(--space-sm, 8px);
-            margin-bottom: 0;
-            padding: 0;
-        }
-
-        .tab-btn {
-            background: var(--card, #1a1d23);
-            border: 1px solid var(--line, #2a2d35);
-            color: var(--text-muted, #9ca3af);
-            padding: var(--space-md, 12px) var(--space-xl, 24px);
-            border-radius: var(--radius, 6px);
-            font-size: var(--font-size-base, 16px);
-            font-weight: var(--font-weight-medium, 500);
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 120px;
-        }
-
-        .tab-btn:hover {
-            background: var(--card-hover, #22252c);
-            border-color: var(--accent, #4da3ff);
-            color: var(--text, #ffffff);
-        }
-
-        .tab-btn.active {
-            background: var(--accent, #4da3ff);
-            border-color: var(--accent, #4da3ff);
-            color: var(--bg, #0e1116);
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: grid;
-            gap: var(--space-2xl, 32px);
-            grid-template-columns: 1fr;
-        }
-
-        @media (min-width: 768px) {
-            .tab-content.active {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .tab-content.active {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        .project-card {
-            cursor: pointer;
-            transition: all 0.3s ease;
-            background: var(--card, #1a1d23);
-            border: 1px solid var(--line, #2a2d35);
-            border-radius: var(--radius-lg, 12px);
-            overflow: hidden;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .project-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-            background: var(--card-hover, #22252c);
-            border-color: var(--accent, #4da3ff);
-        }
-
-        .project-avatar {
-            width: 100%;
-            height: 200px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .project-photo {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .project-info {
-            padding: var(--space-xl, 24px);
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .project-name {
-            font-size: var(--font-size-lg, 18px);
-            font-weight: var(--font-weight-semibold, 600);
-            margin-bottom: var(--space-sm, 8px);
-            color: var(--text, #ffffff);
-        }
-
-        .project-scope {
-            font-size: var(--font-size-sm, 14px);
-            color: var(--accent, #4da3ff);
-            font-weight: var(--font-weight-medium, 500);
-            margin-bottom: var(--space-md, 16px);
-        }
-
-        .project-summary {
-            color: var(--text-muted, #9ca3af);
-            margin-bottom: var(--space-md, 16px);
-            flex: 1;
-            line-height: 1.6;
-            font-size: var(--font-size-sm, 14px);
-        }
-
-        .project-details {
-            margin-top: auto;
-        }
-
-        .project-details p {
-            font-size: var(--font-size-sm, 14px);
-            color: var(--text-muted, #9ca3af);
-            margin-bottom: var(--space-xs, 4px);
-        }
-
-        .project-location, .project-duration, .project-budget, .project-client {
-            font-size: var(--font-size-sm, 14px);
-            color: var(--text-muted, #9ca3af);
-            margin-bottom: var(--space-xs, 4px);
-        }
-
-        .empty-state, .error-message {
-            text-align: center;
-            padding: var(--space-4xl, 64px);
-            color: var(--text-muted, #9ca3af);
-            grid-column: 1 / -1;
-        }
-
-        .loading {
-            text-align: center;
-            padding: var(--space-4xl, 64px);
-            color: var(--text-muted, #9ca3af);
-            grid-column: 1 / -1;
-        }
-
-        /* Project Modal Styles */
-        .project-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .project-modal.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .project-modal-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(4px);
-        }
-
-        .project-modal-content {
-            position: relative;
-            background: var(--card, #1a1d23);
-            border: 1px solid var(--line, #2a2d35);
-            border-radius: var(--radius-lg, 12px);
-            max-width: 800px;
-            max-height: 90vh;
-            width: 90%;
-            overflow-y: auto;
-            transform: scale(0.9) translateY(20px);
-            transition: transform 0.3s ease;
-        }
-
-        .project-modal.visible .project-modal-content {
-            transform: scale(1) translateY(0);
-        }
-
-        .project-modal-close {
-            position: absolute;
-            top: var(--space-md, 16px);
-            right: var(--space-md, 16px);
-            background: var(--card-hover, #22252c);
-            border: 1px solid var(--line, #2a2d35);
-            color: var(--text-muted, #9ca3af);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 24px;
-            line-height: 1;
-            transition: all 0.2s ease;
-            z-index: 10001;
-        }
-
-        .project-modal-close:hover {
-            background: var(--accent, #4da3ff);
-            color: var(--bg, #0e1116);
-            border-color: var(--accent, #4da3ff);
-        }
-
-        .project-modal-body {
-            padding: var(--space-2xl, 32px);
-        }
-
-        .project-modal-header {
-            margin-bottom: var(--space-xl, 24px);
-        }
-
-        .project-modal-title {
-            font-size: var(--font-size-2xl, 24px);
-            font-weight: var(--font-weight-bold, 700);
-            color: var(--text, #ffffff);
-            margin-bottom: var(--space-sm, 8px);
-        }
-
-        .project-modal-meta {
-            display: flex;
-            gap: var(--space-lg, 20px);
-            margin-bottom: var(--space-md, 16px);
-            font-size: var(--font-size-sm, 14px);
-            color: var(--text-muted, #9ca3af);
-        }
-
-        .project-modal-scope {
-            color: var(--accent, #4da3ff);
-            font-weight: var(--font-weight-medium, 500);
-            font-size: var(--font-size-base, 16px);
-        }
-
-        .project-modal-image {
-            width: 100%;
-            height: 300px;
-            border-radius: var(--radius, 6px);
-            overflow: hidden;
-            margin-bottom: var(--space-xl, 24px);
-        }
-
-        .project-modal-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .project-modal-description {
-            color: var(--text, #ffffff);
-            line-height: 1.6;
-            margin-bottom: var(--space-xl, 24px);
-        }
-
-        .project-modal-details {
-            display: grid;
-            gap: var(--space-lg, 20px);
-        }
-
-        .project-modal-section {
-            background: var(--bg, #0e1116);
-            border: 1px solid var(--line, #2a2d35);
-            border-radius: var(--radius, 6px);
-            padding: var(--space-lg, 20px);
-        }
-
-        .project-modal-section h4 {
-            color: var(--text, #ffffff);
-            font-weight: var(--font-weight-semibold, 600);
-            margin-bottom: var(--space-md, 16px);
-        }
-
-        .project-modal-section p,
-        .project-modal-section ul {
-            color: var(--text-muted, #9ca3af);
-            line-height: 1.6;
-        }
-
-        .project-modal-section ul {
-            padding-left: var(--space-lg, 20px);
-        }
-
-        .project-modal-section li {
-            margin-bottom: var(--space-sm, 8px);
-        }
-
-        @media (max-width: 768px) {
-            .project-modal-content {
-                width: 95%;
-                max-height: 95vh;
-            }
-
-            .project-modal-body {
-                padding: var(--space-lg, 20px);
-            }
-
-            .project-modal-meta {
-                flex-direction: column;
-                gap: var(--space-sm, 8px);
-            }
-
-            .project-modal-image {
-                height: 200px;
-            }
-        }
-    </style>
-
     <!-- Favicon and Touch Icons -->
     <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
@@ -421,7 +91,7 @@
     }
     </script>
 </head>
-<body>
+<body class="no-gsap">
     <a href="#main" class="skip-link">ຂ້າມໄປຫາເນື້ອໃນຫຼັກ</a>
 
     <header id="header" role="banner">
@@ -505,138 +175,122 @@
             </div>
         </section>
 
-        <!-- Project Tabs -->
-        <section class="projects-tabs section" aria-labelledby="project-tabs-title">
-            <div class="container">
-                <h2 id="project-tabs-title" class="sr-only">ປະເພດໂຄງການ</h2>
-                <div class="tab-controls reveal-up" role="tablist" aria-label="Project status filter">
-                    <button class="tab-btn" data-tab="ongoing" role="tab" aria-selected="false" aria-controls="ongoing-projects" id="tab-ongoing">ໂຄງການທີ່ກຳລັງດຳເນີນ</button>
-                    <button class="tab-btn active" data-tab="completed" role="tab" aria-selected="true" aria-controls="completed-projects" id="tab-completed">ໂຄງການທີ່ສຳເລັດແລ້ວ</button>
-                </div>
-            </div>
-        </section>
-
         <!-- Projects Grid -->
         <section class="projects-grid-section section" aria-labelledby="projects-grid-title">
             <div class="container">
                 <h2 id="projects-grid-title" class="sr-only">ຫຼັກຊັບໂຄງການ</h2>
-                <div id="ongoing-projects" class="projects-grid tab-content reveal-up" role="tabpanel" aria-labelledby="tab-ongoing" aria-label="ໂຄງການກໍ່ສ້າງທີ່ກຳລັງດຳເນີນ" aria-hidden="true">
-                    <!-- No ongoing projects currently -->
-                    <div class="no-projects">
-                        <p>ບໍ່ມີໂຄງການທີ່ກຳລັງດຳເນີນໃນຂະນະນີ້.</p>
-                    </div>
-                </div>
                 <div id="completed-projects" class="projects-grid tab-content active reveal-up" role="tabpanel" aria-labelledby="tab-completed" aria-label="ໂຄງການກໍ່ສ້າງທີ່ສຳເລັດແລ້ວ">
-                    <article class="project-card card reveal-up" data-project="national-road-1e-lot1" tabindex="0" role="button" aria-label="View details for ໂຄງການກໍ່ສ້າງផ្លូវជាតិເລກທີ 1E (ຕອນທີ I)">
-                        <div class="project-avatar">
-                            <img src="assets/img/projects/national-road-1e-lot1-cover.jpg" alt="ໂຄງການກໍ່ສ້າງផ្លូវជាតិເລກທີ 1E (ຕອນທີ I)" class="project-photo" loading="lazy">
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-name">ໂຄງການກໍ່ສ້າງផ្លូវជាតិເລກທີ 1E (ຕອນທີ I)</h3>
-                            <p class="project-scope">ການກວດກາການກໍ່ສ້າງຖະໜົນ</p>
-                            <p class="project-summary">ການກວດກາການກໍ່ສ້າງແບບຄົບວົງຈອນສຳລັບໂຄງການພື້ນຖານໂຄງລ່າງທາງຫຼວງທີ່ສຳຄັນ.</p>
-                            <div class="project-details">
-                                <p class="project-location">📍 ແຂວງບໍລິຄຳໄຊ, ລາວ</p>
-                                <p class="project-duration">⏱️ ເມສາ 2012 - ມີນາ 2017 (47 ເດືອນ)</p>
-                                <p class="project-budget">💰 4,565,382,448 ກີບ</p>
-                                <p class="project-client">🏢 ກົມໂຍທາທິການ ແລະ ຂົນສົ່ງ, ແຂວງບໍລິຄຳໄຊ</p>
+                    <div class="project-card card reveal-up">
+                        <a href="project-national-road-1e-lot1.lo.html">
+                            <div class="project-avatar">
+                                <img src="assets/img/projects/national-road-1e-lot1-cover.jpg" alt="ໂຄງການກໍ່ສ້າງផ្លូវជាតិເລກທີ 1E (ຕອນທີ I)" class="project-photo" loading="lazy">
                             </div>
-                        </div>
-                    </article>
-                    <article class="project-card card reveal-up" data-project="national-road-1e-lot2" tabindex="0" role="button" aria-label="View details for ໂຄງການກໍ່ສ້າງផ្លូវជាតិເລກທີ 1E (ຕອນທີ II)">
-                        <div class="project-avatar">
-                            <img src="assets/img/projects/national-road-1e-lot2-cover.jpg" alt="ໂຄງການກໍ່ສ້າງផ្លូវជាតិເລກທີ 1E (ຕອນທີ II)" class="project-photo" loading="lazy">
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-name">ໂຄງການກໍ່ສ້າງផ្លូវជាតិເລກທີ 1E (ຕອນທີ II)</h3>
-                            <p class="project-scope">ການກວດກາການກໍ່ສ້າງຖະໜົນ</p>
-                            <p class="project-summary">ໂຄງການກວດກາການກໍ່ສ້າງຖະໜົນ 32 ເດືອນ.</p>
-                            <div class="project-details">
-                                <p class="project-location">📍 ແຂວງບໍລິຄຳໄຊ, ລາວ</p>
-                                <p class="project-duration">⏱️ ເມສາ 2012 - ທັນວາ 2014 (32 ເດືອນ)</p>
-                                <p class="project-budget">💰 1,637,511,480 ກີບ</p>
-                                <p class="project-client">🏢 ກົມໂຍທາທິການ ແລະ ຂົນສົ່ງ, ແຂວງບໍລິຄຳໄຊ</p>
+                            <div class="project-info">
+                                <h3 class="project-name">ໂຄງການກໍ່ສ້າງផ្លូវជាតិເລກທີ 1E (ຕອນທີ I)</h3>
+                                <p class="project-scope">ການກວດກາການກໍ່ສ້າງຖະໜົນ</p>
+                                <p class="project-summary">ການກວດກາການກໍ່ສ້າງແບບຄົບວົງຈອນສຳລັບໂຄງການພື້ນຖານໂຄງລ່າງທາງຫຼວງທີ່ສຳຄັນ.</p>
+                                <div class="project-details">
+                                    <p class="project-location">📍 ແຂວງບໍລິຄຳໄຊ, ລາວ</p>
+                                    <p class="project-duration">⏱️ ເມສາ 2012 - ມີນາ 2017 (47 ເດືອນ)</p>
+                                    <p class="project-budget">💰 4,565,382,448 ກີບ</p>
+                                    <p class="project-client">🏢 ກົມໂຍທາທິການ ແລະ ຂົນສົ່ງ, ແຂວງບໍລິຄຳໄຊ</p>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                    <article class="project-card card reveal-up" data-project="mekong-bank-protection-paksan" tabindex="0" role="button" aria-label="View details for ການປ້ອງກັນຕາຝັ່ງแม่น้ำຂອງ - ເມືອງປາກຊັນ">
-                        <div class="project-avatar">
-                            <img src="assets/img/projects/mekong-bank-protection-cover.jpg" alt="ການປ້ອງກັນຕາຝັ່ງแม่น้ำຂອງ - ເມືອງປາກຊັນ" class="project-photo" loading="lazy">
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-name">ການປ້ອງກັນຕາຝັ່ງแม่น้ำຂອງ - ເມືອງປາກຊັນ</h3>
-                            <p class="project-scope">ການກໍ່ສ້າງການປ້ອງກັນຕາຝັ່ງแม่น้ำ</p>
-                            <p class="project-summary">ກວດກາການກໍ່ສ້າງການປ້ອງກັນຕາຝັ່ງแม่น้ำຂອງ 1.52 ກິໂລແມັດ.</p>
-                            <div class="project-details">
-                                <p class="project-location">📍 ບ້ານໂພໄຊ, ເມືອງປາກຊັນ, ແຂວງບໍລິຄຳໄຊ</p>
-                                <p class="project-duration">⏱️ ຕຸລາ 2013 - ເມສາ 2018 (4.5 ປີ)</p>
-                                <p class="project-budget">💰 779,244,886 ກີບ</p>
-                                <p class="project-client">🏢 ກົມໂຍທາທິການ ແລະ ຂົນສົ່ງ, ແຂວງບໍລິຄຳໄຊ</p>
+                        </a>
+                    </div>
+                    <div class="project-card card reveal-up">
+                        <a href="project-national-road-1e-lot2.lo.html">
+                            <div class="project-avatar">
+                                <img src="assets/img/projects/national-road-1e-lot2-cover.jpg" alt="ໂຄງການກໍ່ສ້າງផ្លូវជាតិເລກທີ 1E (ຕອນທີ II)" class="project-photo" loading="lazy">
                             </div>
-                        </div>
-                    </article>
-                    <article class="project-card card reveal-up" data-project="concrete-bridges-road8" tabindex="0" role="button" aria-label="View details for ຂົວຄອນກຣີດ 4 ແຫ່ງ - ផ្លូវជាតិເລກທີ 8">
-                        <div class="project-avatar">
-                            <img src="assets/img/projects/concrete-bridges-road8-cover.jpg" alt="ຂົວຄອນກຣີດ 4 ແຫ່ງ - ផ្លូវជាតិເລກທີ 8" class="project-photo" loading="lazy">
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-name">ຂົວຄອນກຣີດ 4 ແຫ່ງ - ផ្លូវជាតិເລກທີ 8</h3>
-                            <p class="project-scope">ການກວດກາການກໍ່ສ້າງຂົວ</p>
-                            <p class="project-summary">ໂຄງການກວດກາການກໍ່ສ້າງຂົວແບບຄົບວົງຈອນ.</p>
-                            <div class="project-details">
-                                <p class="project-location">📍 ແຂວງບໍລິຄຳໄຊ, ລາວ</p>
-                                <p class="project-duration">⏱️ ທັນວາ 2014 - ພຶດສະພາ 2017 (2.5 ປີ)</p>
-                                <p class="project-budget">💰 1,050,000,000 ກີບ</p>
-                                <p class="project-client">🏢 ກົມໂຍທາທິການ ແລະ ຂົນສົ່ງ, ແຂວງບໍລິຄຳໄຊ</p>
+                            <div class="project-info">
+                                <h3 class="project-name">ໂຄງການກໍ່ສ້າງផ្លូវជាតិເລກທີ 1E (ຕອນທີ II)</h3>
+                                <p class="project-scope">ການກວດກາການກໍ່ສ້າງຖະໜົນ</p>
+                                <p class="project-summary">ໂຄງການກວດກາການກໍ່ສ້າງຖະໜົນ 32 ເດືອນ.</p>
+                                <div class="project-details">
+                                    <p class="project-location">📍 ແຂວງບໍລິຄຳໄຊ, ລາວ</p>
+                                    <p class="project-duration">⏱️ ເມສາ 2012 - ທັນວາ 2014 (32 ເດືອນ)</p>
+                                    <p class="project-budget">💰 1,637,511,480 ກີບ</p>
+                                    <p class="project-client">🏢 ກົມໂຍທາທິການ ແລະ ຂົນສົ່ງ, ແຂວງບໍລິຄຳໄຊ</p>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                    <article class="project-card card reveal-up" data-project="nam-ngeip-hydroelectric" tabindex="0" role="button" aria-label="View details for ການສຳຫຼວດໂຄງການໄຟຟ້ານ້ຳຕົກນ້ຳງຽບ 1">
-                        <div class="project-avatar">
-                            <img src="assets/img/projects/nam-ngeip-hydroelectric-cover.jpg" alt="ການສຳຫຼວດໂຄງການໄຟຟ້ານ້ຳຕົກນ້ຳງຽບ 1" class="project-photo" loading="lazy">
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-name">ການສຳຫຼວດໂຄງການໄຟຟ້ານ້ຳຕົກນ້ຳງຽບ 1</h3>
-                            <p class="project-scope">ການສຳຫຼວດພູມສັນຖານສຳລັບເຂື່ອນ નિયಂತ್ರణ</p>
-                            <p class="project-summary">ການບໍລິການສຳຫຼວດພູມສັນຖານ ແລະ ການສຳຫຼວດລະດັບພິເສດສຳລັບໂຄງການໄຟຟ້ານ້ຳຕົກ.</p>
-                            <div class="project-details">
-                                <p class="project-location">📍 ສປປ ລາວ</p>
-                                <p class="project-duration">⏱️ ມີນາ - ພຶດສະພາ 2013 (3 ເດືອນ)</p>
-                                <p class="project-budget">💰 6,950 ໂດລາສະຫະລັດ</p>
-                                <p class="project-client">🏢 ບໍລິສັດ Obajasih (ຜູ້ຈັດການກໍ່ສ້າງ)</p>
+                        </a>
+                    </div>
+                    <div class="project-card card reveal-up">
+                        <a href="project-mekong-river-bank-protection.lo.html">
+                            <div class="project-avatar">
+                                <img src="assets/img/projects/mekong-bank-protection-cover.jpg" alt="ການປ້ອງກັນຕາຝັ່ງแม่น้ำຂອງ - ເມືອງປາກຊັນ" class="project-photo" loading="lazy">
                             </div>
-                        </div>
-                    </article>
-                    <article class="project-card card reveal-up" data-project="road-construction-vientiane" tabindex="0" role="button" aria-label="View details for ໂຄງການກໍ່ສ້າງຖະໜົນ - ແຂວງວຽງຈັນ">
-                        <div class="project-avatar">
-                            <img src="assets/img/projects/road-construction-vientiane-cover.jpg" alt="ໂຄງການກໍ່ສ້າງຖະໜົນ - ແຂວງວຽງຈັນ" class="project-photo" loading="lazy">
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-name">ໂຄງການກໍ່ສ້າງຖະໜົນ - ແຂວງວຽງຈັນ</h3>
-                            <p class="project-scope">ການກໍ່ສ້າງ ແລະ ກວດກາຖະໜົນຫຼາຍສາຍ</p>
-                            <p class="project-summary">ຄຸ້ມຄອງໂຄງການກໍ່ສ້າງ ແລະ ກວດກາຖະໜົນຫຼາຍສາຍທົ່ວແຂວງວຽງຈັນ.</p>
-                            <div class="project-details">
-                                <p class="project-location">📍 ແຂວງວຽງຈັນ, ລາວ</p>
-                                <p class="project-duration">⏱️ ມີນາ 2013 - ກັນຍາ 2016 (3.5 ປີ)</p>
-                                <p class="project-budget">💰 2,506,501,727 ກີບ</p>
-                                <p class="project-client">🏢 ກົມໂຍທາທິການ ແລະ ຂົນສົ່ງ, ແຂວງວຽງຈັນ</p>
+                            <div class="project-info">
+                                <h3 class="project-name">ການປ້ອງກັນຕາຝັ່ງแม่น้ำຂອງ - ເມືອງປາກຊັນ</h3>
+                                <p class="project-scope">ການກໍ່ສ້າງການປ້ອງກັນຕາຝັ່ງแม่น้ำ</p>
+                                <p class="project-summary">ກວດກາການກໍ່ສ້າງການປ້ອງກັນຕາຝັ່ງแม่น้ำຂອງ 1.52 ກິໂລແມັດ.</p>
+                                <div class="project-details">
+                                    <p class="project-location">📍 ບ້ານໂພໄຊ, ເມືອງປາກຊັນ, ແຂວງບໍລິຄຳໄຊ</p>
+                                    <p class="project-duration">⏱️ ຕຸລາ 2013 - ເມສາ 2018 (4.5 ປີ)</p>
+                                    <p class="project-budget">💰 779,244,886 ກີບ</p>
+                                    <p class="project-client">🏢 ກົມໂຍທາທິການ ແລະ ຂົນສົ່ງ, ແຂວງບໍລິຄຳໄຊ</p>
+                                </div>
                             </div>
-                        </div>
-                    </article>
+                        </a>
+                    </div>
+                    <div class="project-card card reveal-up">
+                        <a href="project-concrete-bridges-road8.lo.html">
+                            <div class="project-avatar">
+                                <img src="assets/img/projects/concrete-bridges-road8-cover.jpg" alt="ຂົວຄອນກຣີດ 4 ແຫ່ງ - ផ្លូវជាតិເລກທີ 8" class="project-photo" loading="lazy">
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-name">ຂົວຄອນກຣີດ 4 ແຫ່ງ - ផ្លូវជាតិເລກທີ 8</h3>
+                                <p class="project-scope">ການກວດກາການກໍ່ສ້າງຂົວ</p>
+                                <p class="project-summary">ໂຄງການກວດກາການກໍ່ສ້າງຂົວແບບຄົບວົງຈອນ.</p>
+                                <div class="project-details">
+                                    <p class="project-location">📍 ແຂວງບໍລິຄຳໄຊ, ລາວ</p>
+                                    <p class="project-duration">⏱️ ທັນວາ 2014 - ພຶດສະພາ 2017 (2.5 ປີ)</p>
+                                    <p class="project-budget">💰 1,050,000,000 ກີບ</p>
+                                    <p class="project-client">🏢 ກົມໂຍທາທິການ ແລະ ຂົນສົ່ງ, ແຂວງບໍລິຄຳໄຊ</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="project-card card reveal-up">
+                        <a href="project-nam-ngeip-hydroelectric.lo.html">
+                            <div class="project-avatar">
+                                <img src="assets/img/projects/nam-ngeip-hydroelectric-cover.jpg" alt="ການສຳຫຼວດໂຄງການໄຟຟ້ານ້ຳຕົກນ້ຳງຽບ 1" class="project-photo" loading="lazy">
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-name">ການສຳຫຼວດໂຄງການໄຟຟ້ານ້ຳຕົກນ້ຳງຽບ 1</h3>
+                                <p class="project-scope">ການສຳຫຼວດພູມສັນຖານສຳລັບເຂື່ອນ નિયಂತ್ರణ</p>
+                                <p class="project-summary">ການບໍລິການສຳຫຼວດພູມສັນຖານ ແລະ ການສຳຫຼວດລະດັບພິເສດສຳລັບໂຄງການໄຟຟ້ານ້ຳຕົກ.</p>
+                                <div class="project-details">
+                                    <p class="project-location">📍 ສປປ ລາວ</p>
+                                    <p class="project-duration">⏱️ ມີນາ - ພຶດສະພາ 2013 (3 ເດືອນ)</p>
+                                    <p class="project-budget">💰 6,950 ໂດລາສະຫະລັດ</p>
+                                    <p class="project-client">🏢 ບໍລິສັດ Obajasih (ຜູ້ຈັດການກໍ່ສ້າງ)</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="project-card card reveal-up">
+                        <a href="project-road-construction-vientiane.lo.html">
+                            <div class="project-avatar">
+                                <img src="assets/img/projects/road-construction-vientiane-cover.jpg" alt="ໂຄງການກໍ່ສ້າງຖະໜົນ - ແຂວງວຽງຈັນ" class="project-photo" loading="lazy">
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-name">ໂຄງການກໍ່ສ້າງຖະໜົນ - ແຂວງວຽງຈັນ</h3>
+                                <p class="project-scope">ການກໍ່ສ້າງ ແລະ ກວດກາຖະໜົນຫຼາຍສາຍ</p>
+                                <p class="project-summary">ຄຸ້ມຄອງໂຄງການກໍ່ສ້າງ ແລະ ກວດກາຖະໜົນຫຼາຍສາຍທົ່ວແຂວງວຽງຈັນ.</p>
+                                <div class="project-details">
+                                    <p class="project-location">📍 ແຂວງວຽງຈັນ, ລາວ</p>
+                                    <p class="project-duration">⏱️ ມີນາ 2013 - ກັນຍາ 2016 (3.5 ປີ)</p>
+                                    <p class="project-budget">💰 2,506,501,727 ກີບ</p>
+                                    <p class="project-client">🏢 ກົມໂຍທາທິການ ແລະ ຂົນສົ່ງ, ແຂວງວຽງຈັນ</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
-
-        <!-- Project Detail Modal -->
-        <div id="project-modal" class="project-modal hidden" role="dialog" aria-modal="true" aria-labelledby="project-modal-title" aria-hidden="true">
-            <div class="project-modal-overlay"></div>
-            <div class="project-modal-content">
-                <button class="project-modal-close" aria-label="Close project details">&times;</button>
-                <div class="project-modal-body">
-                    <!-- Project detail content will be populated by JavaScript -->
-                </div>
-            </div>
-        </div>
     </main>
 
     <footer id="footer" role="contentinfo">
@@ -669,317 +323,5 @@
             </div>
         </div>
     </footer>
-
-    <!-- Critical Scripts (loaded immediately) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="console.warn('GSAP failed to load, using CSS fallbacks')"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="console.warn('ScrollTrigger failed to load')"></script>
-
-    <!-- Error Handler (loaded first for global error catching) -->
-    <script src="assets/js/error-handler.js"></script>
-
-    <!-- Application Scripts (deferred for better performance) -->
-    <script defer src="assets/js/performance.js" onerror="console.warn('Performance script failed to load')"></script>
-    <script defer src="assets/js/image-optimizer.js" onerror="console.warn('Image optimizer script failed to load')"></script>
-    <script defer src="assets/js/motion.js" onerror="console.warn('Motion script failed to load')"></script>
-    <script defer src="assets/js/seo.js" onerror="console.warn('SEO script failed to load')"></script>
-
-    <!-- Simplified Projects Page Script -->
-    <script>
-        let projectModal = null;
-
-        // Initialize page when DOM is loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('🚀 Projects page loaded');
-
-            // Initialize modal
-            projectModal = document.getElementById('project-modal');
-
-            // Setup tabs
-            setupTabs();
-
-            // Setup modal events
-            setupModalEvents();
-
-            // Add click handlers to project cards
-            document.querySelectorAll('.project-card').forEach(card => {
-                const projectSlug = card.getAttribute('data-project');
-                if (projectSlug) {
-                    const handleClick = () => {
-                        showProjectModal(projectSlug);
-                    };
-                    card.addEventListener('click', handleClick);
-                    card.addEventListener('keydown', function(e) {
-                        if (e.key === 'Enter' || e.key === ' ') {
-                            e.preventDefault();
-                            handleClick();
-                        }
-                    });
-                }
-            });
-
-            console.log('✅ Projects functionality initialized');
-        });
-
-        function setupTabs() {
-            const tabButtons = document.querySelectorAll('.tab-btn');
-            const tabContents = document.querySelectorAll('.tab-content');
-
-            console.log('Found', tabButtons.length, 'tab buttons and', tabContents.length, 'tab contents');
-
-            tabButtons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    console.log('Tab clicked:', this.getAttribute('data-tab'));
-
-                    const targetTab = this.getAttribute('data-tab');
-
-                    // Update buttons
-                    tabButtons.forEach(btn => {
-                        btn.classList.remove('active');
-                        btn.setAttribute('aria-selected', 'false');
-                    });
-                    this.classList.add('active');
-                    this.setAttribute('aria-selected', 'true');
-
-                    // Update content
-                    tabContents.forEach(content => {
-                        content.classList.remove('active');
-                        content.setAttribute('aria-hidden', 'true');
-                        if (content.id === `${targetTab}-projects`) {
-                            content.classList.add('active');
-                            content.setAttribute('aria-hidden', 'false');
-                            console.log('Activated tab content:', content.id);
-                        }
-                    });
-                });
-            });
-        }
-
-        function setupModalEvents() {
-            if (!projectModal) return;
-
-            console.log('🔧 Setting up modal events');
-
-            // Close modal when clicking overlay
-            const overlay = projectModal.querySelector('.project-modal-overlay');
-            if (overlay) {
-                overlay.addEventListener('click', closeProjectModal);
-            }
-
-            // Close modal when clicking close button
-            const closeBtn = projectModal.querySelector('.project-modal-close');
-            if (closeBtn) {
-                closeBtn.addEventListener('click', closeProjectModal);
-            }
-
-            // Close modal with Escape key
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && projectModal && !projectModal.classList.contains('hidden')) {
-                    closeProjectModal();
-                }
-            });
-        }
-
-        // Hardcoded project data for modal display
-        const projectsData = {
-            'national-road-1e-lot1': {
-                title: 'National Road 1E Construction Project (Lot I)',
-                title_lo: 'ໂຄງການກໍ່ສ້າງផ្លូវຊາດເລກທີ 1E (ຕອນທີ I)',
-                location: 'Bolikhamxay Province, Laos',
-                location_lo: 'ແຂວງບໍລິຄຳໄຊ, ລາວ',
-                scope: 'Road Construction Supervision',
-                scope_lo: 'ການກວດກາການກໍ່ສ້າງຖະໜົນ',
-                year: '2012-2017',
-                duration: 'April 2012 - March 2017 (47 months)',
-                duration_lo: 'ເມສາ 2012 - ມີນາ 2017 (47 ເດືອນ)',
-                client: 'Department of Public Works and Transport, Bolikhamxay Province',
-                client_lo: 'ກົມໂຍທາທິການ ແລະ ຂົນສົ່ງ, ແຂວງບໍລິຄຳໄຊ',
-                value: '4,565,382,448 Kip',
-                value_lo: '4,565,382,448 ກີບ',
-                cover: 'assets/img/projects/national-road-1e-lot1-cover.jpg',
-                short_summary: 'Comprehensive construction supervision for a major road infrastructure project.',
-                short_summary_lo: 'ການກວດກາການກໍ່ສ້າງແບບຄົບວົງຈອນສຳລັບໂຄງການພື້ນຖານໂຄງລ່າງທາງຫຼວງທີ່ສຳຄັນ.',
-                summary: 'TPEC provided comprehensive construction supervision for this major road infrastructure project spanning 47 months. Our team of 8 engineers and 1 team leader delivered construction supervision, materials testing, quality control, and progress reporting for road construction with double surface treatment, ensuring project completion to the highest standards.',
-                summary_lo: 'TPEC ໄດ້ໃຫ້ການກວດກາການກໍ່ສ້າງແບບຄົບວົງຈອນສຳລັບໂຄງການພື້ນຖານໂຄງລ່າງທາງຫຼວງທີ່ສຳຄັນນີ້ ເຊິ່ງໃຊ້ເວລາ 47 ເດືອນ. ທີມງານຂອງພວກເຮົາປະກອບດ້ວຍວິສະວະກອນ 8 ຄົນ ແລະ ຫົວໜ້າທີມ 1 ຄົນ ໄດ້ດຳເນີນການກວດກາການກໍ່ສ້າງ, ທົດສອບວັດສະດຸ, ຄວບຄຸມຄຸນນະພາບ ແລະ ລາຍງານຄວາມຄືບໜ້າຂອງການກໍ່ສ້າງຖະໜົນດ້ວຍການປູຢາງສອງຊັ້ນ, ເພື່ອຮັບປະກັນໃຫ້ໂຄງການສຳເລັດຕາມມາດຕະຖານສູງສຸດ.'
-            },
-            'national-road-1e-lot2': {
-                title: 'National Road 1E Construction Project (Lot II)',
-                title_lo: 'ໂຄງການກໍ່ສ້າງផ្លូវຊາດເລກທີ 1E (ຕອນທີ II)',
-                location: 'Bolikhamxay Province, Laos',
-                location_lo: 'ແຂວງບໍລິຄຳໄຊ, ລາວ',
-                scope: 'Road Construction Supervision',
-                scope_lo: 'ການກວດກາການກໍ່ສ້າງຖະໜົນ',
-                year: '2012-2014',
-                duration: 'April 2012 - December 2014 (32 months)',
-                duration_lo: 'ເມສາ 2012 - ທັນວາ 2014 (32 ເດືອນ)',
-                client: 'Department of Public Works and Transport, Bolikhamxay Province',
-                client_lo: 'ກົມໂຍທາທິການ ແລະ ຂົນສົ່ງ, ແຂວງບໍລິຄຳໄຊ',
-                value: '1,637,511,480 Kip',
-                value_lo: '1,637,511,480 ກີບ',
-                cover: 'assets/img/projects/national-road-1e-lot2-cover.jpg',
-                short_summary: 'A 32-month road construction supervision project.',
-                short_summary_lo: 'ໂຄງການກວດກາການກໍ່ສ້າງຖະໜົນ 32 ເດືອນ.',
-                summary: 'A 32-month road construction supervision project where TPEC\'s team of 3 engineers and 1 team leader provided construction supervision, materials testing, and quality control for road double surface treatment construction, demonstrating our expertise in large-scale infrastructure projects.',
-                summary_lo: 'ໂຄງການກວດກາການກໍ່ສ້າງຖະໜົນ 32 ເດືອນ ເຊິ່ງທີມງານ TPEC ປະກອບດ້ວຍວິສະວະກອນ 3 ຄົນ ແລະ ຫົວໜ້າທີມ 1 ຄົນ ໄດ້ໃຫ້ການກວດກາການກໍ່ສ້າງ, ທົດສອບວັດສະດຸ ແລະ ຄວບຄຸມຄຸນນະພາບສຳລັບການກໍ່ສ້າງຖະໜົນປູຢາງສອງຊັ້ນ, ເຊິ່ງສະແດງໃຫ້ເຫັນເຖິງຄວາມຊ່ຽວຊານຂອງພວກເຮົາໃນໂຄງການພື້ນຖານໂຄງລ່າງຂະໜາດໃຫຍ່.'
-            },
-            'mekong-bank-protection-paksan': {
-                title: 'Mekong River Bank Protection - Paksan District',
-                title_lo: 'ການປ້ອງກັນຕາຝັ່ງแม่น้ำຂອງ - ເມືອງປາກຊັນ',
-                location: 'Phoxai Village, Paksan District, Borlikhamxay Province',
-                location_lo: 'ບ້ານໂພໄຊ, ເມືອງປາກຊັນ, ແຂວງບໍລິຄຳໄຊ',
-                scope: 'River Bank Protection Construction',
-                scope_lo: 'ການກໍ່ສ້າງການປ້ອງກັນຕາຝັ່ງแม่น้ำ',
-                year: '2013-2018',
-                duration: 'October 2013 - April 2018 (4.5 years)',
-                duration_lo: 'ຕຸລາ 2013 - ເມສາ 2018 (4.5 ປີ)',
-                client: 'Department of Public Works and Transport, Borlikhamxay Province',
-                client_lo: 'ກົມໂຍທາທິການ ແລະ ຂົນສົ່ງ, ແຂວງບໍລິຄຳໄຊ',
-                value: '779,244,886 Kip',
-                value_lo: '779,244,886 ກີບ',
-                cover: 'assets/img/projects/mekong-bank-protection-cover.jpg',
-                short_summary: 'Supervised the construction of 1.52 km of Mekong river bank protection.',
-                short_summary_lo: 'ກວດກາການກໍ່ສ້າງການປ້ອງກັນຕາຝັ່ງแม่น้ำຂອງ 1.52 ກິໂລແມັດ.',
-                summary: 'TPEC supervised the construction of 1.52 km of Mekong river bank protection in Phoxai Village over 4.5 years. Our team of 2 engineers and 1 team leader ensured proper construction techniques and quality control for this critical flood protection infrastructure project.',
-                summary_lo: 'TPEC ໄດ້ກວດກາການກໍ່ສ້າງການປ້ອງກັນຕາຝັ່ງแม่น้ำຂອງ 1.52 ກິໂລແມັດ ຢູ່ບ້ານໂພໄຊ ເປັນເວລາ 4.5 ປີ. ທີມງານຂອງພວກເຮົາປະກອບດ້ວຍວິສະວະກອນ 2 ຄົນ ແລະ ຫົວໜ້າທີມ 1 ຄົນ ໄດ້ຮັບປະກັນເຕັກນິກການກໍ່ສ້າງທີ່ເໝາະສົມ ແລະ ການຄວບຄຸມຄຸນນະພາບສຳລັບໂຄງການພື້ນຖານໂຄງລ່າງປ້ອງກັນນ້ຳຖ້ວມທີ່ສຳຄັນນີ້.'
-            },
-            'concrete-bridges-road8': {
-                title: '4 Concrete Bridges - National Road No. 8',
-                title_lo: 'ຂົວຄອນກຣີດ 4 ແຫ່ງ - ផ្លូវជាតិເລກທີ 8',
-                location: 'Borlikhamxay Province, Laos',
-                location_lo: 'ແຂວງບໍລິຄຳໄຊ, ລາວ',
-                scope: 'Bridge Construction Supervision',
-                scope_lo: 'ການກວດກາການກໍ່ສ້າງຂົວ',
-                year: '2014-2017',
-                duration: 'December 2014 - May 2017 (2.5 years)',
-                duration_lo: 'ທັນວາ 2014 - ພຶດສະພາ 2017 (2.5 ປີ)',
-                client: 'Department of Public Works and Transport, Borlikhamxay Province',
-                client_lo: 'ກົມໂຍທາທິການ ແລະ ຂົນສົ່ງ, ແຂວງບໍລິຄຳໄຊ',
-                value: '1,050,000,000 Kip',
-                value_lo: '1,050,000,000 ກີບ',
-                cover: 'assets/img/projects/concrete-bridges-road8-cover.jpg',
-                short_summary: 'A comprehensive bridge construction supervision project.',
-                short_summary_lo: 'ໂຄງການກວດກາການກໍ່ສ້າງຂົວແບບຄົບວົງຈອນ.',
-                summary: 'A comprehensive bridge construction supervision project where TPEC\'s team of 3 engineers and 1 team leader provided technical oversight for the construction of 4 concrete bridges, ensuring structural integrity and compliance with engineering standards over a 2.5-year period.',
-                summary_lo: 'ໂຄງການກວດກາການກໍ່ສ້າງຂົວແບບຄົບວົງຈອນ ເຊິ່ງທີມງານ TPEC ປະກອບດ້ວຍວິສະວະກອນ 3 ຄົນ ແລະ ຫົວໜ້າທີມ 1 ຄົນ ໄດ້ໃຫ້ການກວດກາດ້ານເຕັກນິກສຳລັບການກໍ່ສ້າງຂົວຄອນກຣີດ 4 ແຫ່ງ, ເພື່ອຮັບປະກັນຄວາມສົມບູນຂອງໂຄງສ້າງ ແລະ ການປະຕິບັດຕາມມາດຕະຖານວິສະວະກຳຕະຫຼອດໄລຍະເວລາ 2.5 ປີ.'
-            },
-            'nam-ngeip-hydroelectric': {
-                title: 'Nam Ngeip 1 Hydroelectric Project Survey',
-                title_lo: 'ການສຳຫຼວດໂຄງການໄຟຟ້ານ້ຳຕົກນ້ຳງຽບ 1',
-                location: 'Lao PDR',
-                location_lo: 'ສປປ ລາວ',
-                scope: 'Topographic Survey for Re-regulation Dam',
-                scope_lo: 'ການສຳຫຼວດພູມສັນຖານສຳລັບເຂື່ອນ નિયಂತ್ರణ',
-                year: '2013',
-                duration: 'March - May 2013 (3 months)',
-                duration_lo: 'ມີນາ - ພຶດສະພາ 2013 (3 ເດືອນ)',
-                client: 'Obajasih Company (Construction Manager)',
-                client_lo: 'ບໍລິສັດ Obajasih (ຜູ້ຈັດການກໍ່ສ້າງ)',
-                value: '6,950 USD',
-                value_lo: '6,950 ໂດລາສະຫະລັດ',
-                funding: 'Japan Funded',
-                funding_lo: 'ທຶນຈາກປະເທດຍີ່ປຸ່ນ',
-                cover: 'assets/img/projects/nam-ngeip-hydroelectric-cover.jpg',
-                short_summary: 'Specialized topographic mapping and leveling survey services for a hydroelectric project.',
-                short_summary_lo: 'ການບໍລິການສຳຫຼວດພູມສັນຖານ ແລະ ການສຳຫຼວດລະດັບພິເສດສຳລັບໂຄງການໄຟຟ້ານ້ຳຕົກ.',
-                summary: 'TPEC conducted specialized topographic mapping and leveling survey services for this Japan-funded hydroelectric project. Our services included grid 15x15 mapping, river section surveying, and HWL/LWL determination for the re-regulation dam, showcasing our expertise in precision surveying for power infrastructure.',
-                summary_lo: 'TPEC ໄດ້ດຳເນີນການບໍລິການສຳຫຼວດພູມສັນຖານ ແລະ ການສຳຫຼວດລະດັບພິເສດສຳລັບໂຄງການໄຟຟ້ານ້ຳຕົກທີ່ໄດ້ຮັບທຶນຈາກປະເທດຍີ່ປຸ່ນນີ້. ການບໍລິການຂອງພວກເຮົາລວມມີການສ້າງແຜນທີ່ຕາຂ່າຍ 15x15, ການສຳຫຼວດພາກສ່ວນแม่น้ำ ແລະ ການກຳນົດ HWL/LWL ສຳລັບເຂື່ອນ નિયಂತ್ರణ, ເຊິ່ງສະແດງໃຫ້ເຫັນເຖິງຄວາມຊ່ຽວຊານຂອງພວກເຮົາໃນການສຳຫຼວດທີ່แม่นยำສຳລັບພື້ນຖານໂຄງລ່າງດ້ານພະລັງງານ.'
-            },
-            'road-construction-vientiane': {
-                title: 'Road Construction Projects - Vientiane Province',
-                title_lo: 'ໂຄງການກໍ່ສ້າງຖະໜົນ - ແຂວງວຽງຈັນ',
-                location: 'Vientiane Province, Laos',
-                location_lo: 'ແຂວງວຽງຈັນ, ລາວ',
-                scope: 'Multiple Road Construction and Supervision',
-                scope_lo: 'ການກໍ່ສ້າງ ແລະ ກວດກາຖະໜົນຫຼາຍສາຍ',
-                year: '2013-2016',
-                duration: 'March 2013 - September 2016 (3.5 years)',
-                duration_lo: 'ມີນາ 2013 - ກັນຍາ 2016 (3.5 ປີ)',
-                client: 'Department of Public Works and Transport, Vientiane Province',
-                client_lo: 'ກົມໂຍທາທິການ ແລະ ຂົນສົ່ງ, ແຂວງວຽງຈັນ',
-                value: '2,506,501,727 Kip',
-                value_lo: '2,506,501,727 ກີບ',
-                cover: 'assets/img/projects/road-construction-vientiane-cover.jpg',
-                short_summary: 'Managed multiple road construction and supervision projects across Vientiane Province.',
-                short_summary_lo: 'ຄຸ້ມຄອງໂຄງການກໍ່ສ້າງ ແລະ ກວດກາຖະໜົນຫຼາຍສາຍທົ່ວແຂວງວຽງຈັນ.',
-                summary: 'TPEC managed multiple road construction and supervision projects across Vientiane Province, including double bitumen surface treatment construction. Our team of 3 engineers and 1 team leader delivered comprehensive project management and quality control services over a 3-year period.',
-                summary_lo: 'TPEC ໄດ້ຄຸ້ມຄອງໂຄງການກໍ່ສ້າງ ແລະ ກວດກາຖະໜົນຫຼາຍສາຍທົ່ວແຂວງວຽງຈັນ, ລວມທັງການກໍ່ສ້າງປູຢາງສອງຊັ້ນ. ທີມງານຂອງພວກເຮົາປະກອບດ້ວຍວິສະວະກອນ 3 ຄົນ ແລະ ຫົວໜ້າທີມ 1 ຄົນ ໄດ້ໃຫ້ບໍລິການຄຸ້ມຄອງໂຄງການ ແລະ ຄວບຄຸມຄຸນນະພາບແບບຄົບວົງຈອນຕະຫຼອດໄລຍະເວລາ 3 ປີ.'
-            }
-        };
-
-        function showProjectModal(projectSlug) {
-            const project = projectsData[projectSlug];
-            if (!project || !projectModal) {
-                console.warn('❌ Project not found or modal not available:', projectSlug);
-                return;
-            }
-
-            const title = project.title_lo;
-            console.log('📋 Showing modal for:', title);
-
-            // Create modal content
-            const modalBody = projectModal.querySelector('.project-modal-body');
-            if (modalBody) {
-                modalBody.innerHTML = `
-                    <div class="project-modal-header">
-                        <h2 class="project-modal-title" id="project-modal-title">${title}</h2>
-                        <div class="project-modal-meta">
-                            <span class="project-location">📍 ${project.location_lo}</span>
-                            <span class="project-year">📅 ${project.year}</span>
-                            <span class="project-value">💰 ${project.value_lo}</span>
-                            ${project.funding_lo ? `<span class="project-funding">🏦 ${project.funding_lo}</span>` : ''}
-                        </div>
-                    </div>
-                    <div class="project-modal-content">
-                        <div class="project-image">
-                            <img src="${project.cover}" alt="${title}" loading="lazy">
-                        </div>
-                        <div class="project-details">
-                            <h3>ຂອບເຂດໂຄງການ</h3>
-                            <p>${project.scope_lo}</p>
-                            <h3>ລູກຄ້າ</h3>
-                            <p>${project.client_lo}</p>
-                            <h3>ພາບລວມໂຄງການ</h3>
-                            <p>${project.summary_lo}</p>
-                        </div>
-                    </div>
-                `;
-            }
-
-            // Show modal
-            projectModal.classList.remove('hidden');
-            projectModal.setAttribute('aria-hidden', 'false');
-
-            // Add visible class for animation
-            setTimeout(() => {
-                projectModal.classList.add('visible');
-            }, 10);
-
-            // Focus management
-            const closeBtn = projectModal.querySelector('.project-modal-close');
-            if (closeBtn) {
-                closeBtn.focus();
-            }
-
-            // Prevent body scroll
-            document.body.style.overflow = 'hidden';
-        }
-        function closeProjectModal() {
-            if (!projectModal) return;
-
-            console.log('🔒 Closing project modal');
-
-            // Remove visible class
-            projectModal.classList.remove('visible');
-
-            // Hide modal after animation
-            setTimeout(() => {
-                projectModal.classList.add('hidden');
-                projectModal.setAttribute('aria-hidden', 'true');
-            }, 300);
-
-            // Restore body scroll
-            document.body.style.overflow = '';
-        }
-    </script>
 </body>
 </html>

@@ -50,205 +50,6 @@
     <!-- Styles -->
     <link rel="stylesheet" href="assets/css/tokens.css">
     <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/performance.css">
-    
-    <style>
-        /* Team Modal Styles */
-        .team-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .team-modal.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .team-modal-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(4px);
-        }
-
-        .team-modal-content {
-            position: relative;
-            background: var(--card, #1a1d23);
-            border: 1px solid var(--line, #2a2d35);
-            border-radius: var(--radius-lg, 12px);
-            max-width: 700px;
-            max-height: 90vh;
-            width: 90%;
-            overflow-y: auto;
-            transform: scale(0.9) translateY(20px);
-            transition: transform 0.3s ease;
-        }
-
-        .team-modal.visible .team-modal-content {
-            transform: scale(1) translateY(0);
-        }
-
-        .team-modal-close {
-            position: absolute;
-            top: var(--space-md, 16px);
-            right: var(--space-md, 16px);
-            background: var(--card-hover, #22252c);
-            border: 1px solid var(--line, #2a2d35);
-            color: var(--text-muted, #9ca3af);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 24px;
-            line-height: 1;
-            transition: all 0.2s ease;
-            z-index: 10001;
-        }
-
-        .team-modal-close:hover {
-            background: var(--accent, #4da3ff);
-            color: var(--bg, #0e1116);
-            border-color: var(--accent, #4da3ff);
-        }
-
-        .team-modal-body {
-            padding: var(--space-2xl, 32px);
-        }
-
-        .team-modal-header {
-            text-align: center;
-            margin-bottom: var(--space-xl, 24px);
-        }
-
-        .team-modal-avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin: 0 auto var(--space-lg, 20px);
-            background: var(--accent, #4da3ff);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: var(--font-size-2xl, 24px);
-            font-weight: var(--font-weight-bold, 700);
-            color: var(--bg, #0e1116);
-        }
-
-        .team-modal-name {
-            font-size: var(--font-size-xl, 20px);
-            font-weight: var(--font-weight-bold, 700);
-            color: var(--text, #ffffff);
-            margin-bottom: var(--space-sm, 8px);
-        }
-
-        .team-modal-title {
-            color: var(--accent, #4da3ff);
-            font-weight: var(--font-weight-medium, 500);
-            margin-bottom: var(--space-lg, 20px);
-        }
-
-        .team-modal-description {
-            color: var(--text, #ffffff);
-            line-height: 1.6;
-            margin-bottom: var(--space-xl, 24px);
-        }
-
-        .team-modal-section {
-            background: var(--bg, #0e1116);
-            border: 1px solid var(--line, #2a2d35);
-            border-radius: var(--radius, 6px);
-            padding: var(--space-lg, 20px);
-            margin-bottom: var(--space-lg, 20px);
-        }
-
-        .team-modal-section:last-child {
-            margin-bottom: 0;
-        }
-
-        .team-modal-section h4 {
-            color: var(--text, #ffffff);
-            font-weight: var(--font-weight-semibold, 600);
-            margin-bottom: var(--space-md, 16px);
-        }
-
-        .team-modal-section p {
-            color: var(--text-muted, #9ca3af);
-            line-height: 1.6;
-            margin-bottom: var(--space-md, 16px);
-        }
-
-        .team-modal-section p:last-child {
-            margin-bottom: 0;
-        }
-
-        .team-modal-section ul {
-            color: var(--text-muted, #9ca3af);
-            line-height: 1.6;
-            padding-left: var(--space-lg, 20px);
-        }
-
-        .team-modal-section li {
-            margin-bottom: var(--space-sm, 8px);
-        }
-
-        .team-card {
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .team-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-        }
-
-        .team-photo {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .team-modal-photo {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto var(--space-lg, 20px);
-        }
-
-        @media (max-width: 768px) {
-            .team-modal-content {
-                width: 95%;
-                max-height: 95vh;
-            }
-
-            .team-modal-body {
-                padding: var(--space-lg, 20px);
-            }
-
-            .team-modal-avatar {
-                width: 100px;
-                height: 100px;
-                font-size: var(--font-size-xl, 20px);
-            }
-        }
-    </style>
     
     <!-- Favicon and Touch Icons -->
     <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
@@ -302,7 +103,7 @@
     }
     </script>
 </head>
-<body>
+<body class="no-gsap">
     <a href="#main" class="skip-link">Skip to main content</a>
     
     <header id="header" role="banner">
@@ -464,21 +265,33 @@
                 <h2 id="leadership-title" class="reveal-up">Leadership Team</h2>
                 <p class="reveal-up">Experienced professionals leading our consulting excellence</p>
                 <div class="team-grid reveal-up" role="list" aria-label="Leadership team members">
-                    <!-- Team members will be populated by the script below -->
+                    <a href="team-member-founder.html" class="team-member card">
+                        <div class="team-photo">
+                            <img src="assets/img/team/founder.jpg" alt="Mr. Bounlieng Thephachanh">
+                        </div>
+                        <h3 class="team-name">Mr. Bounlieng Thephachanh</h3>
+                        <p class="team-title">Founder &amp; Managing Director</p>
+                        <p class="team-bio">With over 30 years of experience in public works engineering, Mr. Thephachanh founded TPEC after extensive international experience including education in Germany and consulting work with Swedish companies SKANSKA, HIFAB, and Sweroad.</p>
+                    </a>
+                    <a href="team-member-vice-president.html" class="team-member card">
+                        <div class="team-photo">
+                            <img src="assets/img/team/vice president.jpg" alt="Ms. Sengdavanh Thepphachanh">
+                        </div>
+                        <h3 class="team-name">Ms. Sengdavanh Thepphachanh</h3>
+                        <p class="team-title">Vice President</p>
+                        <p class="team-bio">Dr. Sengdavanh Thepphachanh brings advanced expertise in hydraulic and environmental engineering to TPEC. With a Doctor of Engineering degree from Technische Universität Dresden and extensive research experience, she leads our environmental compliance and sustainable engineering initiatives.</p>
+                    </a>
+                    <a href="team-member-technology-advisor.html" class="team-member card">
+                        <div class="team-photo">
+                            <img src="assets/img/team/technology advisor.jpg" alt="Mr. Matthew Thaokhamlue">
+                        </div>
+                        <h3 class="team-name">Mr. Matthew Thaokhamlue</h3>
+                        <p class="team-title">Technology Advisor</p>
+                        <p class="team-bio">Technical Product Manager with 5+ years in B2B SaaS, focusing on AI features and API integrations for health analytics and lab software. He brings expertise in product management, AI solutions, and technical integration to support TPEC’s digital transformation initiatives.</p>
+                    </a>
                 </div>
             </div>
         </section>
-
-        <!-- Team Member Detail Modal -->
-        <div id="team-modal" class="team-modal hidden" role="dialog" aria-modal="true" aria-labelledby="team-modal-title" aria-hidden="true">
-            <div class="team-modal-overlay"></div>
-            <div class="team-modal-content">
-                <button class="team-modal-close" aria-label="Close team member details">&times;</button>
-                <div class="team-modal-body">
-                    <!-- Team member detail content will be populated by JavaScript -->
-                </div>
-            </div>
-        </div>
 
         <!-- Certifications -->
         <section id="certifications" class="certifications section" aria-labelledby="certifications-title">
@@ -525,193 +338,5 @@
             </div>
         </div>
     </footer>
-
-    <!-- Critical Scripts (loaded immediately) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="console.warn('GSAP failed to load, using CSS fallbacks')"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="console.warn('ScrollTrigger failed to load')"></script>
-    
-    <!-- Error Handler (loaded first for global error catching) -->
-    <script src="assets/js/error-handler.js"></script>
-
-    <!-- Application Scripts (deferred for better performance) -->
-
-    <!-- About Page Team Modal Script -->
-    <script>
-        let teamModal = null;
-
-        function initializeTeam() {
-            if (!teamModal) {
-                teamModal = document.getElementById('team-modal');
-                setupTeamModalEvents();
-            }
-            populateTeamGrid();
-        }
-
-        document.addEventListener('DOMContentLoaded', initializeTeam);
-
-        function setupTeamModalEvents() {
-            if (!teamModal) return;
-            const overlay = teamModal.querySelector('.team-modal-overlay');
-            if (overlay) overlay.addEventListener('click', closeTeamModal);
-            const closeBtn = teamModal.querySelector('.team-modal-close');
-            if (closeBtn) closeBtn.addEventListener('click', closeTeamModal);
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && teamModal && !teamModal.classList.contains('hidden')) {
-                    closeTeamModal();
-                }
-            });
-        }
-
-        function populateTeamGrid() {
-            const teamGrid = document.querySelector('.team-grid');
-            if (!teamGrid) return;
-            const teamMembers = [
-                {
-                    key: 'founder',
-                    name: 'Mr. Bounlieng Thephachanh',
-                    title: 'Founder & Managing Director',
-                    bio: 'With over 30 years of experience in public works engineering, Mr. Thephachanh founded TPEC after extensive international experience including education in Germany and consulting work with Swedish companies SKANSKA, HIFAB, and Sweroad. He has led capacity building initiatives for Department of Public Works and Transportation staff across all provinces of Lao PDR.',
-                    education: 'Road-Bridge Construction Engineering graduate from Germany (1981)',
-                    experience: [
-                        'Road-Bridge Maintenance Supervisor, State Enterprise No.1 Company (1982)',
-                        'Head of Planning Department, Water Road Construction Enterprise',
-                        'Chief of Construction Division, Road No.13 Construction Company (1985)',
-                        'International training in Thailand for road-bridge supervision and construction',
-                        'Trainer and Consultant with SKANSKA subsidiary (Swedish construction company)',
-                        'Senior Consultant with HIFAB (Swedish consulting company)',
-                        'Local Consultant with Sweroad Consultant Company (2001)',
-                        'Nationwide capacity building for Department of Public Works and Transportation staff across all provinces of Lao PDR'
-                    ],
-                    description: 'Founded by Mr. Bounlieng Thephachanh, our company is built on over 30 years of engineering excellence and industry expertise. Our founder brings extensive international experience and has been instrumental in developing infrastructure consulting capabilities across Laos.',
-                    image: 'assets/img/team/founder.jpg'
-                },
-                {
-                    key: 'vice_president',
-                    name: 'Ms. Sengdavanh Thepphachanh',
-                    title: 'Vice President',
-                    bio: 'Dr. Sengdavanh Thepphachanh brings advanced expertise in hydraulic and environmental engineering to TPEC. With a Doctor of Engineering degree from Technische Universität Dresden and extensive research experience, she leads our environmental compliance and sustainable engineering initiatives.',
-                    education: 'Doctor of Engineering in Hydraulic Engineering, Technische Universität Dresden (2019-2022); Master\'s degree in Environmental Engineering, University of the Philippines Diliman (2013-2015)',
-                    experience: [
-                        'Scientific Researcher, Technische Universität Dresden (Apr 2023 - Present)',
-                        'Lecturer/Researcher, National University of Laos (NUOL) (Dec 2015 - Aug 2019)',
-                        'Environmental Engineer, Archineer Associates (Mar 2017 - Jul 2019)'
-                    ],
-                    description: 'Dr. Sengdavanh Thepphachanh serves as Vice President, bringing cutting-edge expertise in hydraulic modeling, environmental engineering, and sustainable development. Her international education and research background strengthen TPEC\'s technical capabilities in environmental compliance and innovative engineering solutions.',
-                    image: 'assets/img/team/vice%20president.jpg'
-                },
-                {
-                    key: 'technology_advisor',
-                    name: 'Mr. Matthew Thaokhamlue',
-                    title: 'Technology Advisor',
-                    bio: 'Technical Product Manager with 5+ years in B2B SaaS, focusing on AI features and API integrations for health analytics and lab software. He brings expertise in product management, AI solutions, and technical integration to support TPEC\'s digital transformation initiatives.',
-                    education: 'Master of International and Development Economics, Hochschule für Technik und Wirtschaft Berlin; Bachelor\'s Degree in Economics, Chiang Mai University',
-                    experience: [
-                        'Product Manager, Labforward GmbH, Berlin (Nov 2024 - Present)',
-                        'Technical Product Manager, LabTwin GmbH, Berlin (Jan 2023 - Nov 2024)',
-                        'Product Owner, Thryve GmbH, Berlin (Oct 2019 - Dec 2022)'
-                    ],
-                    description: 'Mr. Matthew Thaokhamlue serves as Technology Advisor, bringing modern expertise in product management, AI implementation, and digital solutions. His international experience in B2B SaaS and technical product development supports TPEC\'s technology advancement and digital transformation initiatives.',
-                    image: 'assets/img/team/technology%20advisor.jpg'
-                }
-            ];
-            teamGrid.innerHTML = '';
-            teamMembers.forEach(member => {
-                const teamCard = createTeamCard(member);
-                teamGrid.appendChild(teamCard);
-            });
-        }
-
-        function createTeamCard(member) {
-            const card = document.createElement('div');
-            card.className = 'team-card card';
-            card.setAttribute('tabindex', '0');
-            card.setAttribute('role', 'button');
-            card.setAttribute('aria-label', `View details for ${member.name}`);
-            const avatarContent = `<img src="${escapeHtml(member.image)}" alt="${escapeHtml(member.name)}" class="team-photo" onerror="this.style.display='none'">`;
-            card.innerHTML = `
-                <div class="team-avatar">
-                    ${avatarContent}
-                </div>
-                <div class="team-info">
-                    <h3 class="team-name">${escapeHtml(member.name)}</h3>
-                    <p class="team-title">${escapeHtml(member.title)}</p>
-                    <p class="team-bio">${escapeHtml(member.bio.substring(0, 120))}...</p>
-                </div>
-            `;
-            const handleClick = () => {
-                showTeamModal(member);
-            };
-            card.addEventListener('click', handleClick);
-            card.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    handleClick();
-                }
-            });
-            return card;
-        }
-
-        function showTeamModal(member) {
-            if (!teamModal || !member) return;
-            const modalBody = teamModal.querySelector('.team-modal-body');
-            if (modalBody) {
-                modalBody.innerHTML = createTeamModalContent(member);
-            }
-            teamModal.classList.remove('hidden');
-            teamModal.setAttribute('aria-hidden', 'false');
-            setTimeout(() => teamModal.classList.add('visible'), 10);
-            const closeBtn = teamModal.querySelector('.team-modal-close');
-            if (closeBtn) closeBtn.focus();
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeTeamModal() {
-            if (!teamModal) return;
-            teamModal.classList.remove('visible');
-            setTimeout(() => {
-                teamModal.classList.add('hidden');
-                teamModal.setAttribute('aria-hidden', 'true');
-            }, 300);
-            document.body.style.overflow = '';
-        }
-
-        function createTeamModalContent(member) {
-            const modalAvatarContent = `<img src="${escapeHtml(member.image)}" alt="${escapeHtml(member.name)}" class="team-modal-photo">`;
-            return `
-                <div class="team-modal-header">
-                    ${modalAvatarContent}
-                    <h2 class="team-modal-name" id="team-modal-title">${escapeHtml(member.name)}</h2>
-                    <p class="team-modal-title">${escapeHtml(member.title)}</p>
-                </div>
-                <div class="team-modal-description">
-                    <p>${escapeHtml(member.description)}</p>
-                </div>
-                <div class="team-modal-section">
-                    <h4>Education</h4>
-                    <p>${escapeHtml(member.education)}</p>
-                </div>
-                <div class="team-modal-section">
-                    <h4>Career Highlights</h4>
-                    <ul>
-                        ${Array.isArray(member.experience) ?
-                            member.experience.map(exp => `<li>${escapeHtml(exp)}</li>`).join('') :
-                            '<li>Extensive experience in public works engineering and consulting</li>'
-                        }
-                    </ul>
-                </div>
-                <div class="team-modal-section">
-                    <h4>Professional Background</h4>
-                    <p>${escapeHtml(member.bio)}</p>
-                </div>
-            `;
-        }
-
-        function escapeHtml(text) {
-            if (!text) return '';
-            const div = document.createElement('div');
-            div.textContent = text;
-            return div.innerHTML;
-        }
-    </script>
 </body>
 </html>

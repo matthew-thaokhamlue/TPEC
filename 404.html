@@ -45,11 +45,79 @@
     <link rel="icon" type="image/png" sizes="512x512" href="/assets/icons/android-chrome-512x512.png">
     <link rel="manifest" href="/assets/icons/site.webmanifest">
 </head>
-<body>
+<body class="no-gsap">
     <a href="#main" class="skip-link" data-i18n="accessibility.skip_to_content">Skip to main content</a>
     
-    <header id="header">
-        <!-- Header content will be injected by shell.js -->
+    <header id="header" role="banner">
+      <div class="container">
+        <div class="header-content">
+          <a href="/TPEC/" class="logo">TPEC Engineering Consulting</a>
+
+          <!-- Desktop Navigation -->
+          <nav class="nav" role="navigation" aria-label="Main navigation">
+            <ul class="nav-list">
+              <li><a href="/TPEC/" class="nav-link">Home</a></li>
+              <li><a href="/TPEC/about.html" class="nav-link">About Us</a></li>
+              <li><a href="/TPEC/projects.html" class="nav-link">Projects</a></li>
+              <li><a href="/TPEC/contact.html" class="nav-link">Contact</a></li>
+            </ul>
+
+            <!-- Language Switcher -->
+            <div class="language-switcher" role="group" aria-label="Language selection">
+              <a href="/TPEC/index.html" class="lang-option active" data-lang="en" aria-label="Switch to English">
+                <span class="lang-code">EN</span>
+                <span class="lang-name">English</span>
+              </a>
+              <a href="/TPEC/index.lo.html" class="lang-option" data-lang="lo" aria-label="Switch to Lao">
+                <span class="lang-code">ລາວ</span>
+                <span class="lang-name">ລາວ</span>
+              </a>
+            </div>
+          </nav>
+
+          <!-- Mobile Menu Button -->
+          <button class="mobile-menu-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
+        <button class="mobile-menu-close" aria-label="Close navigation menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <h2 id="mobile-menu-title" class="sr-only">Navigation Menu</h2>
+
+        <nav role="navigation" aria-label="Mobile navigation">
+          <ul class="mobile-nav-list">
+            <li><a href="/TPEC/" class="mobile-nav-link">Home</a></li>
+            <li><a href="/TPEC/about.html" class="mobile-nav-link">About Us</a></li>
+            <li><a href="/TPEC/projects.html" class="mobile-nav-link">Projects</a></li>
+            <li><a href="/TPEC/contact.html" class="mobile-nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- Mobile Language Switcher -->
+        <div class="language-switcher" role="group" aria-label="Language selection">
+            <a href="/TPEC/index.html" class="lang-option active" data-lang="en" aria-label="Switch to English">
+                <span class="lang-code">EN</span>
+                <span class="lang-name">English</span>
+            </a>
+            <a href="/TPEC/index.lo.html" class="lang-option" data-lang="lo" aria-label="Switch to Lao">
+                <span class="lang-code">ລາວ</span>
+                <span class="lang-name">ລາວ</span>
+            </a>
+        </div>
+      </div>
     </header>
 
     <main id="main">
@@ -68,47 +136,38 @@
         </section>
     </main>
 
-    <footer id="footer">
-        <!-- Footer content will be injected by shell.js -->
-    </footer>
+    <footer id="footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>TPEC Engineering Consulting</h4>
+            <p>Expert public works engineering consulting in Laos. Professional guidance for infrastructure development projects with over 30 years of experience.</p>
+          </div>
 
-    <!-- Scripts -->
-    <script defer src="/assets/js/i18n.js"></script>
-    <script defer src="/assets/js/seo.js"></script>
-    <script defer src="/assets/js/shell.js"></script>
-    <script defer src="/assets/js/main.js"></script>
-    
-    <!-- 404 Deep-link Handler -->
-    <script>
-        // Handle potential deep-links that might have been broken
-        document.addEventListener('DOMContentLoaded', function() {
-            const path = window.location.pathname;
-            const hash = window.location.hash;
-            
-            // Check if this looks like a project deep-link
-            if (hash && hash.startsWith('#project-')) {
-                // Redirect to projects page with the hash
-                window.location.href = '/projects.html' + hash;
-                return;
-            }
-            
-            // Check for common page patterns that might be missing extensions
-            const pagePatterns = {
-                '/about': '/about.html',
-                '/projects': '/projects.html', 
-                '/contact': '/contact.html'
-            };
-            
-            if (pagePatterns[path]) {
-                window.location.href = pagePatterns[path] + hash;
-                return;
-            }
-            
-            // Log 404 for debugging (only in development)
-            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-                console.log('404 Error - Path:', path, 'Hash:', hash);
-            }
-        });
-    </script>
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="/TPEC/">Home</a></li>
+              <li><a href="/TPEC/about.html">About Us</a></li>
+              <li><a href="/TPEC/projects.html">Projects</a></li>
+              <li><a href="/TPEC/contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Contact Information</h4>
+            <ul class="footer-links">
+              <li><a href="tel:+85621732131">+856 21 732131</a></li>
+              <li><a href="mailto:thephachanhtoto@hotmail.com">thephachanhtoto@hotmail.com</a></li>
+              <li><span>Phokham Village, Xaythany District, Road No.13 South, Vientiane Capital, Lao PDR</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2025 TPEC. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
 </body>
 </html>
