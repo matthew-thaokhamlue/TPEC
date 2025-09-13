@@ -28,7 +28,6 @@ Once your server is running, test these core features:
 - ✅ **Mobile Menu**: Resize browser to mobile, test hamburger menu
 - ✅ **Contact Links**: Test phone and email links
 - ✅ **Project Links**: Test "View Projects" buttons
-- ✅ **Animations**: Scroll to see GSAP animations
 
 ---
 
@@ -40,7 +39,6 @@ Once your server is running, test these core features:
 - Text is readable and properly formatted
 - Images display correctly
 - Layout looks good on desktop and mobile
-- Animations work smoothly
 
 **How to test:**
 ```bash
@@ -77,7 +75,6 @@ python3 -m http.server 8080
 **What to check:**
 - Page load speed
 - Image optimization
-- JavaScript performance
 - Mobile performance
 
 **Tools to use:**
@@ -123,43 +120,7 @@ python3 -m http.server 8080
 
 **What to check in each browser:**
 - Layout consistency
-- Animation performance
 - Font rendering
-- JavaScript functionality
-
----
-
-## 🛠️ Automated Testing Tools
-
-### 1. HTML Validation
-```bash
-# Install html5validator
-pip install html5validator
-
-# Validate all HTML files
-html5validator --root . --also-check-css
-```
-
-### 2. Lighthouse CI (Command Line)
-```bash
-# Install Lighthouse CI
-npm install -g @lhci/cli
-
-# Run Lighthouse audit
-lhci autorun --upload.target=temporary-public-storage
-```
-
-### 3. Pa11y (Accessibility Testing)
-```bash
-# Install Pa11y
-npm install -g pa11y
-
-# Test accessibility
-pa11y http://localhost:8080
-pa11y http://localhost:8080/about.html
-pa11y http://localhost:8080/projects.html
-pa11y http://localhost:8080/contact.html
-```
 
 ---
 
@@ -224,17 +185,10 @@ Monitor these metrics:
 
 ## 🐛 Common Issues to Test For
 
-### 1. JavaScript Errors
-**Check browser console:**
-- Press F12 → Console tab
-- Look for red error messages
-- Test with JavaScript disabled
-
-### 2. Missing Resources
+### 1. Missing Resources
 **Check for 404 errors:**
 - Images not loading
 - CSS files missing
-- JavaScript files missing
 - Font loading failures
 
 ### 3. Layout Issues
@@ -247,7 +201,6 @@ Monitor these metrics:
 ### 4. Performance Issues
 **Watch for:**
 - Slow page load (>3 seconds)
-- Janky animations
 - Large image files (>200KB)
 - Too many HTTP requests
 
@@ -261,9 +214,7 @@ Monitor these metrics:
 - [ ] Language switcher functions
 - [ ] Mobile responsive design works
 - [ ] Images load and display properly
-- [ ] Animations work smoothly
 - [ ] Contact links work (tel:, mailto:)
-- [ ] No console errors
 - [ ] HTML validates
 - [ ] Lighthouse scores meet targets
 
@@ -292,25 +243,10 @@ open http://localhost:8080
 # Resize browser to 375px width or use DevTools device mode
 ```
 
-### Run Automated Tests
-```bash
-# HTML validation
-html5validator --root .
-
-# Accessibility testing
-pa11y http://localhost:8080
-
-# Performance testing
-lighthouse http://localhost:8080 --view
-```
-
 ### Test Different Scenarios
 ```bash
 # Test with slow connection
 # Chrome DevTools → Network → Throttling → Slow 3G
-
-# Test with JavaScript disabled
-# Chrome DevTools → Settings → Debugger → Disable JavaScript
 
 # Test with reduced motion
 # Chrome DevTools → Rendering → Emulate CSS prefers-reduced-motion
@@ -346,3 +282,44 @@ Your website passes testing if:
 - ✅ **Cross-browser**: Works in all major browsers
 - ✅ **No Errors**: Clean console, no 404s
 - ✅ **Fast Loading**: <3 seconds on 3G connection
+
+---
+
+## 🚀 Deployment Guide
+
+### GitHub Pages Deployment
+
+1. **Initialize Git repository** (if not already done):
+   ```bash
+   git init
+   ```
+
+2. **Add all files to Git**:
+   ```bash
+   git add .
+   ```
+
+3. **Make your first commit**:
+   ```bash
+   git commit -m "Initial commit"
+   ```
+
+4. **Add your GitHub repository as remote**:
+   ```bash
+   git remote add origin https://github.com/yourusername/your-repo-name.git
+   ```
+
+5. **Push to GitHub**:
+   ```bash
+   git branch -M main
+   git push -u origin main
+   ```
+
+6. **Enable GitHub Pages**:
+   - Go to your repository on GitHub.
+   - Click the "Settings" tab.
+   - Go to the "Pages" section.
+   - For "Source", select "GitHub Actions".
+   - Save the changes.
+
+Your site will be deployed automatically when you push to the `main` branch.

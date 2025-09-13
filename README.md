@@ -1,16 +1,15 @@
 # Construction Consulting Website
 
-A professional bilingual (English/Lao) construction consulting website built with vanilla HTML5, CSS3, and JavaScript with GSAP animations. Optimized for GitHub Pages hosting.
+A professional bilingual (English/Lao) construction consulting website built with vanilla HTML5 and CSS3. Optimized for GitHub Pages hosting.
 
 ## 🚀 Features
 
-- **Bilingual Support**: Seamless English ↔ Lao language switching with localStorage persistence
-- **Responsive Design**: Mobile-first approach with fluid typography and layouts
-- **Smooth Animations**: GSAP-powered scroll animations with ScrollTrigger
-- **Performance Optimized**: <150KB JS, <120KB CSS budgets with lazy loading
-- **Accessibility Compliant**: WCAG 2.2 AA standards with keyboard navigation
-- **SEO Optimized**: Structured data, meta tags, and hreflang support
-- **GitHub Pages Ready**: Automated deployment with GitHub Actions
+- **Bilingual Support**: Seamless English ↔ Lao language switching.
+- **Responsive Design**: Mobile-first approach with fluid typography and layouts.
+- **Performance Optimized**: Minimal footprint with no JavaScript.
+- **Accessibility Compliant**: WCAG 2.2 AA standards with keyboard navigation.
+- **SEO Optimized**: Structured data, meta tags, and hreflang support.
+- **GitHub Pages Ready**: Automated deployment with GitHub Actions.
 
 ## 📁 Project Structure
 
@@ -20,22 +19,17 @@ A professional bilingual (English/Lao) construction consulting website built wit
 ├── about.html              # About us page
 ├── projects.html           # Projects showcase
 ├── contact.html            # Contact information
-├── 404.html               # Custom 404 page
-├── robots.txt             # Search engine directives
-├── sitemap.xml            # Site structure for SEO
-├── .nojekyll              # GitHub Pages configuration
+├── 404.html                # Custom 404 page
+├── *.lo.html               # Lao language versions of pages
+├── robots.txt              # Search engine directives
+├── sitemap.xml             # Site structure for SEO
+├── .nojekyll               # GitHub Pages configuration
 ├── assets/
 │   ├── css/
 │   │   ├── tokens.css     # Design system variables
 │   │   └── main.css       # Main stylesheet
-│   ├── js/
-│   │   ├── shell.js       # Navigation & layout
-│   │   ├── i18n.js        # Internationalization
-│   │   ├── motion.js      # GSAP animations
-│   │   └── main.js        # Main application
 │   ├── img/               # Images and graphics
 │   ├── icons/             # SVG icons
-│   ├── data/              # JSON data files
 │   └── i18n/              # Translation files
 │       ├── en.json        # English translations
 │       └── lo.json        # Lao translations
@@ -107,23 +101,6 @@ A professional bilingual (English/Lao) construction consulting website built wit
    }
    ```
 
-#### Adding Projects
-
-1. Edit `assets/data/projects.json`
-2. Add project objects with required fields:
-   ```json
-   {
-     "slug": "project-identifier",
-     "title": "Project Title",
-     "status": "ongoing|completed",
-     "location": "City, Country",
-     "scope": "Brief description",
-     "year": "2024",
-     "cover": "/assets/img/projects/cover.jpg",
-     "gallery": ["img1.jpg", "img2.jpg"],
-     "summary_i18n_key": "projects.project_slug.summary"
-   }
-   ```
 
 #### Adding Images
 
@@ -348,173 +325,6 @@ Edit `assets/css/tokens.css` to customize:
 - **Spacing**: Consistent spacing scale
 - **Layout**: Container widths, breakpoints
 
-### Animations
-
-Modify `assets/js/motion.js` to:
-
-- Add new GSAP effects
-- Adjust animation timings
-- Configure ScrollTrigger settings
-- Enable/disable ScrollSmoother
-
-### Performance Budgets
-
-Current targets:
-
-- JavaScript: <150KB gzipped
-- CSS: <120KB gzipped
-- Images: <200KB each
-- Lighthouse Performance: ≥90
-
-## 🔧 GSAP Licensing & Setup
-
-This project uses GSAP (GreenSock Animation Platform) with careful attention to licensing requirements.
-
-### Current GSAP Usage
-
-**FREE PLUGINS (Included by default):**
-- ✅ **GSAP Core**: Free for commercial use
-- ✅ **ScrollTrigger**: Free for commercial use
-
-**CLUB GREENSOCK PLUGINS (Requires paid membership):**
-- ⚠️ **ScrollSmoother**: Requires Club GreenSock membership ($99+/year)
-
-### ScrollSmoother Configuration
-
-**Default Configuration (FREE):**
-```javascript
-// In assets/js/config.js
-FEATURES: {
-  GSAP_SCROLL_SMOOTHER: false  // Uses free plugins only
-}
-```
-
-**With Club GreenSock License:**
-```javascript
-// In assets/js/config.js
-FEATURES: {
-  GSAP_SCROLL_SMOOTHER: true   // Enables ScrollSmoother
-}
-```
-
-### Enabling ScrollSmoother (Club Members Only)
-
-1. **Purchase Club GreenSock membership**:
-   - Visit: https://greensock.com/club/
-   - Choose appropriate plan ($99+ per year)
-
-2. **Download ScrollSmoother**:
-   - Log into your Club GreenSock account
-   - Download ScrollSmoother plugin files
-   - Add to your project
-
-3. **Include ScrollSmoother in HTML**:
-   ```html
-   <!-- Add after ScrollTrigger -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-   <script src="/assets/js/ScrollSmoother.min.js"></script>
-   ```
-
-4. **Enable in configuration**:
-   ```javascript
-   // In assets/js/config.js
-   FEATURES: {
-     GSAP_SCROLL_SMOOTHER: true
-   }
-   ```
-
-### Fallback System
-
-The site works perfectly without ScrollSmoother:
-
-- **With ScrollSmoother**: Ultra-smooth scrolling with advanced effects
-- **Without ScrollSmoother**: Native smooth scrolling + ScrollTrigger animations
-
-### Testing Both Modes
-
-**Test ScrollSmoother disabled (default):**
-```javascript
-// In browser console
-window.CONFIG.FEATURES.GSAP_SCROLL_SMOOTHER = false;
-location.reload();
-```
-
-**Test ScrollSmoother enabled (if licensed):**
-```javascript
-// In browser console
-window.CONFIG.FEATURES.GSAP_SCROLL_SMOOTHER = true;
-location.reload();
-```
-
-### Licensing Compliance
-
-- ✅ **Free plugins**: No license required for commercial use
-- ⚠️ **ScrollSmoother**: Must purchase license before enabling
-- 📄 **License verification**: Check console logs for licensing status
-
-**Console Output Examples:**
-```
-✅ Using free GSAP plugins only (Core + ScrollTrigger)
-⚠️ ScrollSmoother enabled - requires Club GreenSock license
-```
-
-### Important Legal Notes
-
-1. **Do not enable ScrollSmoother without a valid license**
-2. **Club GreenSock licenses are per-developer, not per-project**
-3. **Licenses include updates and support for 1 year**
-4. **Commercial projects require appropriate licensing**
-
-For complete licensing information: https://greensock.com/licensing/
-
-### Testing GSAP Licensing Compliance
-
-A test page is included to verify both modes work correctly:
-
-```bash
-# Serve the site locally
-python3 -m http.server 8000
-
-# Open test page
-open http://localhost:8000/test-gsap-licensing.html
-```
-
-**Test Page Features:**
-- ✅ Visual status indicators for each GSAP plugin
-- 🧪 Buttons to test both free and licensed modes
-- 📊 Real-time console output display
-- 🎯 Animation test elements (reveal, parallax, counter)
-- 📋 Complete licensing information and links
-
-**Console Commands for Testing:**
-```javascript
-// Check current status
-window.Motion.getStatus()
-
-// Test free mode (ScrollSmoother disabled)
-window.Motion.setScrollSmoother(false)
-
-// Test licensed mode (ScrollSmoother enabled - requires license)
-window.Motion.setScrollSmoother(true)
-```
-
-**Expected Console Output:**
-
-*Free Mode (Default):*
-```
-✅ Using free GSAP plugins only (Core + ScrollTrigger)
-✅ ScrollSmoother loaded successfully (Club GreenSock license active)
-🔄 ScrollSmoother requested but not available - using native smooth scroll
-```
-
-*Licensed Mode (with ScrollSmoother):*
-```
-⚠️ ScrollSmoother enabled - requires Club GreenSock license
-📄 License info: https://greensock.com/licensing/
-✅ ScrollSmoother loaded successfully (Club GreenSock license active)
-✅ ScrollSmoother active (Club GreenSock license)
-```
-
 ## 📱 Browser Support
 
 - Chrome 90+
@@ -611,36 +421,9 @@ Use these tools to monitor performance:
    - Verify preconnect links
    - Test font-display: swap
 
-2. **GSAP animations not working**
-
-   - Check console for errors
-   - Verify CDN links
-   - Test with USE_SMOOTHER = false
-
-3. **Language switching not working**
-
-   - Check translation JSON syntax
-   - Verify data-i18n attributes
-   - Test localStorage permissions
-
-4. **Images not loading**
+2. **Images not loading**
    - Check file paths (case-sensitive)
    - Verify image formats
-   - Test lazy loading
-
-### Debug Mode
-
-Add to URL for debugging:
-
-```
-?debug=true
-```
-
-This enables:
-
-- Console logging
-- Animation markers
-- Missing translation indicators
 
 ## 📄 License
 
