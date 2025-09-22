@@ -130,6 +130,15 @@ body {
   margin: 0 auto var(--space-xl);
 }
 
+.detail-page-container {
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+.detail-page-image {
+    margin-top: 36px;
+}
+
 /* Focus Management */
 :focus {
   outline: 2px solid var(--accent);
