@@ -1,492 +1,366 @@
 <!DOCTYPE html>
 <html lang="lo">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self';"
-    />
 
-    <title>ບໍລິການປຶກສາກໍ່ສ້າງແບບມືອາຊີບໃນລາວ</title>
-    <meta
-      name="description"
-      content="ບໍລິການປຶກສາກໍ່ສ້າງຈາກຜູ້ຊ່ຽວຊານໃນລາວ. ການສຶກສາຄວາມເປັນໄປໄດ້, ການຄຸ້ມຄອງໂຄງການ, ການປຶກສາດ້ານເຕັກນິກ, ແລະ ການຮັບປະກັນຄຸນນະພາບສຳລັບໂຄງການກໍ່ສ້າງຂອງທ່ານ."
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self';" />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://example.com/index.lo.html" />
-    <meta
-      property="og:title"
-      content="ບໍລິການປຶກສາກໍ່ສ້າງ - ການແນະນຳຈາກຜູ້ຊ່ຽວຊານໃນລາວ"
-    />
-    <meta
-      property="og:description"
-      content="ການປຶກສາກໍ່ສ້າງແບບມືອາຊີບດ້ວຍປະສົບການ 15+ ປີ. ການຄຸ້ມຄອງໂຄງການແບບຄົບຖ້ວນ ແລະ ຄວາມຊ່ຽວຊານດ້ານເຕັກນິກໃນລາວ ແລະ ພາກພື້ນ."
-    />
-    <meta
-      property="og:image"
-      content="https://example.com/assets/img/og-image.jpg"
-    />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta
-      property="og:image:alt"
-      content="ບໍລິການປຶກສາກໍ່ສ້າງ - ຄວາມຊ່ຽວຊານແບບມືອາຊີບໃນລາວ"
-    />
-    <meta property="og:locale" content="lo_LA" />
-    <meta property="og:locale:alternate" content="en_US" />
-    <meta property="og:site_name" content="ບໍລິການປຶກສາກໍ່ສ້າງ" />
+  <title>ບໍລິການປຶກສາກໍ່ສ້າງແບບມືອາຊີບໃນລາວ</title>
+  <meta name="description"
+    content="ບໍລິການປຶກສາກໍ່ສ້າງຈາກຜູ້ຊ່ຽວຊານໃນລາວ. ການສຶກສາຄວາມເປັນໄປໄດ້, ການຄຸ້ມຄອງໂຄງການ, ການປຶກສາດ້ານເຕັກນິກ, ແລະ ການຮັບປະກັນຄຸນນະພາບສຳລັບໂຄງການກໍ່ສ້າງຂອງທ່ານ." />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://example.com/index.lo.html" />
-    <meta
-      property="twitter:title"
-      content="ບໍລິການປຶກສາກໍ່ສ້າງ - ການແນະນຳຈາກຜູ້ຊ່ຽວຊານໃນລາວ"
-    />
-    <meta
-      property="twitter:description"
-      content="ການປຶກສາກໍ່ສ້າງແບບມືອາຊີບດ້ວຍປະສົບການ 15+ ປີ. ການຄຸ້ມຄອງໂຄງການແບບຄົບຖ້ວນ ແລະ ຄວາມຊ່ຽວຊານດ້ານເຕັກນິກໃນລາວ ແລະ ພາກພື້ນ."
-    />
-    <meta
-      property="twitter:image"
-      content="https://example.com/assets/img/og-image.jpg"
-    />
-    <meta
-      property="twitter:image:alt"
-      content="ບໍລິການປຶກສາກໍ່ສ້າງ - ຄວາມຊ່ຽວຊານແບບມືອາຊີບໃນລາວ"
-    />
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com/index.lo.html" />
+  <meta property="og:title" content="ບໍລິການປຶກສາກໍ່ສ້າງ - ການແນະນຳຈາກຜູ້ຊ່ຽວຊານໃນລາວ" />
+  <meta property="og:description"
+    content="ການປຶກສາກໍ່ສ້າງແບບມືອາຊີບດ້ວຍປະສົບການ 15+ ປີ. ການຄຸ້ມຄອງໂຄງການແບບຄົບຖ້ວນ ແລະ ຄວາມຊ່ຽວຊານດ້ານເຕັກນິກໃນລາວ ແລະ ພາກພື້ນ." />
+  <meta property="og:image" content="https://example.com/assets/img/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="ບໍລິການປຶກສາກໍ່ສ້າງ - ຄວາມຊ່ຽວຊານແບບມືອາຊີບໃນລາວ" />
+  <meta property="og:locale" content="lo_LA" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:site_name" content="ບໍລິການປຶກສາກໍ່ສ້າງ" />
 
-    <!-- Hreflang -->
-    <link rel="alternate" hreflang="en" href="https://example.com/index.html" />
-    <link rel="alternate" hreflang="lo" href="https://example.com/index.lo.html" />
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://example.com/index.lo.html" />
+  <meta property="twitter:title" content="ບໍລິການປຶກສາກໍ່ສ້າງ - ການແນະນຳຈາກຜູ້ຊ່ຽວຊານໃນລາວ" />
+  <meta property="twitter:description"
+    content="ການປຶກສາກໍ່ສ້າງແບບມືອາຊີບດ້ວຍປະສົບການ 15+ ປີ. ການຄຸ້ມຄອງໂຄງການແບບຄົບຖ້ວນ ແລະ ຄວາມຊ່ຽວຊານດ້ານເຕັກນິກໃນລາວ ແລະ ພາກພື້ນ." />
+  <meta property="twitter:image" content="https://example.com/assets/img/og-image.jpg" />
+  <meta property="twitter:image:alt" content="ບໍລິການປຶກສາກໍ່ສ້າງ - ຄວາມຊ່ຽວຊານແບບມືອາຊີບໃນລາວ" />
 
-    <!-- Resource Hints -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+  <!-- Hreflang -->
+  <link rel="alternate" hreflang="en" href="https://example.com/index.html" />
+  <link rel="alternate" hreflang="lo" href="https://example.com/index.lo.html" />
 
-    <!-- Font Preloading -->
-    <link
-      rel="preload"
-      href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="https://fonts.gstatic.com/s/notosanslao/v30/bx6lNx2Ol_ixgdYWLm9BwxM3NW6BOkuf763Clj73CiQ_J1Djx9pidOt4ccbdf5MK3riB2g.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
+  <!-- Resource Hints -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
 
-    <!-- Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Lao:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Font Preloading -->
+  <link rel="preload" href="https://fonts.gstatic.com/s/dmsans/v15/rP2Yp2ywxg089UriCZOIHQ.woff2" as="font"
+    type="font/woff2" crossorigin />
+  <link rel="preload"
+    href="https://fonts.gstatic.com/s/fraunces/v31/6NUh8FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0K7iN7hzFUPJH58nib.woff2"
+    as="font" type="font/woff2" crossorigin />
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="assets/css/tokens.css" />
-    <link rel="stylesheet" href="assets/css/main.css" />
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Noto+Sans+Lao:wght@400;600&display=swap"
+    rel="stylesheet" />
 
-    <!-- Favicon and Touch Icons -->
-    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="assets/icons/favicon-16x16.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="assets/icons/favicon-32x32.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="assets/icons/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="192x192"
-      href="assets/icons/android-chrome-192x192.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="512x512"
-      href="assets/icons/android-chrome-512x512.png"
-    />
-    <link rel="manifest" href="assets/icons/site.webmanifest" />
-  </head>
-  <body class="no-gsap">
-    <a href="#main" class="skip-link">ຂ້າມໄປເນື້ອຫາຫຼັກ</a>
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/tokens.css" />
+  <link rel="stylesheet" href="assets/css/main.css" />
 
-    <header id="header" role="banner">
-      <div class="container">
-        <div class="header-content">
-          <a href="/TPEC/index.lo.html" class="logo">TPEC Engineering Consulting</a>
+  <!-- Favicon and Touch Icons -->
+  <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/android-chrome-192x192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/android-chrome-512x512.png" />
+  <link rel="manifest" href="assets/icons/site.webmanifest" />
+</head>
 
-          <!-- Desktop Navigation -->
-          <nav class="nav" role="navigation" aria-label="ການນຳທາງຫຼັກ">
-            <ul class="nav-list">
-              <li><a href="/TPEC/index.lo.html" class="nav-link active" aria-current="page">ໜ້າຫຼັກ</a></li>
-              <li><a href="/TPEC/about.lo.html" class="nav-link">ກ່ຽວກັບພວກເຮົາ</a></li>
-              <li><a href="/TPEC/project.lo.html" class="nav-link">ໂຄງການ</a></li>
-              <li><a href="/TPEC/contact.lo.html" class="nav-link">ຕິດຕໍ່</a></li>
-            </ul>
+<body class="no-gsap">
+  <a href="#main" class="skip-link">ຂ້າມໄປເນື້ອຫາຫຼັກ</a>
 
-            <!-- Language Switcher -->
-            <div class="language-switcher" role="group" aria-label="ປ່ຽນພາສາ">
-              <a href="/TPEC/index.html" class="lang-option" data-lang="en" aria-label="Switch to English">
-                <span class="lang-code">EN</span>
-                <span class="lang-name">English</span>
-              </a>
-              <a href="/TPEC/index.lo.html" class="lang-option active" data-lang="lo" aria-label="Switch to Lao">
-                <span class="lang-code">ລາວ</span>
-                <span class="lang-name">ລາວ</span>
-              </a>
-            </div>
-          </nav>
+  <header id="header" role="banner">
+    <div class="container">
+      <div class="header-content">
+        <a href="index.lo.html" class="logo">TPEC Engineering Consulting</a>
 
-          <!-- Mobile Menu Button -->
-          <button class="mobile-menu-btn" aria-label="ເປີດເມນູການນຳທາງ" aria-expanded="false" aria-controls="mobile-menu">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-        </div>
-      </div>
-
-      <!-- Mobile Menu Overlay -->
-      <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
-        <button class="mobile-menu-close" aria-label="ປິດເມນູການນຳທາງ">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-
-        <h2 id="mobile-menu-title" class="sr-only">ການນຳທາງຫຼັກ</h2>
-
-        <nav role="navigation" aria-label="ການນຳທາງມືຖື">
-          <ul class="mobile-nav-list">
-            <li><a href="/TPEC/index.lo.html" class="mobile-nav-link active" aria-current="page">ໜ້າຫຼັກ</a></li>
-            <li><a href="/TPEC/about.lo.html" class="mobile-nav-link">ກ່ຽວກັບພວກເຮົາ</a></li>
-            <li><a href="/TPEC/project.lo.html" class="mobile-nav-link">ໂຄງການ</a></li>
-            <li><a href="/TPEC/contact.lo.html" class="mobile-nav-link">ຕິດຕໍ່</a></li>
+        <!-- Desktop Navigation -->
+        <nav class="nav" role="navigation" aria-label="ການນຳທາງຫຼັກ">
+          <ul class="nav-list">
+            <li><a href="index.lo.html" class="nav-link active" aria-current="page">ໜ້າຫຼັກ</a></li>
+            <li><a href="about.lo.html" class="nav-link">ກ່ຽວກັບພວກເຮົາ</a></li>
+            <li><a href="project.lo.html" class="nav-link">ໂຄງການ</a></li>
+            <li><a href="contact.lo.html" class="nav-link">ຕິດຕໍ່</a></li>
           </ul>
+
+          <!-- Language Switcher -->
+          <div class="language-switcher" role="group" aria-label="ປ່ຽນພາສາ">
+            <a href="index.html" class="lang-option" data-lang="en" aria-label="Switch to English">
+              <span class="lang-code">EN</span>
+              <span class="lang-name">English</span>
+            </a>
+            <a href="index.lo.html" class="lang-option active" data-lang="lo" aria-label="Switch to Lao">
+              <span class="lang-code">ລາວ</span>
+              <span class="lang-name">ລາວ</span>
+            </a>
+          </div>
         </nav>
 
-        <!-- Mobile Language Switcher -->
-        <div class="language-switcher" role="group" aria-label="ປ່ຽນພາສາ">
-            <a href="/TPEC/index.html" class="lang-option" data-lang="en" aria-label="Switch to English">
-                <span class="lang-code">EN</span>
-                <span class="lang-name">English</span>
-            </a>
-            <a href="/TPEC/index.lo.html" class="lang-option active" data-lang="lo" aria-label="Switch to Lao">
-                <span class="lang-code">ລາວ</span>
-                <span class="lang-name">ລາວ</span>
-            </a>
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-btn" aria-label="ເປີດເມນູການນຳທາງ" aria-expanded="false" aria-controls="mobile-menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
+      <button class="mobile-menu-close" aria-label="ປິດເມນູການນຳທາງ">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+
+      <h2 id="mobile-menu-title" class="sr-only">ການນຳທາງຫຼັກ</h2>
+
+      <nav role="navigation" aria-label="ການນຳທາງມືຖື">
+        <ul class="mobile-nav-list">
+          <li><a href="index.lo.html" class="mobile-nav-link active" aria-current="page">ໜ້າຫຼັກ</a></li>
+          <li><a href="about.lo.html" class="mobile-nav-link">ກ່ຽວກັບພວກເຮົາ</a></li>
+          <li><a href="project.lo.html" class="mobile-nav-link">ໂຄງການ</a></li>
+          <li><a href="contact.lo.html" class="mobile-nav-link">ຕິດຕໍ່</a></li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Language Switcher -->
+      <div class="language-switcher" role="group" aria-label="ປ່ຽນພາສາ">
+        <a href="index.html" class="lang-option" data-lang="en" aria-label="Switch to English">
+          <span class="lang-code">EN</span>
+          <span class="lang-name">English</span>
+        </a>
+        <a href="index.lo.html" class="lang-option active" data-lang="lo" aria-label="Switch to Lao">
+          <span class="lang-code">ລາວ</span>
+          <span class="lang-name">ລາວ</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" role="main">
+    <!-- Hero Section -->
+    <section class="hero section" aria-labelledby="hero-title">
+      <div class="container">
+        <h1 id="hero-title" class="reveal-up parallax-y">
+          ບໍລິການປຶກສາວິສະວະກຳໂຄງການສາທາລະນະແບບມືອາຊີບ
+        </h1>
+        <p class="reveal-up">
+          ຄຳແນະນຳຈາກຜູ້ຊ່ຽວຊານສຳລັບໂຄງການພັດທະນາໂຄງສ້າງພື້ນຖານໃນລາວ ດ້ວຍປະສົບການຫຼາຍກວ່າ 30 ປີ
+        </p>
+        <a href="project.lo.html" class="btn btn-primary reveal-up">ເບິ່ງໂຄງການຂອງພວກເຮົາ</a>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services section" aria-labelledby="services-title">
+      <div class="container">
+        <h2 id="services-title" class="reveal-up" style="text-align: center; margin-bottom: var(--space-3xl)">
+          ບໍລິການຂອງພວກເຮົາ
+        </h2>
+        <p class="reveal-up" style="
+              text-align: center;
+              margin-bottom: var(--space-3xl);
+              color: var(--text-muted);
+              font-size: var(--font-size-lg);
+            ">
+          ການແກ້ໄຂບໍລິການປຶກສາວິສະວະກຳໂຄງການສາທາລະນະແບບຄົບຖ້ວນ
+        </p>
+        <div class="services-grid" role="list" aria-label="ບໍລິການປຶກສາການກໍ່ສ້າງຂອງພວກເຮົາ">
+          <div class="card reveal-up" role="listitem" style="--delay:0s;" aria-label="ການສຳຫຼວດ ແລະ ອອກແບບຖະໜົນ">
+            <div class="card-header">
+              <h3 class="card-title">ການສຳຫຼວດ ແລະ ອອກແບບຖະໜົນ</h3>
+              <p class="card-description">ບໍລິການສຳຫຼວດຖະໜົນແບບມືອາຊີບ ແລະ ການອອກແບບວິສະວະກຳ</p>
+            </div>
+          </div>
+          <div class="card reveal-up" role="listitem" style="--delay:0.1s;" aria-label="ການສຳຫຼວດ ແລະ ອອກແບບຂົວ">
+            <div class="card-header">
+              <h3 class="card-title">ການສຳຫຼວດ ແລະ ອອກແບບຂົວ</h3>
+              <p class="card-description">ການອອກແບບວິສະວະກຳຂົວແບບຄົບຖ້ວນ ແລະ ການອອກແບບໂຄງສ້າງ</p>
+            </div>
+          </div>
+          <div class="card reveal-up" role="listitem" style="--delay:0.2s;" aria-label="ການກວດກາການກໍ່ສ້າງ">
+            <div class="card-header">
+              <h3 class="card-title">ການກວດກາການກໍ່ສ້າງ</h3>
+              <p class="card-description">ການກວດກາການກໍ່ສ້າງຈາກຜູ້ຊ່ຽວຊານ ແລະ ການຄຸ້ມຄອງຄວບຄຸມຄຸນນະພາບ</p>
+            </div>
+          </div>
+          <div class="card reveal-up" role="listitem" style="--delay:0.3s;" aria-label="ການປ້ອງກັນຝັ່ງແມ່ນ້ຳ">
+            <div class="card-header">
+              <h3 class="card-title">ການປ້ອງກັນຝັ່ງແມ່ນ້ຳ</h3>
+              <p class="card-description">ການອອກແບບການປ້ອງກັນຝັ່ງແມ່ນ້ຳແບບພິເສດ ແລະ ການປຶກສາການກໍ່ສ້າງ</p>
+            </div>
+          </div>
+          <div class="card reveal-up" role="listitem" style="--delay:0.4s;" aria-label="ການອອກແບບ ແລະ ກໍ່ສ້າງອາຄານ">
+            <div class="card-header">
+              <h3 class="card-title">ການອອກແບບ ແລະ ກໍ່ສ້າງອາຄານ</h3>
+              <p class="card-description">ບໍລິການອອກແບບອາຄານແບບຄົບຖ້ວນ ແລະ ການຄຸ້ມຄອງການກໍ່ສ້າງ</p>
+            </div>
+          </div>
+          <div class="card reveal-up" role="listitem" style="--delay:0.5s;" aria-label="ການຄຸ້ມຄອງໂຄງການ ແລະ ການຈັດຊື້">
+            <div class="card-header">
+              <h3 class="card-title">ການຄຸ້ມຄອງໂຄງການ ແລະ ການຈັດຊື້</h3>
+              <p class="card-description">ການຄຸ້ມຄອງໂຄງການແບບຄົບຖ້ວນ, ການປະມູນ, ແລະ ການປຶກສາການຈັດຊື້</p>
+            </div>
+          </div>
         </div>
       </div>
-    </header>
+    </section>
 
-    <main id="main" role="main">
-      <!-- Hero Section -->
-      <section class="hero section" aria-labelledby="hero-title">
-        <div class="container">
-          <h1
-            id="hero-title"
-            class="reveal-up parallax-y"
-          >
-            ບໍລິການປຶກສາວິສະວະກຳໂຄງການສາທາລະນະແບບມືອາຊີບ
-          </h1>
-          <p class="reveal-up">
-            ຄຳແນະນຳຈາກຜູ້ຊ່ຽວຊານສຳລັບໂຄງການພັດທະນາໂຄງສ້າງພື້ນຖານໃນລາວ ດ້ວຍປະສົບການຫຼາຍກວ່າ 30 ປີ
-          </p>
-          <a
-            href="/TPEC/project.lo.html"
-            class="btn btn-primary reveal-up"
-            >ເບິ່ງໂຄງການຂອງພວກເຮົາ</a
-          >
+    <!-- Credibility Section -->
+    <section class="credibility section" style="background: var(--bg-alt)" aria-labelledby="credibility-title">
+      <div class="container">
+        <h2 id="credibility-title" class="reveal-up" style="text-align: center; margin-bottom: var(--space-3xl)">
+          ປະຫວັດການເຮັດວຽກທີ່ພິສູດໄດ້
+        </h2>
+        <div class="credibility-stats" role="list" aria-label="ສະຖິຕິ ແລະ ຜົນສຳເລັດຂອງບໍລິສັດ">
+          <div class="stat reveal-up" role="listitem">
+            <span class="counter" data-target="30" aria-label="30+ ປີປະສົບການ">30+</span>
+            <span>ປີປະສົບການ</span>
+          </div>
+          <div class="stat reveal-up" role="listitem">
+            <span class="counter" data-target="25" aria-label="25+ ໂຄງການໃຫຍ່ສຳເລັດ">25+</span>
+            <span>ໂຄງການໃຫຍ່ສຳເລັດ</span>
+          </div>
+          <div class="stat reveal-up" role="listitem">
+            <span class="counter" data-target="8" aria-label="8 ແຂວງທີ່ໃຫ້ບໍລິການ">8</span>
+            <span>ແຂວງທີ່ໃຫ້ບໍລິການ</span>
+          </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Services Section -->
-      <section class="services section" aria-labelledby="services-title">
-        <div class="container">
-          <h2
-            id="services-title"
-            class="reveal-up"
-            style="text-align: center; margin-bottom: var(--space-3xl)"
-          >
-            ບໍລິການຂອງພວກເຮົາ
-          </h2>
-          <p
-            class="reveal-up"
-            style="
+    <!-- Featured Projects Section -->
+    <section class="highlights section" aria-labelledby="featured-projects-title">
+      <div class="container">
+        <h2 id="featured-projects-title" class="reveal-up">
+          ໂຄງການເດັ່ນ
+        </h2>
+        <p class="reveal-up" style="
               text-align: center;
               margin-bottom: var(--space-3xl);
               color: var(--text-muted);
               font-size: var(--font-size-lg);
-            "
-          >
-            ການແກ້ໄຂບໍລິການປຶກສາວິສະວະກຳໂຄງການສາທາລະນະແບບຄົບຖ້ວນ
-          </p>
-          <div
-            class="services-grid"
-            role="list"
-            aria-label="ບໍລິການປຶກສາການກໍ່ສ້າງຂອງພວກເຮົາ"
-          >
-            <div class="card reveal-up" role="listitem" style="--delay:0s;" aria-label="ການສຳຫຼວດ ແລະ ອອກແບບຖະໜົນ">
-              <div class="card-header">
-                <h3 class="card-title">ການສຳຫຼວດ ແລະ ອອກແບບຖະໜົນ</h3>
-                <p class="card-description">ບໍລິການສຳຫຼວດຖະໜົນແບບມືອາຊີບ ແລະ ການອອກແບບວິສະວະກຳ</p>
+            ">
+          ສະແດງໃຫ້ເຫັນຄວາມຊ່ຽວຊານຂອງພວກເຮົາໃນຂະແໜງການກໍ່ສ້າງທີ່ຫຼາກຫຼາຍ
+        </p>
+        <div class="projects-grid" role="list" aria-label="ໂຄງການກໍ່ສ້າງເດັ່ນ">
+          <div class="card reveal-up" role="listitem" style="--delay:0s;"
+            aria-label="ໂຄງການເດັ່ນ: National Road 1E Construction Project (Lot I) in Bolikhamxay Province, Laos">
+            <div class="card-header">
+              <h3 class="card-title">National Road 1E Construction Project (Lot I)</h3>
+              <p class="card-description">ໂຄງການກວດກາການກໍ່ສ້າງຖະໜົນແຫ່ງຊາດ 1E (ຕອນທີ 1) ໃນແຂວງບໍລິຄຳໄຊ,
+                ລວມທັງການກວດກາການກໍ່ສ້າງແບບຄົບຖ້ວນ ແລະ ການຄວບຄຸມຄຸນນະພາບ.</p>
+              <div
+                style="margin-top: var(--space-lg); display: flex; justify-content: space-between; align-items: center; font-size: var(--font-size-sm); color: var(--text-muted);">
+                <span aria-label="ສະຖານທີ່: Bolikhamxay Province, Laos">Bolikhamxay Province, Laos</span>
+                <span aria-label="ປີ: 2012-2017">2012-2017</span>
               </div>
             </div>
-            <div class="card reveal-up" role="listitem" style="--delay:0.1s;" aria-label="ການສຳຫຼວດ ແລະ ອອກແບບຂົວ">
-              <div class="card-header">
-                <h3 class="card-title">ການສຳຫຼວດ ແລະ ອອກແບບຂົວ</h3>
-                <p class="card-description">ການອອກແບບວິສະວະກຳຂົວແບບຄົບຖ້ວນ ແລະ ການອອກແບບໂຄງສ້າງ</p>
+          </div>
+          <div class="card reveal-up" role="listitem" style="--delay:0.15s;"
+            aria-label="ໂຄງການເດັ່ນ: Road Construction Projects - Vientiane Province in Vientiane Province, Laos">
+            <div class="card-header">
+              <h3 class="card-title">Road Construction Projects - Vientiane Province</h3>
+              <p class="card-description">ໂຄງການກໍ່ສ້າງ ແລະ ກວດກາຖະໜົນຫຼາຍໂຄງການໃນແຂວງວຽງຈັນ,
+                ລວມທັງການປູຖະໜົນແບບດັບເບິນບິຕູເມັນ.</p>
+              <div
+                style="margin-top: var(--space-lg); display: flex; justify-content: space-between; align-items: center; font-size: var(--font-size-sm); color: var(--text-muted);">
+                <span aria-label="ສະຖານທີ່: Vientiane Province, Laos">Vientiane Province, Laos</span>
+                <span aria-label="ປີ: 2013-2016">2013-2016</span>
               </div>
             </div>
-            <div class="card reveal-up" role="listitem" style="--delay:0.2s;" aria-label="ການກວດກາການກໍ່ສ້າງ">
-              <div class="card-header">
-                <h3 class="card-title">ການກວດກາການກໍ່ສ້າງ</h3>
-                <p class="card-description">ການກວດກາການກໍ່ສ້າງຈາກຜູ້ຊ່ຽວຊານ ແລະ ການຄຸ້ມຄອງຄວບຄຸມຄຸນນະພາບ</p>
-              </div>
-            </div>
-            <div class="card reveal-up" role="listitem" style="--delay:0.3s;" aria-label="ການປ້ອງກັນຝັ່ງແມ່ນ້ຳ">
-              <div class="card-header">
-                <h3 class="card-title">ການປ້ອງກັນຝັ່ງແມ່ນ້ຳ</h3>
-                <p class="card-description">ການອອກແບບການປ້ອງກັນຝັ່ງແມ່ນ້ຳແບບພິເສດ ແລະ ການປຶກສາການກໍ່ສ້າງ</p>
-              </div>
-            </div>
-            <div class="card reveal-up" role="listitem" style="--delay:0.4s;" aria-label="ການອອກແບບ ແລະ ກໍ່ສ້າງອາຄານ">
-              <div class="card-header">
-                <h3 class="card-title">ການອອກແບບ ແລະ ກໍ່ສ້າງອາຄານ</h3>
-                <p class="card-description">ບໍລິການອອກແບບອາຄານແບບຄົບຖ້ວນ ແລະ ການຄຸ້ມຄອງການກໍ່ສ້າງ</p>
-              </div>
-            </div>
-            <div class="card reveal-up" role="listitem" style="--delay:0.5s;" aria-label="ການຄຸ້ມຄອງໂຄງການ ແລະ ການຈັດຊື້">
-              <div class="card-header">
-                <h3 class="card-title">ການຄຸ້ມຄອງໂຄງການ ແລະ ການຈັດຊື້</h3>
-                <p class="card-description">ການຄຸ້ມຄອງໂຄງການແບບຄົບຖ້ວນ, ການປະມູນ, ແລະ ການປຶກສາການຈັດຊື້</p>
+          </div>
+          <div class="card reveal-up" role="listitem" style="--delay:0.3s;"
+            aria-label="ໂຄງການເດັ່ນ: National Road 1E Construction Project (Lot II) in Bolikhamxay Province, Laos">
+            <div class="card-header">
+              <h3 class="card-title">National Road 1E Construction Project (Lot II)</h3>
+              <p class="card-description">ການກວດກາການກໍ່ສ້າງຖະໜົນແຫ່ງຊາດ 1E (ຕອນທີ 2)
+                ທີ່ມີການກໍ່ສ້າງຖະໜົນແບບດັບເບິນເຊີເຟດທີດເມັນໃນແຂວງບໍລິຄຳໄຊ.</p>
+              <div
+                style="margin-top: var(--space-lg); display: flex; justify-content: space-between; align-items: center; font-size: var(--font-size-sm); color: var(--text-muted);">
+                <span aria-label="ສະຖານທີ່: Bolikhamxay Province, Laos">Bolikhamxay Province, Laos</span>
+                <span aria-label="ປີ: 2012-2014">2012-2014</span>
               </div>
             </div>
           </div>
         </div>
-      </section>
-
-      <!-- Credibility Section -->
-      <section
-        class="credibility section"
-        style="background: var(--bg-alt)"
-        aria-labelledby="credibility-title"
-      >
-        <div class="container">
-          <h2
-            id="credibility-title"
-            class="reveal-up"
-            style="text-align: center; margin-bottom: var(--space-3xl)"
-          >
-            ປະຫວັດການເຮັດວຽກທີ່ພິສູດໄດ້
-          </h2>
-          <div
-            class="credibility-stats"
-            role="list"
-            aria-label="ສະຖິຕິ ແລະ ຜົນສຳເລັດຂອງບໍລິສັດ"
-          >
-            <div class="stat reveal-up" role="listitem">
-              <span
-                class="counter"
-                data-target="30"
-                aria-label="30+ ປີປະສົບການ"
-                >30+</span
-              >
-              <span>ປີປະສົບການ</span>
-            </div>
-            <div class="stat reveal-up" role="listitem">
-              <span
-                class="counter"
-                data-target="25"
-                aria-label="25+ ໂຄງການໃຫຍ່ສຳເລັດ"
-                >25+</span
-              >
-              <span>ໂຄງການໃຫຍ່ສຳເລັດ</span>
-            </div>
-            <div class="stat reveal-up" role="listitem">
-              <span
-                class="counter"
-                data-target="8"
-                aria-label="8 ແຂວງທີ່ໃຫ້ບໍລິການ"
-                >8</span
-              >
-              <span>ແຂວງທີ່ໃຫ້ບໍລິການ</span>
-            </div>
-          </div>
+        <div style="text-align: center; margin-top: var(--space-3xl)">
+          <a href="project.lo.html" class="btn btn-secondary reveal-up">ເບິ່ງໂຄງການທັງໝົດ</a>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Featured Projects Section -->
-      <section
-        class="highlights section"
-        aria-labelledby="featured-projects-title"
-      >
-        <div class="container">
-          <h2
-            id="featured-projects-title"
-            class="reveal-up"
-          >
-            ໂຄງການເດັ່ນ
-          </h2>
-          <p
-            class="reveal-up"
-            style="
-              text-align: center;
-              margin-bottom: var(--space-3xl);
-              color: var(--text-muted);
-              font-size: var(--font-size-lg);
-            "
-          >
-            ສະແດງໃຫ້ເຫັນຄວາມຊ່ຽວຊານຂອງພວກເຮົາໃນຂະແໜງການກໍ່ສ້າງທີ່ຫຼາກຫຼາຍ
-          </p>
-          <div
-            class="projects-grid"
-            role="list"
-            aria-label="ໂຄງການກໍ່ສ້າງເດັ່ນ"
-          >
-            <div class="card reveal-up" role="listitem" style="--delay:0s;" aria-label="ໂຄງການເດັ່ນ: National Road 1E Construction Project (Lot I) in Bolikhamxay Province, Laos">
-                <div class="card-header">
-                    <h3 class="card-title">National Road 1E Construction Project (Lot I)</h3>
-                    <p class="card-description">ໂຄງການກວດກາການກໍ່ສ້າງຖະໜົນແຫ່ງຊາດ 1E (ຕອນທີ 1) ໃນແຂວງບໍລິຄຳໄຊ, ລວມທັງການກວດກາການກໍ່ສ້າງແບບຄົບຖ້ວນ ແລະ ການຄວບຄຸມຄຸນນະພາບ.</p>
-                    <div style="margin-top: var(--space-lg); display: flex; justify-content: space-between; align-items: center; font-size: var(--font-size-sm); color: var(--text-muted);">
-                        <span aria-label="ສະຖານທີ່: Bolikhamxay Province, Laos">Bolikhamxay Province, Laos</span>
-                        <span aria-label="ປີ: 2012-2017">2012-2017</span>
-                    </div>
-                </div>
-            </div>
-            <div class="card reveal-up" role="listitem" style="--delay:0.15s;" aria-label="ໂຄງການເດັ່ນ: Road Construction Projects - Vientiane Province in Vientiane Province, Laos">
-                <div class="card-header">
-                    <h3 class="card-title">Road Construction Projects - Vientiane Province</h3>
-                    <p class="card-description">ໂຄງການກໍ່ສ້າງ ແລະ ກວດກາຖະໜົນຫຼາຍໂຄງການໃນແຂວງວຽງຈັນ, ລວມທັງການປູຖະໜົນແບບດັບເບິນບິຕູເມັນ.</p>
-                    <div style="margin-top: var(--space-lg); display: flex; justify-content: space-between; align-items: center; font-size: var(--font-size-sm); color: var(--text-muted);">
-                        <span aria-label="ສະຖານທີ່: Vientiane Province, Laos">Vientiane Province, Laos</span>
-                        <span aria-label="ປີ: 2013-2016">2013-2016</span>
-                    </div>
-                </div>
-            </div>
-            <div class="card reveal-up" role="listitem" style="--delay:0.3s;" aria-label="ໂຄງການເດັ່ນ: National Road 1E Construction Project (Lot II) in Bolikhamxay Province, Laos">
-                <div class="card-header">
-                    <h3 class="card-title">National Road 1E Construction Project (Lot II)</h3>
-                    <p class="card-description">ການກວດກາການກໍ່ສ້າງຖະໜົນແຫ່ງຊາດ 1E (ຕອນທີ 2) ທີ່ມີການກໍ່ສ້າງຖະໜົນແບບດັບເບິນເຊີເຟດທີດເມັນໃນແຂວງບໍລິຄຳໄຊ.</p>
-                    <div style="margin-top: var(--space-lg); display: flex; justify-content: space-between; align-items: center; font-size: var(--font-size-sm); color: var(--text-muted);">
-                        <span aria-label="ສະຖານທີ່: Bolikhamxay Province, Laos">Bolikhamxay Province, Laos</span>
-                        <span aria-label="ປີ: 2012-2014">2012-2014</span>
-                    </div>
-                </div>
-            </div>
-          </div>
-          <div style="text-align: center; margin-top: var(--space-3xl)">
-            <a
-              href="/TPEC/project.lo.html"
-              class="btn btn-secondary reveal-up"
-              >ເບິ່ງໂຄງການທັງໝົດ</a
-            >
-          </div>
-        </div>
-      </section>
-
-      <!-- CTA Section -->
-      <section
-        class="cta section"
-        style="
+    <!-- CTA Section -->
+    <section class="cta section" style="
           background: linear-gradient(
             135deg,
             var(--accent) 0%,
             var(--accent-hover) 100%
           );
           color: var(--bg);
-        "
-        aria-labelledby="cta-title"
-      >
-        <div class="container" style="text-align: center">
-          <h2
-            id="cta-title"
-            class="reveal-up"
-            style="color: var(--bg); margin-bottom: var(--space-lg)"
-          >
-            ພ້ອມທີ່ຈະເລີ່ມໂຄງການຂອງທ່ານບໍ?
-          </h2>
-          <p
-            class="reveal-up"
-            style="
+        " aria-labelledby="cta-title">
+      <div class="container" style="text-align: center">
+        <h2 id="cta-title" class="reveal-up" style="color: var(--bg); margin-bottom: var(--space-lg)">
+          ພ້ອມທີ່ຈະເລີ່ມໂຄງການຂອງທ່ານບໍ?
+        </h2>
+        <p class="reveal-up" style="
               color: rgba(14, 17, 22, 0.8);
               font-size: var(--font-size-lg);
               margin-bottom: var(--space-2xl);
-            "
-          >
-            ຮັບບໍລິການປຶກສາກໍ່ສ້າງຈາກຜູ້ຊ່ຽວຊານທີ່ເໝາະສົມກັບຄວາມຕ້ອງການຂອງທ່ານ
-          </p>
-          <a
-            href="/TPEC/contact.lo.html"
-            class="btn btn-secondary reveal-up"
-            style="
+            ">
+          ຮັບບໍລິການປຶກສາກໍ່ສ້າງຈາກຜູ້ຊ່ຽວຊານທີ່ເໝາະສົມກັບຄວາມຕ້ອງການຂອງທ່ານ
+        </p>
+        <a href="contact.lo.html" class="btn btn-secondary reveal-up" style="
               background: var(--bg);
               color: var(--accent);
               border-color: var(--bg);
-            "
-            >ຕິດຕໍ່ພວກເຮົາມື້ນີ້</a
-          >
-        </div>
-      </section>
-    </main>
+            ">ຕິດຕໍ່ພວກເຮົາມື້ນີ້</a>
+      </div>
+    </section>
+  </main>
 
-    <footer id="footer" role="contentinfo">
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-section">
-            <h4>TPEC Engineering Consulting</h4>
-            <p>ການປຶກສາກໍ່ສ້າງຈາກຜູ້ຊ່ຽວຊານໃນລາວ</p>
-          </div>
-
-          <div class="footer-section">
-            <h4>Quick Links</h4>
-            <ul class="footer-links">
-              <li><a href="/TPEC/index.lo.html">ໜ້າຫຼັກ</a></li>
-              <li><a href="/TPEC/about.lo.html">ກ່ຽວກັບພວກເຮົາ</a></li>
-              <li><a href="/TPEC/project.lo.html">ໂຄງການ</a></li>
-              <li><a href="/TPEC/contact.lo.html">ຕິດຕໍ່</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-section">
-            <h4>ຂໍ້ມູນການຕິດຕໍ່</h4>
-            <ul class="footer-links">
-              <li><a href="tel:+85621732131">+856 21 732131</a></li>
-              <li><a href="mailto:thephachanhtoto@hotmail.com">thephachanhtoto@hotmail.com</a></li>
-              <li><span>ບ້ານໂພຄຳ, ເມືອງໄຊທານີ, ຖະໜົນເລກທີ 13 ໃຕ້, ນະຄອນຫຼວງວຽງຈັນ, ສປປ ລາວ</span></li>
-            </ul>
-          </div>
+  <footer id="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>TPEC Engineering Consulting</h4>
+          <p>ການປຶກສາກໍ່ສ້າງຈາກຜູ້ຊ່ຽວຊານໃນລາວ</p>
         </div>
 
-        <div class="footer-bottom">
-          <p>&copy; 2025 TPEC. All rights reserved.</p>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.lo.html">ໜ້າຫຼັກ</a></li>
+            <li><a href="about.lo.html">ກ່ຽວກັບພວກເຮົາ</a></li>
+            <li><a href="project.lo.html">ໂຄງການ</a></li>
+            <li><a href="contact.lo.html">ຕິດຕໍ່</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>ຂໍ້ມູນການຕິດຕໍ່</h4>
+          <ul class="footer-links">
+            <li><a href="tel:+85621732131">+856 21 732131</a></li>
+            <li><a href="mailto:thephachanhtoto@hotmail.com">thephachanhtoto@hotmail.com</a></li>
+            <li><span>ບ້ານໂພຄຳ, ເມືອງໄຊທານີ, ຖະໜົນເລກທີ 13 ໃຕ້, ນະຄອນຫຼວງວຽງຈັນ, ສປປ ລາວ</span></li>
+          </ul>
         </div>
       </div>
-    </footer>
-  </body>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 TPEC. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+
 </html>
